@@ -53,10 +53,14 @@
   <div class="Hero__main" bind:this={heroMain}>
     <slot name="image" />
     <slot name="main">
-      <h1 class="H0 | Hero__heading" bind:this={heroHeading}>{heading}</h1>
-      <div class="Hero__intro">
-        <p>{description}</p>
-      </div></slot
-    >
+      <slot name="heading">
+        <h1 class="H0 | Hero__heading" bind:this={heroHeading}>{heading}</h1>
+      </slot>
+      <slot name="intro">
+        <div class="Hero__intro">
+          <p>{description}</p>
+        </div>
+      </slot>
+    </slot>
   </div>
 </div>
