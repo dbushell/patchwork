@@ -1,0 +1,79 @@
+.Range {
+  --color: var(--color-primary);
+  --size: var(--space-m);
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: calc((4 / 16) * 1rem);
+  block-size: var(--size);
+  display: block;
+  inline-size: 100%;
+  margin: 0;
+  overflow: hidden;
+
+  &:hover {
+    --color: var(--color-secondary);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: calc((4 / 16) * 1rem);
+  }
+
+  &:disabled {
+    --color: var(--color-text) / 0.5;
+    pointer-events: none;
+  }
+}
+
+.Range::-moz-range-track {
+  background: transparent;
+  background-image: linear-gradient(
+    to right,
+    oklch(var(--color-bg-lighter)),
+    oklch(var(--color-bg-lighter))
+  );
+  background-position: 0% center;
+  background-repeat: no-repeat;
+  background-size: 100% var(--space-2xs);
+  block-size: var(--size);
+  inline-size: 100%;
+}
+
+.Range::-moz-range-thumb {
+  appearance: none;
+  background: oklch(var(--color));
+  border: 0;
+  border-radius: 100%;
+  block-size: var(--size);
+  inline-size: var(--size);
+  transition: background-color 200ms;
+}
+
+.Range::-webkit-slider-runnable-track {
+  background: transparent;
+  background-image: linear-gradient(
+    to right,
+    oklch(var(--color-bg-lighter)),
+    oklch(var(--color-bg-lighter))
+  );
+  background-position: 0% center;
+  background-repeat: no-repeat;
+  background-size: 100% var(--space-2xs);
+  block-size: var(--size);
+  inline-size: 100%;
+}
+
+.Range::-webkit-slider-thumb {
+  appearance: none;
+  background: oklch(var(--color));
+  border: 0;
+  border-radius: 100%;
+  block-size: var(--size);
+  inline-size: var(--size);
+  transition: background-color 200ms;
+}

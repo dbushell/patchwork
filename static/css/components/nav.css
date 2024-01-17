@@ -1,0 +1,96 @@
+.Nav {
+  --grid-template: var(--grid-template-basic);
+  background: oklch(var(--color-bg-dark));
+  block-size: auto;
+  color: oklch(var(--color-text));
+
+  display: none;
+  inline-size: 100%;
+  inset: 0 0 auto 0;
+  min-block-size: var(--header-height);
+  padding-block-start: var(--header-space);
+  padding-block-end: calc(var(--header-space) * 2);
+
+  &:popover-open {
+    display: grid;
+  }
+
+  &.\:popover-open {
+    display: grid;
+    margin-block-start: calc(-1 * var(--header-space));
+    margin-inline: calc(-1 * (var(--grid-margin) + var(--grid-column-gap)));
+    width: auto;
+  }
+}
+
+.Nav__settings {
+  background: oklch(var(--color-bg-dark));
+  border-radius: calc((8 / 16) * 1rem);
+  border: calc((1 / 16) * 1rem) solid oklch(var(--color-bg-lighter));
+  inset: 0;
+  margin: auto;
+  padding: var(--space-xs) var(--space-s);
+
+  &[style*='--inset'] {
+    inset: calc(var(--space-s) + (1px * var(--inset-top)))
+      calc(1px * var(--inset-right)) auto auto;
+  }
+}
+
+@supports not selector(:popover-open) {
+  .Nav__settings {
+    &[style*='--inset'] {
+      inset-block-start: calc(var(--space-s) + var(--button-small-height));
+      inset-inline-end: 0;
+    }
+  }
+}
+
+@container header (inline-size < calc((500 / 16) * 1rem)) {
+  .Nav {
+    & .Button-group {
+      grid-column: main-start / main-end;
+    }
+
+    & [popovertarget='settings'] {
+      display: none;
+    }
+  }
+
+  .Nav__settings {
+    display: contents;
+  }
+}
+
+@container header (inline-size >= calc((500 / 16) * 1rem)) {
+  .Nav {
+    display: contents;
+
+    &:popover-open {
+      display: contents;
+    }
+
+    &.\:popover-open {
+      display: contents;
+    }
+
+    & .Menu {
+      flex-direction: row;
+      gap: var(--space-s);
+    }
+
+    & .Menu__item {
+      border: 0;
+      inline-size: auto;
+      padding: 0;
+    }
+  }
+
+  @supports not selector(:popover-open) {
+    .Nav__settings {
+      &:not(.\:popover-open) {
+        display: none;
+      }
+    }
+  }
+}

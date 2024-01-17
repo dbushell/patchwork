@@ -1,0 +1,54 @@
+.Select {
+  --background-color: var(--color-bg-dark);
+  --border-color: var(--color-primary);
+  --border-width: calc((2 / 16) * 1rem);
+  --color: var(--color-text);
+  --font-size: var(--step-1);
+  --line-height: 1.2;
+  --padding-block: calc(var(--space-xs));
+  --padding-inline: calc(var(--space-s) - var(--border-width));
+  --height: calc(
+    (var(--font-size) * var(--line-height)) +
+      ((var(--padding-block) + var(--border-width)) * 2)
+  );
+  appearance: none;
+  background: oklch(var(--background-color));
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="oklch(97% 0.02 80)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m2 5 6 6 6-6"/></svg>');
+  background-size: var(--space-m) auto;
+  background-repeat: no-repeat;
+  background-position: right var(--space-s) center;
+  border: var(--border-width) solid oklch(var(--border-color));
+  border-radius: calc((8 / 16) * 1rem);
+  block-size: var(--height);
+  color: oklch(var(--color));
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--font-size);
+  inline-size: 100%;
+  line-height: var(--line-height);
+  padding: var(--padding-block) var(--padding-inline);
+  padding-inline-end: calc(var(--space-m) + (var(--space-s) * 2));
+  transition: color 200ms, border-color 200ms;
+
+  &:hover {
+    --border-color: var(--color-secondary);
+  }
+
+  &:focus {
+    --border-color: var(--color-secondary);
+    outline: none;
+  }
+
+  &:focus-visible {
+    --underline-opacity: 0;
+    outline: var(--focus-outline);
+    outline-offset: calc((2 / 16) * 1rem);
+  }
+
+  &[disabled] {
+    --background-color: var(--color-bg-light);
+    --border-color: var(--color-bg-lighter);
+    --color: var(--color-text) / 0.5;
+    pointer-events: none;
+  }
+}

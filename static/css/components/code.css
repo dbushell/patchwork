@@ -1,0 +1,24 @@
+.Code {
+  background: oklch(var(--color-bg-dark));
+  border: calc((2 / 16) * 1rem) solid oklch(var(--color-bg-lighter));
+  border-radius: calc((8 / 16) * 1rem);
+  font-size: var(--step-0);
+  margin-block: var(--block-gap2);
+  overflow: auto;
+  overscroll-behavior-inline: contain;
+  padding: 0;
+
+  &:first-child {
+    margin-block-start: 0;
+  }
+
+  &:last-child {
+    margin-block-end: 0;
+  }
+
+  & > code {
+    color: oklch(var(--color-text));
+    display: block;
+    padding: var(--space-m);
+  }
+}

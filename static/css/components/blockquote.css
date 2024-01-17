@@ -1,0 +1,21 @@
+.Blockquote {
+  margin-block: var(--block-gap2);
+  margin-inline: 0;
+  padding: 0;
+
+  &:first-child {
+    margin-block-start: 0;
+  }
+
+  &:last-child {
+    margin-block-end: 0;
+  }
+
+  & > :nth-last-child(1 of p)::after {
+    content: close-quote;
+  }
+
+  & > :nth-child(1 of p)::before {
+    content: open-quote;
+  }
+}

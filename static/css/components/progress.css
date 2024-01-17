@@ -1,0 +1,51 @@
+.Progress {
+  --color: var(--color-primary);
+  --size: var(--space-m);
+  appearance: none;
+  background: transparent;
+  background-image: linear-gradient(
+    to right,
+    oklch(var(--color-bg-lighter)),
+    oklch(var(--color-bg-lighter))
+  );
+  background-position: 0% center;
+  background-repeat: no-repeat;
+  background-size: 100% var(--space-2xs);
+  border: 0;
+  border-radius: calc((4 / 16) * 1rem);
+  block-size: var(--size);
+  display: block;
+  inline-size: 100%;
+  overflow: hidden;
+}
+
+.Progress::-moz-progress-bar {
+  background: transparent;
+  background-image: linear-gradient(
+    to right,
+    oklch(var(--color-secondary)),
+    oklch(var(--color-primary))
+  );
+  background-position: 0% center;
+  background-repeat: no-repeat;
+  background-size: 100% var(--space-2xs);
+  block-size: var(--size);
+  inline-size: 100%;
+}
+
+.Progress::-webkit-progress-bar {
+  background: transparent;
+}
+
+.Progress::-webkit-progress-value {
+  background: transparent;
+  background-image: linear-gradient(
+    to right,
+    oklch(var(--color-secondary)),
+    oklch(var(--color-primary))
+  );
+  background-position: 0% center;
+  background-repeat: no-repeat;
+  background-size: 100% var(--space-2xs);
+  block-size: var(--size);
+}

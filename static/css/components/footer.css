@@ -1,0 +1,7 @@
+.Footer {
+  --color-anchor: var(--color-text-subtle);
+  --grid-template: var(--grid-template-basic);
+  color: oklch(var(--color-text-subtle));
+  background: oklch(var(--color-bg-dark));
+  padding-block: var(--space-l-xl);
+}

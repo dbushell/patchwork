@@ -1,0 +1,41 @@
+.space-2xs {
+  --space: var(--space-2xs);
+}
+.space-xs {
+  --space: var(--space-xs);
+}
+.space-s {
+  --space: var(--space-s);
+}
+.space-m {
+  --space: var(--space-m);
+}
+.space-l {
+  --space: var(--space-l);
+}
+
+.mb-start {
+  margin-block-start: var(--space);
+}
+.mb-end {
+  margin-block-end: var(--space);
+}
+.mb {
+  margin-block: var(--space);
+}
+.mb-0 {
+  margin-block: 0;
+}
+
+.mi-start {
+  margin-inline-start: var(--space);
+}
+.mi-end {
+  margin-inline-end: var(--space);
+}
+.mi {
+  margin-inline: var(--space);
+}
+.mi-0 {
+  margin-inline: 0;
+}

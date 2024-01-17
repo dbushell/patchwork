@@ -1,0 +1,35 @@
+.List {
+  --border-color: var(--color-bg-lighter);
+  border: calc((1 / 16) * 1rem) solid oklch(var(--border-color));
+  border-radius: calc((8 / 16) * 1rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  list-style: none;
+
+  & > * {
+    background: none;
+    border-block-end: calc((1 / 16) * 1rem) solid oklch(var(--border-color));
+    inline-size: 100%;
+    margin: 0;
+    min-inline-size: 0;
+    padding: var(--space-xs) var(--space-s);
+
+    &:last-child {
+      border-block-end: 0;
+    }
+  }
+
+  & > a {
+    text-decoration: none;
+
+    &:not(:hover):not(:focus-visible) {
+      --color: var(--color-text);
+    }
+  }
+
+  & > li {
+    &::before {
+      display: none;
+    }
+  }
+}

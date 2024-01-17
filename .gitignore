@@ -1,0 +1,17 @@
+/*
+!.github
+!.gitignore
+!README.md
+!app.html
+!deno.json
+!mod.js
+!mod.ts
+!dev.ts
+!tsconfig.json
+!components
+!demo
+!icons
+!lib
+!routes
+!static
+!**/*.svelte

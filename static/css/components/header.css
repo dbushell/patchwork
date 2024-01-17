@@ -1,0 +1,69 @@
+:root {
+  --header-space: var(--space-s-m);
+  --header-height: calc((var(--header-space) * 2) + var(--button-small-height));
+}
+
+.Header {
+  --grid-template: var(--grid-template-basic);
+  background: oklch(var(--color-bg-dark));
+  block-size: var(--header-height);
+  padding-block: var(--header-space);
+  position: relative;
+  z-index: 1;
+}
+
+.Header__main {
+  align-items: center;
+  container-name: header;
+  container-type: inline-size;
+  display: flex;
+  gap: var(--space-s);
+  justify-content: space-between;
+
+  .Button[popovertarget='nav'] {
+    --icon-scale: 1.5;
+    justify-self: end;
+  }
+
+  @container header (inline-size >= calc((500 / 16) * 1rem)) {
+    .Button[popovertarget='nav'] {
+      display: none;
+      --icon-scale: 1.5;
+      justify-self: end;
+    }
+  }
+}
+
+.Header__logo {
+  --underline-opacity: 0;
+  margin-inline-end: auto;
+  font-size: var(--font-size);
+  font-weight: 400;
+  position: relative;
+
+  &:not(:focus):not(:hover) {
+    --color: var(--color-secondary);
+  }
+}
+
+.Header__tag {
+  color: oklch(var(--color-bg-default));
+  display: block;
+  background: oklch(var(--color-primary));
+  background-image: linear-gradient(
+    45deg,
+    oklch(var(--color-secondary)),
+    oklch(var(--color-primary))
+  );
+  border-radius: calc((8 / 16) * 1rem);
+  font-size: var(--step-0);
+  font-weight: 700;
+  inset-block-start: 0;
+  inset-inline-start: calc(100% + var(--space-xs));
+  line-height: 1;
+  padding: var(--space-3xs) var(--space-2xs);
+  position: absolute;
+  text-transform: uppercase;
+  transform: scale(0.75);
+  transform-origin: 0% 50%;
+}

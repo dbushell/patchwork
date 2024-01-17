@@ -1,0 +1,49 @@
+.bg-default {
+  background-color: oklch(var(--color-bg-default));
+}
+.bg-dark {
+  background-color: oklch(var(--color-bg-dark));
+}
+.bg-light {
+  background-color: oklch(var(--color-bg-light));
+}
+.bg-lighter {
+  background-color: oklch(var(--color-bg-lighter));
+}
+.bg-text {
+  background-color: oklch(var(--color-text));
+}
+.bg-text-subtle {
+  background-color: oklch(var(--color-text-subtle));
+}
+.bg-primary {
+  background-color: oklch(var(--color-primary));
+}
+.bg-secondary {
+  background-color: oklch(var(--color-secondary));
+}
+.bg-tertiary {
+  background-color: oklch(var(--color-tertiary));
+}
+.bg-focus {
+  background-color: oklch(var(--color-focus));
+}
+
+.color-bg {
+  color: oklch(var(--color-bg-default));
+}
+.color-text {
+  color: oklch(var(--color-text));
+}
+.color-subtle {
+  color: oklch(var(--color-text-subtle));
+}
+.color-primary {
+  color: oklch(var(--color-primary));
+}
+.color-secondary {
+  color: oklch(var(--color-secondary));
+}
+.color-tertiary {
+  color: oklch(var(--color-tertiary));
+}
