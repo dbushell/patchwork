@@ -5,3 +5,10 @@
   background: oklch(var(--color-bg-dark));
   padding-block: var(--space-l-xl);
 }
+
+.Footer__main {
+  align-items: start;
+  display: flex;
+  gap: var(--space-s);
+  justify-content: space-between;
+}
