@@ -44,6 +44,7 @@
   font-family: var(--font-sans);
   font-size: var(--font-size);
   font-weight: 700;
+  flex-shrink: 0;
   inline-size: fit-content;
   justify-content: center;
   line-height: var(--line-height);
