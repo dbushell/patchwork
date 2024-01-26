@@ -54,7 +54,7 @@
     <slot name="image" />
     <slot name="main">
       <slot name="heading">
-        <h1 class="H0 | Hero__heading" bind:this={heroHeading}>{heading}</h1>
+        <h1 class="Hero__heading" bind:this={heroHeading}>{heading}</h1>
       </slot>
       <slot name="intro">
         <div class="Hero__intro">
