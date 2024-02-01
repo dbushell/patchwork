@@ -1,8 +1,9 @@
+<script context="module">
+  export const island = true;
+</script>
+
 <script>
-  import Island from '@dinossr/island';
   import Header from '@components/header.svelte';
 </script>
 
-<Island props={$$props}>
-  <Header heading="Patchwork" tag="Beta" {...$$props} />
-</Island>
+<Header heading="Patchwork" tag="Beta" {...$$props} />

@@ -1,11 +1,13 @@
 #!/usr/bin/env -S deno run --allow-all
-import {DinoServer} from 'dinossr';
+
+import * as path from 'path';
 import {debounce} from 'debounce';
-import * as lcss from 'npm:lightningcss@1.22.1';
+import * as lcss from 'npm:lightningcss@1.23.0';
+import {DinoSsr} from '../dinossr/mod.ts';
 
 const dir = new URL('./', import.meta.url).pathname;
 
-let dinossr: DinoServer;
+let dinossr: DinoSsr;
 let controller: AbortController;
 
 const cssOptions: lcss.BundleOptions<lcss.CustomAtRules> = {
@@ -25,9 +27,9 @@ const cssBundle = () => {
 
 const start = async () => {
   controller = new AbortController();
-  dinossr = new DinoServer(dir, {
+  dinossr = new DinoSsr(dir, {
     deployHash: 'dev',
-    bumbler: {dev: true},
+    dev: true,
     serve: {
       signal: controller.signal
     }
@@ -58,11 +60,15 @@ start();
 
 const watcher = Deno.watchFs(dir);
 
+const directories = ['components', 'routes', 'lib', 'demo', 'icons'];
+
 const update = debounce(async (ev: Deno.FsEvent) => {
   if (controller.signal.aborted) return;
   if (['modify', 'create'].includes(ev.kind)) {
     for (const evpath of ev.paths) {
-      if (evpath.endsWith('.min.css')) return;
+      const dir = path.dirname(evpath.replace(Deno.cwd(), ''));
+      if (!directories.includes(dir.split('/')[1])) return;
+      if (evpath.includes('.min.')) return;
     }
     controller.abort();
     await dinossr.server.finished;

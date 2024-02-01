@@ -1,5 +1,5 @@
-import {DinoServer} from 'dinossr';
+import {DinoSsr} from 'dinossr';
 
-const dinossr = new DinoServer(new URL('./', import.meta.url).pathname);
+const dinossr = new DinoSsr();
 
 await dinossr.init();

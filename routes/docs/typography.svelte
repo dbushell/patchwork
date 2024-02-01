@@ -3,14 +3,12 @@
 
   export const pattern = '/';
 
-  export const load = () => {
-    return {
-      code1: highlight(
-        'svelte',
-        `
+  export const load = ({publicData}) => {
+    publicData.code1 = highlight(
+      'svelte',
+      `
 <script>
   import {onMount} from 'svelte';
-  import Island from '@dinossr/island';
 
   let time = '';
   const update = () => {
@@ -23,12 +21,9 @@
   });
 <\/script>
 
-<Island>
-  <time>{time}</time>
-</Island>
+<time>{time}</time>
 `
-      )
-    };
+    );
   };
 </script>
 
@@ -37,7 +32,7 @@
   import Layout from '@demo/layout-aside.svelte';
   import Code from '@components/code.svelte';
 
-  const {code1} = getContext('data');
+  const {code1} = getContext('publicData');
 
   const title = 'Typography - Documentation';
 </script>
