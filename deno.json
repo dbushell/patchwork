@@ -1,7 +1,7 @@
 {
   "imports": {
-    "path": "https://deno.land/std@0.212.0/path/mod.ts",
-    "debounce": "https://deno.land/std@0.212.0/async/debounce.ts",
-    "dinossr": "https://raw.githubusercontent.com/dbushell/dinossr/v0.15.0/mod.ts"
+    "path": "https://deno.land/std@0.214.0/path/mod.ts",
+    "debounce": "https://deno.land/std@0.214.0/async/debounce.ts",
+    "dinossr": "https://raw.githubusercontent.com/dbushell/dinossr/v0.16.0/mod.ts"
   }
 }
