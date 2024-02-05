@@ -49,7 +49,7 @@
   <h5>Heading level five</h5>
   <h6>Heading level six</h6>
   <p>
-    DinoSsr is a minimal <a href="https://ssr.dinoear.com/about/"
+    DinoSsr is a minimal <a href="https://ssr.rocks/about/"
       >web framework</a
     >
     for <strong>Deno</strong> and <strong>Svelte</strong> fans. It's similar to
