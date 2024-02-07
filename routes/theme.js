@@ -9,10 +9,11 @@ export const post = async ({request, platform}) => {
       throw new Error();
     }
     platform.cookies.set('theme', {
+      name: 'theme',
       value: data.theme,
       path: '/',
       maxAge: 2630000,
-      sameSite: true,
+      sameSite: 'Strict',
       secure: true
     });
     return Response.json({success: true});

@@ -1,7 +1,11 @@
 <script>
+  /** @type {Array<string>} */
   export let classes = [];
+  /** @type {Array<string>} */
   export let headerClasses = [];
+  /** @type {Array<string>} */
   export let mainClasses = [];
+  /** @type {boolean} */
   export let open = false;
 
   classes = ['Accordion', ...classes];

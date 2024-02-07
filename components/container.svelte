@@ -1,5 +1,7 @@
 <script>
+  /** @type {boolean} */
   export let light;
+  /** @type {boolean} */
   export let dark;
 </script>
 

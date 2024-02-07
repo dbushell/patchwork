@@ -1,5 +1,7 @@
 <script>
+  /** @type {string} */
   export let code;
+  /** @type {string} */
   export let language;
 </script>
 

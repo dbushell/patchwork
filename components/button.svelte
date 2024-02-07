@@ -1,18 +1,23 @@
 <script>
+  /** @type {string} */
   export let label = '';
+  /** @type {string} */
   export let href;
+  /** @type {string} */
   export let type;
+  /** @type {boolean} */
   export let icon;
+  /** @type {boolean} */
   export let small;
+  /** @type {boolean} */
   export let disabled;
+  /** @type {string} */
   export let tag = href ? 'a' : 'button';
-
-  /** @type {Array<string>}*/
+  /** @type {Array<string>} */
   export let classes = [];
-
-  /** @type {Record<string, string>}*/
+  /** @type {Record<string, string>} */
   export let attr = {};
-
+  /** @type {HTMLAnchorElement | HTMLButtonElement} */
   export let node;
 
   classes = ['Button', ...classes];

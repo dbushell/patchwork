@@ -4,7 +4,9 @@
   import Button from '../components/button.svelte';
   import IconMenu from '../icons/icon-menu.svelte';
 
+  /** @type {string} */
   export let heading = '';
+  /** @type {string} */
   export let tag = '';
 
   /** @type {Array<{name: string, href: string, target?: string}>} */

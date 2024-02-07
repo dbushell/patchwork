@@ -51,7 +51,7 @@
   };
 
   const onTheme = async (newTheme) => {
-    const response = await fetch('/api/theme/', {
+    const response = await fetch('/theme/', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

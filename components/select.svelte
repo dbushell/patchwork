@@ -1,9 +1,14 @@
 <script>
-  export let options = [];
+  /** @type {string} */
   export let id;
+  /** @type {string} */
   export let name;
+  /** @type {boolean} */
   export let disabled;
+  /** @type {boolean} */
   export let required;
+  /** @type {Array<{label: string, value: string, selected?: boolean}>} */
+  export let options = [];
 </script>
 
 <select class="Select" {id} {name} {disabled} {required} on:change on:input>

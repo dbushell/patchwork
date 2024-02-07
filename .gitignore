@@ -4,7 +4,6 @@
 !README.md
 !app.html
 !deno.json
-!mod.js
 !mod.ts
 !dev.ts
 !tsconfig.json

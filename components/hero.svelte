@@ -1,7 +1,9 @@
 <script>
   import {onMount} from 'svelte';
 
+  /** @type {string} */
   export let heading = '';
+  /** @type {string} */
   export let description = '';
 
   let hero;
