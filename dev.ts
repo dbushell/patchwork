@@ -2,7 +2,7 @@
 
 import * as path from 'path';
 import {debounce} from 'debounce';
-import * as lcss from 'npm:lightningcss@1.23.0';
+import * as lcss from 'lightningcss';
 import {DinoSsr} from '../dinossr/mod.ts';
 
 const dir = new URL('./', import.meta.url).pathname;

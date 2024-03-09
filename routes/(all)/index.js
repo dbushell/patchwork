@@ -6,7 +6,7 @@ export const order = 999;
 
 const themes = ['light', 'dark'];
 
-export const get = async ({response, platform}) => {
+export const GET = async ({response, platform}) => {
   if (!(response instanceof Response)) {
     return response;
   }
