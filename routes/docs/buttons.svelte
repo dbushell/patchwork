@@ -75,13 +75,13 @@
 
     <h2>Advanced</h2>
     <Button tag="label">
-      <Checkbox toggle slot="label" label="Switch" tag="span" />
+      <Checkbox switched slot="label" label="Switch" tag="span" />
     </Button>
     <Button small tag="label">
-      <Checkbox toggle slot="label" label="Switch" tag="span" />
+      <Checkbox switched slot="label" label="Switch" tag="span" />
     </Button>
     <Button small tag="label">
-      <Checkbox toggle disabled slot="label" label="Switch" tag="span" />
+      <Checkbox switched disabled slot="label" label="Switch" tag="span" />
     </Button>
   </Stack>
 </Layout>

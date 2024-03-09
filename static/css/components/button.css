@@ -10,6 +10,7 @@
 .Button {
   --color: var(--color-primary);
   --border-color: var(--color);
+  --border-radius: calc((8 / 16) * 1rem);
   --border-width: 2;
   --border-opacity: 0;
   --font-size: var(--step-1);
@@ -30,15 +31,14 @@
     oklch(var(--color-primary))
   );
   align-items: center;
-  border-radius: calc((8 / 16) * 1rem);
   border: calc((var(--border-width) / 16) * 1rem) solid
     oklch(var(--border-color) / var(--border-opacity));
+  border-radius: var(--border-radius);
   background: var(--background-padding-box) padding-box,
     var(--background-border-box) border-box;
   background-size: 300% 100%, 100% 100%;
   background-position: 0 0, 0 0;
   color: oklch(var(--color));
-  cursor: pointer;
   display: flex;
   gap: var(--space-xs);
   font-family: var(--font-sans);
@@ -53,7 +53,6 @@
   text-decoration: none;
   transition: color 200ms, border-color 200ms, background-position 400ms;
   user-select: none;
-  -webkit-user-select: none;
 
   &:hover {
     --color: var(--color-secondary);
@@ -86,11 +85,11 @@
   &:disabled,
   &[disabled],
   &:has([disabled]) {
-    background: oklch(var(--color-bg-light));
     --background-color: var(--color-bg-light);
     --border-color: var(--color-bg-lighter);
     --border-opacity: 1;
     --color: var(--color-text) / 0.5;
+    background: oklch(var(--color-bg-light));
     pointer-events: none;
   }
 
@@ -105,7 +104,6 @@
     transform: scale(var(--icon-scale));
     transform-origin: center center;
     user-select: none;
-    -webkit-user-select: none;
   }
 }
 
@@ -163,7 +161,6 @@
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  /* gap: var(--space-xs); */
   margin-block: var(--block-gap2);
 
   & > * {

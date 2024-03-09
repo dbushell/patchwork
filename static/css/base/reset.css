@@ -7,6 +7,7 @@
 html {
   hanging-punctuation: first allow-end last;
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -27,10 +28,15 @@ body {
 img,
 svg,
 video {
-  border: 0;
   block-size: auto;
+  border: 0;
   display: block;
   max-inline-size: 100%;
+}
+
+input,
+button {
+  touch-action: manipulation;
 }
 
 button {
@@ -42,10 +48,6 @@ button {
   line-height: inherit;
   outline: none;
   text-align: start;
-
-  &:hover {
-    cursor: pointer;
-  }
 }
 
 b,

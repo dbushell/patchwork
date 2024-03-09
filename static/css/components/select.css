@@ -1,25 +1,27 @@
 .Select {
+  --background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="oklch(97% 0.02 80)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m2 5 6 6 6-6"/></svg>');
   --background-color: var(--color-bg-dark);
   --border-color: var(--color-primary);
+  --border-radius: calc((8 / 16) * 1rem);
   --border-width: calc((2 / 16) * 1rem);
   --color: var(--color-text);
   --font-size: var(--step-1);
   --line-height: 1.2;
   --padding-block: calc(var(--space-xs));
   --padding-inline: calc(var(--space-s) - var(--border-width));
-  --height: calc(
+  --block-size: calc(
     (var(--font-size) * var(--line-height)) +
       ((var(--padding-block) + var(--border-width)) * 2)
   );
   appearance: none;
   background: oklch(var(--background-color));
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="oklch(97% 0.02 80)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m2 5 6 6 6-6"/></svg>');
+  background-image: var(--background-image);
   background-size: var(--space-m) auto;
   background-repeat: no-repeat;
   background-position: right var(--space-s) center;
   border: var(--border-width) solid oklch(var(--border-color));
-  border-radius: calc((8 / 16) * 1rem);
-  block-size: var(--height);
+  border-radius: var(--border-radius);
+  block-size: var(--block-size);
   color: oklch(var(--color));
   display: block;
   font-family: var(--font-sans);
@@ -50,5 +52,13 @@
     --border-color: var(--color-bg-lighter);
     --color: var(--color-text) / 0.5;
     pointer-events: none;
+  }
+
+  &:dir(rtl) {
+    background-position: left var(--space-xs) center;
+  }
+
+  :where([data-theme='light']) & {
+    --background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="oklch(20% 0.015 275)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m2 5 6 6 6-6"/></svg>');
   }
 }

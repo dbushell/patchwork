@@ -11,7 +11,7 @@
   export let disabled;
   /** @type {boolean} */
   export let required;
-  /** @type {boolean} */
+  /** @type {string} */
   export let placeholder;
 </script>
 

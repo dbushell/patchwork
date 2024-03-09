@@ -52,9 +52,9 @@
     <Checkbox label="Checkbox" />
     <Checkbox disabled label="Checkbox" />
     <Checkbox checked disabled label="Checkbox" />
-    <Checkbox toggle label="Toggle" />
-    <Checkbox toggle disabled label="Toggle" />
-    <Checkbox toggle checked disabled label="Toggle" />
+    <Checkbox switched label="Switch" />
+    <Checkbox switched disabled label="Switch" />
+    <Checkbox switched checked disabled label="Switch" />
 
     <h2>Radio</h2>
     <Radio checked label="Radio" name="radio" />

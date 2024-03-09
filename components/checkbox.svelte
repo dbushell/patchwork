@@ -3,7 +3,6 @@
   export let label = '';
   /** @type {string} */
   export let tag = 'label';
-  export let toggle = false;
   /** @type {string} */
   export let id;
   /** @type {string} */
@@ -14,15 +13,21 @@
   export let disabled;
   /** @type {boolean} */
   export let required;
+  /** @type {boolean} */
+  export let switched;
 </script>
 
-<svelte:element
-  this={tag}
-  class="Checkbox"
-  class:Checkbox--toggle={toggle}
-  on:change
-  on:input
->
-  <input type="checkbox" {id} {name} {checked} {disabled} {required} />
+<svelte:element this={tag} class="Checkbox">
+  <input
+    type="checkbox"
+    {id}
+    {name}
+    {checked}
+    {disabled}
+    {required}
+    {...{switch: switched}}
+    on:change
+    on:input
+  />
   <span>{label}</span>
 </svelte:element>
