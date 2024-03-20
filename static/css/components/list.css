@@ -22,7 +22,7 @@
   & > a {
     text-decoration: none;
 
-    &:not(:hover):not(:focus-visible) {
+    &:not(:focus-visible, :hover) {
       --color: var(--color-text);
     }
   }

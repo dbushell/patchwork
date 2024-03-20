@@ -30,12 +30,8 @@
     --border-color: var(--color-secondary);
   }
 
-  &:focus {
-    --border-color: var(--color-secondary);
-    outline: none;
-  }
-
   &:focus-visible {
+    --border-color: var(--color-secondary);
     outline: var(--focus-outline);
     outline-offset: calc((2 / 16) * 1rem);
   }

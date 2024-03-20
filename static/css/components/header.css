@@ -41,7 +41,7 @@
   font-weight: 400;
   position: relative;
 
-  &:not(:focus):not(:hover) {
+  &:not(:focus-visible, :hover) {
     --color: var(--color-secondary);
   }
 }

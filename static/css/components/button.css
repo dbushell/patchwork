@@ -60,12 +60,8 @@
     background-position: 100% 0, 0 0;
   }
 
-  &:focus {
-    --color: var(--color-focus);
-    outline: none;
-  }
-
   &:focus-visible {
+    --color: var(--color-focus);
     --underline-opacity: 0;
     outline: var(--focus-outline);
     outline-offset: calc((2 / 16) * 1rem);
