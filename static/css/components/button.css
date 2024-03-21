@@ -130,12 +130,24 @@
       border-start-start-radius: 0;
     }
 
-    &:focus,
-    &:hover {
+    :where(.Button-group:has([aria-current='page'])) & {
+      &:not(:focus-visible, :hover, [aria-current='page'], [disabled]) {
+        --border-color: var(--color-bg-lighter);
+        --border-opacity: 1;
+      }
+    }
+
+    &[aria-current='page'] {
       z-index: 1;
     }
 
-    &:disabled {
+    &:focus,
+    &:hover {
+      z-index: 2;
+    }
+
+    &:disabled,
+    &[disabled] {
       z-index: -1;
     }
 
@@ -185,7 +197,8 @@
       z-index: 2;
     }
 
-    &:disabled {
+    &:disabled,
+    &[disabled] {
       z-index: -1;
     }
 
