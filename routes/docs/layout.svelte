@@ -40,8 +40,13 @@
     <h2>List</h2>
     <ul class="List">
       <li>Item 1</li>
-      <a href="/">Item 2 (anchor)</a>
-      <li>Item 3</li>
+      <li>
+        <a href="/">Item 2 (anchor)</a>
+      </li>
+      <li>
+        <button class="Anchor" type="button">Item 2 (button)</button>
+      </li>
+      <li>Item 4</li>
     </ul>
 
     <h2>Cards</h2>

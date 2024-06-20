@@ -9,4 +9,9 @@
   &::-webkit-details-marker {
     display: none;
   }
+
+  &:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: calc((2 / 16) * 1rem);
+  }
 }

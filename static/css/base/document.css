@@ -1,4 +1,4 @@
-.Document {
+:root {
   background: oklch(var(--color-bg-default));
   color: oklch(var(--color-text));
   font-family: var(--font-sans);

@@ -46,8 +46,14 @@ button {
   color: currentColor;
   font: inherit;
   line-height: inherit;
-  outline: none;
+  padding: 0;
   text-align: start;
+  user-select: none;
+
+  &:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: calc((2 / 16) * 1rem);
+  }
 }
 
 b,

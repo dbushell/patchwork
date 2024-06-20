@@ -19,17 +19,17 @@
     }
   }
 
-  & > a {
-    text-decoration: none;
-
-    &:not(:focus-visible, :hover) {
-      --color: var(--color-text);
-    }
-  }
-
   & > li {
     &::before {
       display: none;
+    }
+
+    & > :is(a, button) {
+      text-decoration: none;
+
+      &:not(:focus-visible, :hover) {
+        --color: var(--color-text);
+      }
     }
   }
 }

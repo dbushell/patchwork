@@ -1,16 +1,8 @@
 @font-face {
-  font-family: 'OpenSans';
-  src: url('/fonts/OpenSans-Regular.woff2') format('woff2');
+  font-family: 'Sora';
+  src: url('/fonts/Sora-Variable.woff2') format('woff2');
   font-display: swap;
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'OpenSans';
-  src: url('/fonts/OpenSans-Bold.woff2') format('woff2');
-  font-display: swap;
-  font-weight: 700;
+  font-weight: 100 800;
   font-style: normal;
 }
 

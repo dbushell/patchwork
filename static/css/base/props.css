@@ -101,8 +101,8 @@
   --focus-outline: calc((2 / 16) * 1rem) solid oklch(var(--color-focus));
 
   --font-monospace: 'MonaspaceNeon', monospace;
-  --font-display: 'OpenSans', sans-serif;
-  --font-sans: 'OpenSans', sans-serif;
+  --font-display: 'Sora', sans-serif;
+  --font-sans: 'Sora', sans-serif;
   --font-size: var(--step-1);
   --line-height: 1.4;
 }

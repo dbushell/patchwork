@@ -2,7 +2,7 @@
   "imports": {
     "path": "jsr:@std/path@0.220",
     "debounce": "jsr:@std/async@0.220/debounce",
-    "dinossr": "jsr:@ssr/dinossr@0.29",
-    "lightningcss": "npm:lightningcss@1.24.0"
+    "dinossr": "jsr:@ssr/dinossr@0.31",
+    "lightningcss": "npm:lightningcss@1.25.1"
   }
 }

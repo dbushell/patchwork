@@ -26,6 +26,22 @@ a {
   }
 }
 
+.Anchor {
+  --color: var(--color-anchor);
+  color: oklch(var(--color));
+  cursor: pointer;
+  transition: color 200ms;
+  user-select: text;
+
+  &:hover {
+    --color: var(--color-secondary);
+  }
+
+  &:focus-visible {
+    --color: var(--color-focus);
+  }
+}
+
 h1,
 h2,
 h3,
