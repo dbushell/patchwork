@@ -1,11 +1,77 @@
+@property --scroll-y {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --scroll-dir {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --hero-height {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --hero-min-height {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --hero-max-height {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --hero-main-height {
+  syntax: '<length> | <percentage>';
+  inherits: true;
+  initial-value: 100%;
+}
+
+@property --hero-main-min-height {
+  syntax: '<length> | <percentage>';
+  inherits: true;
+  initial-value: 100%;
+}
+
+@property --hero-main-max-height {
+  syntax: '<length> | <percentage>';
+  inherits: true;
+  initial-value: 100%;
+}
+
+@property --hero-offset-top {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+/* @property --hero-offset-height {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 1;
+} */
+
+@property --hero-visible {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 1;
+}
+
+@property --hero-visible-ratio {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 1;
+}
+
 .Hero {
   --grid-template: var(--grid-template-basic);
-
-  --hero-offset-height: 1;
-  --hero-main-offset-height: 1;
-  --hero-heading-offset-height: 0;
-  --hero-offset-top: 0;
-  --hero-offset: 0;
 
   --hero-main-space: var(--space-l);
 
@@ -18,17 +84,19 @@
     var(--hero-max-height)
   );
 
+  /* --hero-offset-height: var(--hero-height); */
+
+  /* Number of pixels visible*/
   --hero-visible: min(
-    max(0, calc(-1 * (var(--hero-offset-top) - (var(--scroll-y))))),
+    max(
+      0,
+      var(--hero-offset-height) - (var(--scroll-y) - var(--hero-offset-top))
+    ),
     var(--hero-offset-height)
   );
 
-  --hero-visible-ratio: calc((var(--hero-visible) / var(--hero-offset-height)));
-
-  --hero-scale-ratio: calc(
-    var(--hero-visible) /
-      (var(--hero-offset-height) - (var(--hero-heading-offset-height)))
-  );
+  /* 1 = visible, 0 = invisible */
+  --hero-visible-ratio: calc(var(--hero-visible) / var(--hero-offset-height));
 
   --hero-main-min-height: calc(var(--step-5) + (var(--hero-main-space) * 2));
   --hero-main-max-height: calc(
@@ -36,7 +104,7 @@
   );
   --hero-main-height: clamp(
     var(--hero-main-min-height),
-    calc(100% * (1 - var(--hero-visible-ratio))),
+    calc(1px * (var(--hero-offset-height) * var(--hero-visible-ratio))),
     var(--hero-main-max-height)
   );
 
@@ -44,7 +112,7 @@
     var(--step-4),
     calc(
       var(--step-4) +
-        ((var(--step-5) - var(--step-4)) * (1 - var(--hero-scale-ratio)))
+        ((var(--step-5) - var(--step-4)) * var(--hero-visible-ratio))
     ),
     var(--step-5)
   );
@@ -104,11 +172,14 @@
   grid-template-columns: repeat(5, 1fr);
   justify-items: start;
   block-size: var(--hero-main-height);
-  inset-block-start: 0;
+
   min-block-size: var(--hero-main-min-height);
   max-block-size: var(--hero-main-max-height);
   padding-block: var(--hero-main-space);
-  position: sticky;
+  /* position: sticky;
+  inset-block-start: calc(var(--hero-height) - var(--hero-main-height)); */
+  position: relative;
+  transform: translateY(calc(var(--hero-height) - var(--hero-main-height)));
 
   & > * {
     grid-column: 1 / 6;
@@ -118,7 +189,7 @@
 }
 
 .Hero__image {
-  --opacity1: max(0, min(1, calc(1 - var(--hero-scale-ratio))));
+  --opacity1: max(0, min(1, var(--hero-visible-ratio)));
   block-size: 100%;
   grid-column: 4 / 6;
   justify-self: center;
@@ -148,12 +219,12 @@
 .Hero__heading {
   --color1: color-mix(
     in oklch,
-    oklch(var(--color-secondary)) calc(100% * (1 - var(--hero-scale-ratio))),
+    oklch(var(--color-secondary)) calc(100% * var(--hero-visible-ratio)),
     oklch(var(--color-text))
   );
   --color2: color-mix(
     in oklch,
-    oklch(var(--color-primary)) calc(100% * (1 - var(--hero-scale-ratio))),
+    oklch(var(--color-primary)) calc(100% * var(--hero-visible-ratio)),
     oklch(var(--color-text))
   );
   background: linear-gradient(50deg, var(--color1), var(--color2));
@@ -166,7 +237,7 @@
 }
 
 .Hero__intro {
-  --opacity1: max(0, min(1, calc(1 - var(--hero-scale-ratio))));
+  --opacity1: max(0, min(1, var(--hero-visible-ratio)));
   --font-size: var(--step-0);
   align-self: start;
   inset-block-start: 50%;
