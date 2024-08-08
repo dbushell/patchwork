@@ -1,22 +1,12 @@
 {
   "compilerOptions": {
     "paths": {
-      "@lib/*": ["./lib/*"],
+      "@components/*": ["./components/*"],
       "@demo/*": ["./demo/*"],
       "@icons/*": ["./icons/*"],
-      "@components/*": ["./components/*"]
+      "@lib/*": ["./lib/*"],
     },
-    "moduleResolution": "bundler",
-    "lib": ["ESNext", "DOM"],
-    "module": "ESNext",
-    "target": "ESNext",
-    "strict": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "isolatedModules": true,
-    "verbatimModuleSyntax": true,
     "allowImportingTsExtensions": true,
-    "allowSyntheticDefaultImports": true,
-    "noEmit": true
+    "moduleResolution": "bundler"
   }
 }

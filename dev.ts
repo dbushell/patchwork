@@ -1,11 +1,11 @@
 #!/usr/bin/env -S deno run --allow-all
 
-import * as path from 'path';
-import {debounce} from 'debounce';
-import * as lcss from 'lightningcss';
-import {DinoSsr} from '../dinossr/mod.ts';
+import * as path from '@std/path';
+import {debounce} from '@std/async/debounce';
+import * as lcss from 'npm:lightningcss';
+import {DinoSsr} from '@ssr/dinossr';
 
-const dir = new URL('./', import.meta.url).pathname;
+const dir = new URL(import.meta.resolve('./')).pathname;
 
 let dinossr: DinoSsr;
 let controller: AbortController;
