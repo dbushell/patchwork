@@ -1,7 +1,10 @@
 {
   "imports": {
+    "@dbushell/carriageway": "jsr:@dbushell/carriageway@^1.0.1",
     "@ssr/dinossr": "jsr:@ssr/dinossr@^0.35.0",
     "@std/async": "jsr:@std/async@^1.0.3",
+    "@std/fs": "jsr:@std/fs@^1.0.1",
+    "@std/http": "jsr:@std/http@^1.0.2",
     "@std/path": "jsr:@std/path@^1.0.2",
     "lightningcss": "npm:lightningcss@^1.26.0"
   }
