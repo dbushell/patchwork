@@ -1,5 +1,9 @@
-import {DinoSsr} from '@ssr/dinossr';
+import { Hyperserve } from "@dbushell/hyperserve";
 
-const dinossr = new DinoSsr(new URL(import.meta.resolve('./')).pathname);
+const dir = new URL("./", import.meta.url).pathname;
 
-await dinossr.init();
+const ssr = new Hyperserve(dir, {
+  dev: true,
+});
+
+await ssr.init();

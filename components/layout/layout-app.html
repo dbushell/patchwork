@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preload" as="font" href="/fonts/Sora-Variable.woff2?v={{deployHash}}" type="font/woff2">
+  <meta name="application-name" content="Patchwork">
+  <meta name="theme-color" content="#14161d">
+  <link rel="manifest" href="/app.webmanifest?v={{deployHash}}">
+  <link rel="icon" sizes="32x32" href="/favicon.ico?v={{deployHash}}">
+  <link rel="icon" type="image/svg+xml" href="/512x512.svg?v={{deployHash}}">
+  <link rel="apple-touch-icon" sizes="180x180" href="/180x180.png?v={{deployHash}}">
+  <link rel="stylesheet" href="/app.min.css?v={{deployHash}}">
+  <ssr-portal name="head" />
+</head>
+<body class="Body">
+  <ssr-slot />
+</body>
+</html>

@@ -1,0 +1,69 @@
+<script context="module">
+  export const pattern = "/";
+
+  export const load = async ({fetch, platformProps}) => {
+    const response = await fetch("/props.json");
+    platformProps.props = await response.json();
+    platformProps.title = "Typography - Documentation";
+  }
+</script>
+
+<ssr-fragment portal="head">
+  <title>{{title}}</title>
+</ssr-fragment>
+
+<layout-app>
+  <layout-aside>
+    <h1>Typography</h1>
+    <h1>Heading level one</h1>
+    <h2>Heading level two</h2>
+    <h3>Heading level three</h3>
+    <h4>Heading level four</h4>
+    <h5>Heading level five</h5>
+    <h6>Heading level six</h6>
+    <p>
+      <strong>Lorem Ipsum</strong> is <em>simply dummy text</em> of the printing and <a href="/">typesetting industry</a>. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </p>
+    <p><q>Inline quote</q></p>
+    <blockquote class="Blockquote">
+      <p>Block quote first paragraph.</p>
+      <p>Block quote second paragraph.</p>
+    </blockquote>
+    <!-- <pw-code language="svelte" code="test" /> -->
+    <ul>
+      <li>
+        First item
+        <ul>
+          <li>Nested item</li>
+        </ul>
+      </li>
+      <li>Second item</li>
+      <li>Third item</li>
+    </ul>
+    <ol>
+      <li>First item</li>
+      <li>Second list item</li>
+      <li>Third item</li>
+    </ol>
+    <div class="Table">
+      <table>
+        <thead>
+          <tr>
+            <th>Table</th>
+            <th>Heading</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Table</td>
+            <td>Cell</td>
+          </tr>
+          <tr>
+            <td>Table</td>
+            <td>Cell</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </layout-aside>
+</layout-app>

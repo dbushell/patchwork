@@ -13,3 +13,9 @@
     margin-block-start: auto;
   }
 }
+
+patchwork-nav,
+patchwork-hero,
+patchwork-header {
+  display: contents;
+}

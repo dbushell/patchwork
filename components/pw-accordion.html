@@ -1,0 +1,16 @@
+<script context="component">
+  const c1 = ['Accordion', ...($local.classes ?? [])];
+  const c2 = ['Accordion__header', ...($local.headerClasses ?? [])];
+  const c3 = ['Accordion__main', ...($local.mainClasses ?? [])];
+</script>
+
+<details
+  class="{{c1.join(' ')}}"
+  open="{{$local.open === undefined ? undefined : ''}}">
+  <summary class="{{c2.join(' ')}}">
+    <ssr-slot name="header" />
+  </summary>
+  <div class="{{c3.join(' ')}}">
+    <ssr-slot name="main" />
+  </div>
+</details>

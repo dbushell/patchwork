@@ -1,0 +1,26 @@
+<script context="component">
+  const tagattr = $local.tag ?? ($local.href ? 'a' : 'button');
+  const typeattr = $local.type ?? ($local.tag === 'button' ? 'button' : undefined);
+  const labelclass = $local.icon === undefined ? undefined : 'hidden';
+  const buttonclass = ['Button', ...($local.classes ?? [])];
+  if ($local.small !== undefined) {
+    buttonclass.push('Button--small');
+  }
+</script>
+
+<ssr-element
+  tag="{{tagattr}}"
+  class="{{buttonclass.join(' ')}}"
+  id="{{$local.id}}"
+  href="{{$local.href}}"
+  type="{{typeattr}}"
+  disabled="{{$local.disabled}}"
+  aria-current="{{ariaCurrent}}"
+  popovertarget="{{popovertarget}}"
+  popovertargetaction="{{popovertargetaction}}"
+  >
+  <ssr-slot name="icon" />
+  <ssr-slot name="label">
+    <span class="{{labelclass}}">{{$local.label ?? 'Button'}}</span>
+  </slot>
+</ssr-element>

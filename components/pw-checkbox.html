@@ -1,0 +1,11 @@
+<ssr-element tag="{{$local.tag ?? 'label'}}" class="Checkbox">
+  <input
+    type="checkbox"
+    id="{{$local.id}}"
+    name="{{$local.name}}"
+    checked="{{$local.checked}}"
+    disabled="{{$local.disabled}}"
+    required="{{$local.required}}"
+    switch="{{$local.switched}}" />
+  <span>{{$local.label}}</span>
+</ssr-element>

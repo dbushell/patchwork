@@ -1,0 +1,9 @@
+<script context="component">
+  let className = "Grid | Container";
+  if (typeof light !== 'undefined') className += ' Container--light';
+  if (typeof dark !== 'undefined') className += ' Container--dark';
+</script>
+
+<div class="{{className}}">
+  <ssr-slot />
+</div>

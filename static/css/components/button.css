@@ -49,6 +49,7 @@
   justify-content: center;
   line-height: var(--line-height);
   padding: var(--padding-block) var(--padding-inline);
+  cursor: pointer;
   text-align: start;
   text-decoration: none;
   transition: color 200ms, border-color 200ms, background-position 400ms;

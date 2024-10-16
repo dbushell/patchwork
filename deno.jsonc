@@ -1,0 +1,14 @@
+{
+  "imports": {
+    "@dbushell/carriageway": "jsr:@dbushell/carriageway@^1.1.0",
+    "@dbushell/hyperserve": "jsr:@dbushell/hyperserve@^0.13.0",
+    "@std/async": "jsr:@std/async@^1.0.6",
+    "@std/fs": "jsr:@std/fs@^1.0.4",
+    "@std/http": "jsr:@std/http@^1.0.8",
+    "@std/path": "jsr:@std/path@^1.0.6",
+    "lightningcss": "npm:lightningcss@^1.27.0"
+  }
+  // "patch": [
+  //   "../packages/hyperserve"
+  // ]
+}

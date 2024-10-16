@@ -1,0 +1,23 @@
+<script context="module">
+  export const pattern = "/";
+
+  export const load = async ({fetch, platformProps}) => {
+    const response = await fetch("/props.json");
+    platformProps.props = await response.json();
+    platformProps.title = "Documentation";
+  }
+</script>
+
+<ssr-fragment portal="head">
+  <title>{{title}}</title>
+</ssr-fragment>
+
+<layout-app>
+  <layout-aside>
+    <h1>Documentation</h1>
+    <p>Patchwork is a pattern library for <a href="https://github.com/dbushell/">my personal projects</a>.</p>
+    <p><strong>This is work in progress!</strong></p>
+    <p>Built with <a href="https://github.com/dbushell/hypermore">Hypermore</a> and <a href="https://github.com/dbushell/hyperserve">Hyperserve</a>.</p>
+    <p><small>The CSS and design are copyright &copy; <a href="https://dbushell.com">David Bushell</a> other code is <a href="https://github.com/dbushell/patchwork/">open source</a>.</small></p>
+  </layout-aside>
+</layout-app>

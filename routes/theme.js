@@ -1,23 +1,23 @@
-export const pattern = '/';
+export const pattern = "/";
 
-const themes = ['light', 'dark'];
+const themes = ["light", "dark"];
 
-export const POST = async ({request, platform}) => {
+export const POST = async ({ request, platform }) => {
   try {
     const data = await request.json();
     if (!themes.includes(data.theme)) {
       throw new Error();
     }
-    platform.cookies.set('theme', {
-      name: 'theme',
+    platform.cookies.set("theme", {
+      name: "theme",
       value: data.theme,
-      path: '/',
+      path: "/",
       maxAge: 2630000,
-      sameSite: 'Strict',
-      secure: true
+      sameSite: "Strict",
+      secure: true,
     });
-    return Response.json({success: true});
+    return Response.json({ success: true });
   } catch {
-    return new Response(null, {status: 400});
+    return new Response(null, { status: 400 });
   }
 };

@@ -1,4 +1,4 @@
-# Patchwork
+# 🧩 Patchwork
 
 Patchwork is a pattern library for my [personal projects](https://github.com/dbushell/).
 

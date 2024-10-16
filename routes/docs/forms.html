@@ -1,0 +1,59 @@
+<script context="module">
+  export const pattern = "/";
+
+  export const load = async ({fetch, platformProps}) => {
+    const response = await fetch("/props.json");
+    platformProps.props = await response.json();
+    platformProps.title = "Forms - Documentation";
+  }
+</script>
+
+<ssr-fragment portal="head">
+  <title>{{title}}</title>
+</ssr-fragment>
+
+<layout-app>
+  <layout-aside>
+    <pw-stack tag="div">
+      <h1>Forms</h1>
+
+      <h2>Fields</h2>
+      <pw-field />
+      <pw-field placeholder="Placeholder..." />
+      <pw-field value="Value entered" />
+      <pw-field disabled placeholder="Placeholder..." />
+      <pw-field disabled value="Value entered" />
+
+      <h2>Progress</h2>
+      <pw-progress value="40" />
+
+      <h2>Range</h2>
+      <pw-range value="33" />
+      <pw-range disabled value="66" />
+
+
+      <h2>Select</h2>
+      <pw-select />
+      <pw-select
+        required
+        options="{{[{value: 'one', label: 'One'},{value: 'two', label: 'Two', selected: true},{value: 'three', label: 'Three'}]}}"
+      />
+      <pw-select disabled options="{{[{value: 'none', label: 'None'}]}}" />
+
+      <h2>Checkbox</h2>
+      <pw-checkbox checked required label="Checkbox" />
+      <pw-checkbox label="Checkbox" />
+      <pw-checkbox disabled label="Checkbox" />
+      <pw-checkbox checked disabled label="Checkbox" />
+      <pw-checkbox switched label="Switch" />
+      <pw-checkbox switched disabled label="Switch" />
+      <pw-checkbox switched checked disabled label="Switch" />
+
+      <h2>Radio</h2>
+      <pw-radio checked label="Radio" name="radio" />
+      <pw-radio label="Radio" name="radio" />
+      <pw-radio disabled label="Radio" name="radio" />
+      <pw-radio checked disabled label="Radio" name="radio2" />
+    </pw-stack>
+  </layout-aside>
+</layout-app>

@@ -1,0 +1,94 @@
+<script context="module">
+  export const pattern = "/";
+
+  export const load = async ({fetch, platformProps}) => {
+    const response = await fetch("/props.json");
+    platformProps.props = await response.json();
+    platformProps.title = "Layout - Documentation";
+  }
+</script>
+
+<ssr-fragment portal="head">
+  <title>{{title}}</title>
+</ssr-fragment>
+
+<layout-app>
+  <layout-aside>
+    <pw-stack tag="div">
+      <h1>Layout</h1>
+      <h2>Stack</h2>
+      <p>Stack paragraph.</p>
+
+      <pw-accordion open>
+        <ssr-fragment slot="header">
+          <h3>Accordion header</h3>
+        </ssr-fragment>
+        <ssr-fragment slot="main">
+          <p>Start of accordion main.</p>
+          <p>End of accordion main.</p>
+        </ssr-fragment>
+      </pw-accordion>
+
+      <h2>Alert</h2>
+      <div class="Alert">
+        <p>Alert!</p>
+      </div>
+
+      <h2>List</h2>
+      <ul class="List">
+        <li>Item 1</li>
+        <li>
+          <a href="/">Item 2 (anchor)</a>
+        </li>
+        <li>
+          <button class="Anchor" type="button">Item 2 (button)</button>
+        </li>
+        <li>Item 4</li>
+      </ul>
+
+      <h2>Cards</h2>
+      <div class="Card-container">
+        <article class="Card">
+          <h3>Card One</h3>
+          <p>This is a card container pattern.</p>
+          <pw-button small href="/docs/" label="Docs" />
+        </article>
+        <article class="Card">
+          <h3>Card Two</h3>
+          <p>This is a card container pattern.</p>
+          <pw-button small href="/docs/" label="Docs" />
+        </article>
+        <article class="Card">
+          <h3>Card Three</h3>
+          <p>This is a card container pattern.</p>
+          <pw-button small href="/docs/" label="Docs" />
+        </article>
+      </div>
+
+      <h2>Misc</h2>
+      <ul class="List">
+        <li>
+          <pw-accordion>
+            <ssr-fragment slot="header">
+              <div class="flex flex-wrap gap-xs ai-center jc-between">
+                <pw-button small tag="label" classes="{{['jc-start', 'flex-grow-1']}}">
+                  <ssr-fragment slot="label">
+                    <pw-checkbox switched label="Office Light" tag="span" />
+                  </ssr-fragment>
+                </pw-button>
+                <pw-button small icon tag="div" label="Settings">
+                  <ssr-fragment slot="icon"><icon-config /></ssr-fragment>
+                </pw-button>
+              </div>
+            </ssr-fragment>
+            <ssr-fragment slot="main">
+              <div class="space-s mb-start">
+                <pw-range />
+              </div>
+            </ssr-fragment>
+          </pw-accordion>
+        </li>
+      </ul>
+    </pw-stack>
+  </layout-aside>
+</layout-app>
