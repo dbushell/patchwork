@@ -5,7 +5,7 @@ import { debounce } from "@std/async/debounce";
 import * as lcss from "npm:lightningcss";
 import { Hyperserve } from "@dbushell/hyperserve";
 
-const dir = new URL(import.meta.resolve("./")).pathname;
+const dir = new URL("./", import.meta.url).pathname;
 
 let ssr: Hyperserve;
 let controller: AbortController;

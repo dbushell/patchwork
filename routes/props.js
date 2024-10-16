@@ -1,8 +1,6 @@
-import type { HyperHandle } from "@dbushell/hyperserve";
-
 export const pattern = ".json";
 
-export const GET: HyperHandle = () => {
+export const GET = () => {
   return Response.json(props);
 };
 
