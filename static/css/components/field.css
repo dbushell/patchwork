@@ -21,7 +21,6 @@
   display: block;
   font-family: var(--font-sans);
   font-size: var(--font-size);
-  hanging-punctuation: none;
   inline-size: 100%;
   line-height: var(--line-height);
   padding: var(--padding-block) var(--padding-inline);

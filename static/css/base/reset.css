@@ -2,6 +2,7 @@
 *::after,
 *::before {
   box-sizing: border-box;
+  margin: 0;
 }
 
 html {
@@ -9,6 +10,10 @@ html {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
   -webkit-font-smoothing: antialiased;
+
+  &:where(.translated-rtl) {
+    direction: rtl;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -17,35 +22,24 @@ html {
   }
 }
 
-.translated-rtl {
-  direction: rtl;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-img,
-svg,
-video {
+:where(canvas, img, picture, svg, video) {
   block-size: auto;
   border: 0;
   display: block;
   max-inline-size: 100%;
 }
 
-input,
-button {
+:where(button, input, select, textarea) {
+  font: inherit;
+  hanging-punctuation: none;
   touch-action: manipulation;
 }
 
-button {
+:where(button) {
   appearance: none;
   background: transparent;
   border: none;
   color: currentColor;
-  font: inherit;
   line-height: inherit;
   padding: 0;
   text-align: start;
@@ -57,40 +51,32 @@ button {
   }
 }
 
-b,
-strong {
+:where(b, strong) {
   font-weight: 700;
 }
 
-small,
-figcaption {
-  font-size: var(--step-0);
+:where(p, li, h1, h2, h3, h4, h5, h6) {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
 }
 
-abbr {
+:where(abbr) {
   &[title] {
     border: none;
     text-decoration: none;
   }
 }
 
-ul,
-ol {
+:where(ul, ol, li) {
   list-style: none;
-  margin: 0;
   padding: 0;
 }
 
-li {
-  margin: 0;
-  padding: 0;
-}
-
-[popover] {
+:where(dialog, [popover]) {
   background: transparent;
   border: 0;
   color: currentColor;
-  margin: 0;
+  margin: auto;
   padding: 0;
   position: fixed;
 }

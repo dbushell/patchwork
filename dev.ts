@@ -1,5 +1,3 @@
-#!/usr/bin/env -S deno run --allow-all
-
 import * as path from "@std/path";
 import { debounce } from "@std/async/debounce";
 import * as lcss from "npm:lightningcss";

@@ -169,3 +169,7 @@ code {
   font-family: var(--font-monospace);
   color: oklch(var(--color-secondary));
 }
+
+:is(small, figcaption) {
+  font-size: var(--step-0);
+}
