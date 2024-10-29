@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Sora';
-  src: url('/fonts/Sora-Variable.woff2') format('woff2');
+  src: url('/fonts/Sora-Variable.woff2?v=%DEPLOY_HASH%') format('woff2');
   font-display: swap;
   font-weight: 100 800;
   font-style: normal;

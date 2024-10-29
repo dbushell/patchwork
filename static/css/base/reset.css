@@ -8,6 +8,7 @@ html {
   hanging-punctuation: first allow-end last;
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -42,9 +42,10 @@ const start = async () => {
     });
   };
 
-  ssr.router.get("/app.min.css", () => {
+  ssr.router.get("/app.min.css", ({ platform }) => {
     let css = cssBundle();
     css = `/* ${new Date().toISOString()} */\n${css}`;
+    css = css.replaceAll("%DEPLOY_HASH%", platform.deployHash);
     return new Response(css, {
       headers: {
         "content-type": "text/css; charset=utf-8",

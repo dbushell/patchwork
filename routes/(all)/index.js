@@ -10,6 +10,11 @@ export const GET = async ({ response, platform }) => {
   if (!(response instanceof Response)) {
     return response;
   }
+  if (response.headers.get("content-type")?.includes("text/css")) {
+    let body = await response.text();
+    body = body.replaceAll("%DEPLOY_HASH%", platform.deployHash);
+    return new Response(body, response);
+  }
   // Add policy to allow `data:` URIs in the stylesheet
   if (response.headers.get("content-type")?.includes("text/html")) {
     try {
@@ -23,7 +28,7 @@ export const GET = async ({ response, platform }) => {
     if (themes.includes(theme)) {
       let body = await response.text();
       body = body.replace(/<html([^>]+?)>/, `<html$1 data-theme="${theme}">`);
-      response = new Response(body, response);
+      return new Response(body, response);
     }
   }
   return response;
