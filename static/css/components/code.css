@@ -1,6 +1,6 @@
 .Code {
-  background: oklch(var(--color-bg-dark));
-  border: calc((2 / 16) * 1rem) solid oklch(var(--color-bg-lighter));
+  background: oklch(var(--color-bg-2));
+  border: var(--border-size-2) solid oklch(var(--color-bg-4));
   border-radius: var(--radius-2);
   font-size: var(--font-size-0);
   margin-block: var(--block-gap-2);

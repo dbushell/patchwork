@@ -3,7 +3,7 @@ a {
   --underline-opacity: 0.5;
   color: oklch(var(--color));
   text-decoration-line: underline;
-  text-decoration-thickness: calc((1 / 16) * 1rem);
+  text-decoration-thickness: var(--border-size-1);
   text-decoration-skip-ink: all;
   text-decoration-color: oklch(var(--color) / var(--underline-opacity));
   text-underline-offset: 0.15em;

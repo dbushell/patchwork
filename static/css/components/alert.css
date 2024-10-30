@@ -1,17 +1,16 @@
 .Alert {
-  --border-width: 2;
+  --border-size: var(--border-size-2);
   --background-padding-box: linear-gradient(
     to right,
-    oklch(var(--color-bg-default)),
-    oklch(var(--color-bg-dark))
+    oklch(var(--color-bg-1)),
+    oklch(var(--color-bg-2))
   );
   --background-border-box: linear-gradient(
     45deg,
     oklch(var(--color-secondary)),
     oklch(var(--color-primary))
   );
-  border: calc((var(--border-width) / 16) * 1rem) solid
-    oklch(var(--color-bg-lighter));
+  border: var(--border-size) solid oklch(var(--color-bg-4));
   border-color: transparent;
   border-radius: var(--radius-2);
   background: var(--background-padding-box) padding-box,
@@ -34,7 +33,7 @@
 }
 
 .Alert--small {
-  --border-width: 1;
+  --border-size: 1;
   --font-size: var(--font-size-0);
   padding: var(--size-3);
 }

@@ -127,16 +127,16 @@
   max-block-size: var(--hero-max-height);
 
   &::before {
-    background: oklch(var(--color-bg-default));
+    background: oklch(var(--color-bg-1));
     background-image: repeating-conic-gradient(
         from calc(var(--hero-visible-ratio) * 20deg) at 0 100%,
-        oklch(var(--color-bg-dark) / 1) 0 10deg,
-        oklch(var(--color-bg-dark) / 0) 0 20deg
+        oklch(var(--color-bg-2) / 1) 0 10deg,
+        oklch(var(--color-bg-2) / 0) 0 20deg
       ),
       linear-gradient(
         225deg,
-        oklch(var(--color-bg-dark) / 0.5),
-        oklch(var(--color-bg-dark) / 0)
+        oklch(var(--color-bg-2) / 0.5),
+        oklch(var(--color-bg-2) / 0)
       );
     block-size: 150%;
     display: block;
@@ -149,13 +149,13 @@
   &::after {
     background: linear-gradient(
         to top,
-        oklch(var(--color-bg-default) / 1),
-        oklch(var(--color-bg-default) / 0)
+        oklch(var(--color-bg-1) / 1),
+        oklch(var(--color-bg-1) / 0)
       ),
       linear-gradient(
         to right,
-        oklch(var(--color-bg-default) / 1),
-        oklch(var(--color-bg-default) / 0)
+        oklch(var(--color-bg-1) / 1),
+        oklch(var(--color-bg-1) / 0)
       );
     block-size: 50%;
     display: block;
@@ -216,7 +216,7 @@
   position: absolute;
   text-wrap: balance;
 
-  @container hero (block-size > calc((300 / 16) * 1rem)) {
+  @container hero (block-size > 300px) {
     --font-size: var(--font-size-1);
   }
 }

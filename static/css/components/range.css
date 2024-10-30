@@ -26,8 +26,8 @@
   background: transparent;
   background-image: linear-gradient(
     to right,
-    oklch(var(--color-bg-lighter)),
-    oklch(var(--color-bg-lighter))
+    oklch(var(--color-bg-4)),
+    oklch(var(--color-bg-4))
   );
   background-position: 0% center;
   background-repeat: no-repeat;
@@ -50,8 +50,8 @@
   background: transparent;
   background-image: linear-gradient(
     to right,
-    oklch(var(--color-bg-lighter)),
-    oklch(var(--color-bg-lighter))
+    oklch(var(--color-bg-4)),
+    oklch(var(--color-bg-4))
   );
   background-position: 0% center;
   background-repeat: no-repeat;

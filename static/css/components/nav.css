@@ -1,6 +1,6 @@
 .Nav {
   --grid-template: var(--grid-template-basic);
-  background: oklch(var(--color-bg-dark));
+  background: oklch(var(--color-bg-2));
   block-size: auto;
   color: oklch(var(--color-text));
 
@@ -24,9 +24,9 @@
 }
 
 .Nav__settings {
-  background: oklch(var(--color-bg-dark));
+  background: oklch(var(--color-bg-2));
   border-radius: var(--radius-2);
-  border: calc((1 / 16) * 1rem) solid oklch(var(--color-bg-lighter));
+  border: var(--border-size-1) solid oklch(var(--color-bg-4));
   inset: 0;
   margin: auto;
   padding: var(--size-2) var(--size-3);
@@ -46,7 +46,7 @@
   }
 }
 
-@container header (inline-size < calc((500 / 16) * 1rem)) {
+@container header (inline-size < 500px) {
   .Nav {
     & .Button-group {
       grid-column: main-start / main-end;
@@ -62,7 +62,7 @@
   }
 }
 
-@container header (inline-size >= calc((500 / 16) * 1rem)) {
+@container header (inline-size >= 500px) {
   .Nav {
     display: contents;
 

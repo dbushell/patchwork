@@ -2,7 +2,7 @@
   --color-anchor: var(--color-text-subtle);
   --grid-template: var(--grid-template-basic);
   color: oklch(var(--color-text-subtle));
-  background: oklch(var(--color-bg-dark));
+  background: oklch(var(--color-bg-2));
   padding-block: var(--size-7);
 }
 

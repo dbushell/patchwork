@@ -5,7 +5,7 @@ body {
 
 .Header {
   --grid-template: var(--grid-template-basic);
-  background: oklch(var(--color-bg-dark));
+  background: oklch(var(--color-bg-2));
   block-size: var(--header-height);
   padding-block: var(--header-space);
   position: relative;
@@ -25,7 +25,7 @@ body {
     justify-self: end;
   }
 
-  @container header (inline-size >= calc((500 / 16) * 1rem)) {
+  @container header (inline-size >= 500px) {
     .Button[popovertarget='nav'] {
       display: none;
       --icon-scale: 1.5;
@@ -47,7 +47,7 @@ body {
 }
 
 .Header__tag {
-  color: oklch(var(--color-bg-default));
+  color: oklch(var(--color-bg-1));
   display: block;
   background: oklch(var(--color-primary));
   background-image: linear-gradient(

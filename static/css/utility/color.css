@@ -1,14 +1,14 @@
 .bg-default {
-  background-color: oklch(var(--color-bg-default));
+  background-color: oklch(var(--color-bg-1));
 }
 .bg-dark {
-  background-color: oklch(var(--color-bg-dark));
+  background-color: oklch(var(--color-bg-2));
 }
 .bg-light {
-  background-color: oklch(var(--color-bg-light));
+  background-color: oklch(var(--color-bg-3));
 }
 .bg-lighter {
-  background-color: oklch(var(--color-bg-lighter));
+  background-color: oklch(var(--color-bg-4));
 }
 .bg-text {
   background-color: oklch(var(--color-text));
@@ -25,12 +25,9 @@
 .bg-tertiary {
   background-color: oklch(var(--color-tertiary));
 }
-.bg-focus {
-  background-color: oklch(var(--color-focus));
-}
 
 .color-bg {
-  color: oklch(var(--color-bg-default));
+  color: oklch(var(--color-bg-1));
 }
 .color-text {
   color: oklch(var(--color-text));

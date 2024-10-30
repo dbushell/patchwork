@@ -1,5 +1,5 @@
 .Field {
-  --background-color: var(--color-bg-dark);
+  --background-color: var(--color-bg-2);
   --border-color: var(--color-primary);
   --border-radius: var(--radius-2);
   --border-width: var(--border-size-1);
@@ -43,8 +43,8 @@
   }
 
   &[disabled] {
-    --background-color: var(--color-bg-light);
-    --border-color: var(--color-bg-lighter);
+    --background-color: var(--color-bg-3);
+    --border-color: var(--color-bg-4);
     --color: var(--color-text) / 0.5;
     pointer-events: none;
   }

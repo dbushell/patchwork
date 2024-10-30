@@ -6,11 +6,11 @@
 }
 
 html {
-  background: oklch(var(--color-bg-default));
+  background: oklch(var(--color-bg-1));
   container: root / inline-size;
   hanging-punctuation: first allow-end last;
   scroll-behavior: smooth;
-  scrollbar-color: oklch(var(--color-blue)) oklch(var(--color-bg-default));
+  scrollbar-color: oklch(var(--color-secondary)) oklch(var(--color-bg-1));
   scrollbar-gutter: stable;
   -webkit-font-smoothing: antialiased;
 
