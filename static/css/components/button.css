@@ -1,4 +1,5 @@
-:where(body) {
+body {
+  /* TODO fix */
   --button-height: calc(
     (var(--font-size-1) * 1.2) + (var(--size-3) * 2) + ((4 / 16) * 1rem)
   );
@@ -11,10 +12,10 @@
   --color: var(--color-primary);
   --border-color: var(--color);
   --border-radius: var(--radius-2);
-  --border-width: 2;
+  --border-width: var(--border-size-1);
   --border-opacity: 0;
-  --font-size: var(--font-size-1);
-  --line-height: 1.2;
+  --font-size: var(--font-size-0);
+  --line-height: 1.5;
   --icon-scale: 1;
   --padding-block: var(--size-2);
   --padding-inline: var(--size-3);
@@ -31,7 +32,7 @@
     oklch(var(--color-primary))
   );
   align-items: center;
-  border: calc((var(--border-width) / 16) * 1rem) solid
+  border: var(--border-width) solid
     oklch(var(--border-color) / var(--border-opacity));
   border-radius: var(--border-radius);
   background: var(--background-padding-box) padding-box,
@@ -49,11 +50,9 @@
   justify-content: center;
   line-height: var(--line-height);
   padding: var(--padding-block) var(--padding-inline);
-  cursor: pointer;
   text-align: start;
   text-decoration: none;
   transition: color 200ms, border-color 200ms, background-position 400ms;
-  user-select: none;
 
   &:hover {
     --color: var(--color-secondary);
@@ -65,7 +64,7 @@
     --color: var(--color-focus);
     --underline-opacity: 0;
     outline: var(--focus-outline);
-    outline-offset: calc((2 / 16) * 1rem);
+    outline-offset: var(--size-0);
   }
 
   &:has(.Checkbox input:not(:checked)) {
@@ -104,10 +103,10 @@
   }
 }
 
-.Button--small {
-  --border-width: 1;
-  --font-size: var(--font-size-0);
-}
+/* .Button--large {
+  --border-width: 2;
+  --font-size: var(--font-size-1);
+} */
 
 .Button-group {
   align-items: center;

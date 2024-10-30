@@ -3,9 +3,6 @@
   const typeattr = $local.type ?? ($local.tag === 'button' ? 'button' : undefined);
   const labelclass = $local.icon === undefined ? undefined : 'hidden';
   const buttonclass = ['Button', ...($local.classes ?? [])];
-  if ($local.small !== undefined) {
-    buttonclass.push('Button--small');
-  }
 </script>
 
 <ssr-element

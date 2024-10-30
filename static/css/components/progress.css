@@ -1,8 +1,6 @@
 .Progress {
   --color: var(--color-primary);
   --size: var(--size-5);
-  appearance: none;
-  background: transparent;
   background-image: linear-gradient(
     to right,
     oklch(var(--color-bg-lighter)),
@@ -11,7 +9,6 @@
   background-position: 0% center;
   background-repeat: no-repeat;
   background-size: 100% var(--size-2);
-  border: 0;
   border-radius: var(--radius-1);
   block-size: var(--size);
   display: block;

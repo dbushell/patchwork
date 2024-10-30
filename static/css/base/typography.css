@@ -22,7 +22,7 @@ a {
     --color: var(--color-focus);
     --underline-opacity: 0;
     outline: var(--focus-outline);
-    outline-offset: calc((2 / 16) * 1rem);
+    outline-offset: var(--size-0);
   }
 }
 

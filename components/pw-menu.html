@@ -23,7 +23,7 @@
   <ssr-for item="item" of="menu">
     <li class="Menu__item">
       <ssr-if condition="item.button">
-        <pw-button small href="{{item.href}}" label="{{item.name}}" />
+        <pw-button href="{{item.href}}" label="{{item.name}}" />
       <ssr-else>
         <a class="Menu__link" href="{{item.href}}" aria-current="{{item.current ? 'page' : 'false'}}">
           <span>{{item.name}}</span>

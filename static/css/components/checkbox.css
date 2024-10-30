@@ -3,13 +3,14 @@
   --background-color: var(--color-bg-dark);
   --border-color: var(--color-primary);
   --border-radius: var(--radius-1);
-  --border-width: calc((2 / 16) * 1rem);
+  --border-width: var(--border-size-1);
   --color: var(--color-text);
   --opacity-checked: 1;
-  --font-size: var(--font-size-1);
-  --line-height: 1.2;
-  --block-size: var(--size-5);
-  --inline-size: var(--size-5);
+  --font-size: var(--font-size-0);
+  --line-height: 1.4;
+  --size: var(--size-5);
+  --block-size: var(--size);
+  --inline-size: var(--size);
   display: block;
   position: relative;
 
@@ -62,7 +63,7 @@
   & input:focus-visible + span {
     &::before {
       outline: var(--focus-outline);
-      outline-offset: calc((2 / 16) * 1rem);
+      outline-offset: var(--size-0);
     }
   }
 
@@ -86,17 +87,17 @@
 }
 
 .Checkbox:has([switch]) {
-  --inline-size: calc((var(--size-5) * 2) - ((10 / 16) * 1rem));
+  --inline-size: calc((var(--size) * 1.7));
 
   & > span {
     &::after {
-      --block-size: calc(var(--size-5) - ((10 / 16) * 1rem));
-      --inline-size: calc(var(--size-5) - ((10 / 16) * 1rem));
+      --block-size: calc(var(--size) * 0.7);
+      --inline-size: calc(var(--size) * 0.7);
       --border-radius: var(--radius-0);
       background-image: var(--checkbox-image);
       background-color: oklch(var(--color-text));
       inset-block-start: 50%;
-      inset-inline-start: calc((5 / 16) * 1rem);
+      inset-inline-start: calc((var(--size) - (var(--size) * 0.7)) * 0.5);
       transition: background-color 200ms, opacity 200ms, transform 200ms;
       transform: translateY(-50%);
       transform-origin: 50% 50%;
@@ -131,22 +132,22 @@
 }
 
 .Radio {
-  --block-size: calc(var(--size-5) + ((2 / 16) * 1rem));
-  --inline-size: calc(var(--size-5) + ((2 / 16) * 1rem));
+  --block-size: calc(var(--size) + 2px);
+  --inline-size: calc(var(--size) + 2px);
   --border-radius: 100%;
 
   & > span {
     &::after,
     &::before {
-      inset-inline-start: calc((-1 / 16) * 1rem);
+      inset-inline-start: -1px;
     }
 
     &::after {
-      --block-size: calc(var(--size-5) - ((10 / 16) * 1rem));
-      --inline-size: calc(var(--size-5) - ((10 / 16) * 1rem));
+      --block-size: calc(var(--size) * 0.7);
+      --inline-size: calc(var(--size) * 0.7);
       background: oklch(var(--color-text));
       inset-block-start: 50%;
-      inset-inline-start: calc((5 / 16) * 1rem);
+      inset-inline-start: calc((var(--size) - (var(--size) * 0.7)) * 0.5);
       transform: translateY(-50%);
     }
   }

@@ -11,7 +11,7 @@
       </ssr-slot>
       <ssr-slot name="secondary">
         <ssr-if condition="menu.length">
-          <pw-button icon small label="Toggle Menu" classes="{{['Hamburger']}}" popovertarget="nav" popovertargetaction="toggle">
+          <pw-button icon label="Toggle Menu" classes="{{['Hamburger']}}" popovertarget="nav" popovertargetaction="toggle">
             <ssr-fragment slot="icon"><icon-menu /></ssr-fragment>
           </pw-button>
           <pw-nav menu="{{menu}}" />

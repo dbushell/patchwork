@@ -12,6 +12,6 @@
 
   &:focus-visible {
     outline: var(--focus-outline);
-    outline-offset: calc((2 / 16) * 1rem);
+    outline-offset: var(--size-0);
   }
 }

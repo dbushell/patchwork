@@ -2,21 +2,21 @@
   --background-color: var(--color-bg-dark);
   --border-color: var(--color-primary);
   --border-radius: var(--radius-2);
-  --border-width: calc((2 / 16) * 1rem);
+  --border-width: var(--border-size-1);
   --color: var(--color-text);
-  --font-size: var(--font-size-1);
-  --line-height: 1.2;
-  --padding-block: calc(var(--size-2));
-  --padding-inline: calc(var(--size-3) - var(--border-width));
-  --block-size: calc(
+  --font-size: var(--font-size-0);
+  --line-height: 1.5;
+  --padding-block: var(--size-2);
+  --padding-inline: var(--size-3);
+  /* --block-size: calc(
     (var(--font-size) * var(--line-height)) +
       ((var(--padding-block) + var(--border-width)) * 2)
-  );
+  ); */
   appearance: none;
   background: oklch(var(--background-color));
   border: var(--border-width) solid oklch(var(--border-color));
   border-radius: var(--border-radius);
-  block-size: var(--block-size);
+  /* block-size: var(--block-size); */
   color: oklch(var(--color));
   display: block;
   font-family: var(--font-sans);
@@ -33,7 +33,7 @@
   &:focus-visible {
     --border-color: var(--color-secondary);
     outline: var(--focus-outline);
-    outline-offset: calc((2 / 16) * 1rem);
+    outline-offset: var(--size-0);
   }
 
   &::placeholder {

@@ -19,14 +19,14 @@
 
       <pw-button type="button" label="Regular" />
       <pw-button disabled type="button" label="Disabled" />
-      <pw-button small type="button" label="Small" />
+      <!-- <pw-button type="button" label="Small" /> -->
       <pw-button href="/" label="Link" />
 
       <pw-button icon label="icon only">
         <ssr-fragment slot="icon"><icon-config /></ssr-fragment>
       </pw-button>
 
-      <pw-button small icon label="icon only">
+      <pw-button icon label="icon only">
         <ssr-fragment slot="icon"><icon-config /></ssr-fragment>
       </pw-button>
 
@@ -38,15 +38,15 @@
         <ssr-fragment slot="icon"><icon-config /></ssr-fragment>
       </pw-button>
 
-      <pw-button small label="With Icon">
+      <pw-button label="With Icon">
         <ssr-fragment slot="icon"><icon-config /></ssr-fragment>
       </pw-button>
 
       <h2>Group</h2>
       <div class="Button-group">
-        <pw-button small label="One" />
-        <pw-button small label="Two" />
-        <pw-button small label="Three" />
+        <pw-button label="One" />
+        <pw-button label="Two" />
+        <pw-button label="Three" />
       </div>
 
       <h2>Tabs</h2>
@@ -74,12 +74,12 @@
           <pw-checkbox switched label="Switch" tag="span" />
         </ssr-fragment>
       </pw-button>
-      <pw-button small tag="label">
+      <pw-button tag="label">
         <ssr-fragment slot="label">
           <pw-checkbox switched label="Switch" tag="span" />
         </ssr-fragment>
       </pw-button>
-      <pw-button small tag="label">
+      <pw-button tag="label">
         <ssr-fragment slot="label">
           <pw-checkbox switched disabled label="Switch" tag="span" />
         </ssr-fragment>

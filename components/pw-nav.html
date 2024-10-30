@@ -1,17 +1,17 @@
 <patchwork-nav>
   <nav class="Grid | Nav" id="nav" popover>
-    <pw-button icon small label="Close Menu" classes="{{['Hamburger']}}" popovertarget="nav" popovertargetaction="hide">
+    <pw-button icon label="Close Menu" classes="{{['Hamburger']}}" popovertarget="nav" popovertargetaction="hide">
       <ssr-fragment slot="icon"><icon-close /></ssr-fragment>
     </pw-button>
     <pw-menu id="nav-menu" menu="{{menu}}" />
-    <pw-button icon small id="settings-button" label="Settings" popovertarget="settings" popovertargetaction="toggle">
+    <pw-button icon id="settings-button" label="Settings" popovertarget="settings" popovertargetaction="toggle">
       <ssr-fragment slot="icon"><icon-config /></ssr-fragment>
     </pw-button>
     <div id="settings" class="Nav__settings" popover>
       <div class="Button-group jc-end">
         <p class="small space-xs mi-end">Theme</p>
-        <pw-button small disabled id="settings-light" label="Light" />
-        <pw-button small disabled id="settings-dark" label="Dark" />
+        <pw-button disabled id="settings-light" label="Light" />
+        <pw-button disabled id="settings-dark" label="Dark" />
       </div>
     </div>
   </nav>

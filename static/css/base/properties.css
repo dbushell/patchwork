@@ -16,13 +16,11 @@
   initial-value: 1.4;
 }
 
-/* @link https://utopia.fyi/type/calculator?c=314,14,1.125,1464,16,1.414,5,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,m,3xl,12 */
-
 body {
   --body-size: 100cqi;
   --fluid: calc((var(--body-size) - 400px) / (1200 - 400));
 
-  --size-0: clamp(2px, calc(2px + (4 - 2) * var(--fluid)), 4px);
+  --size-0: clamp(2px, calc(2px + (3 - 2) * var(--fluid)), 3px);
   --size-1: clamp(4px, calc(4px + (6 - 4) * var(--fluid)), 6px);
   --size-2: clamp(8px, calc(8px + (10 - 8) * var(--fluid)), 10px);
   --size-3: clamp(12px, calc(12px + (16 - 12) * var(--fluid)), 16px);
@@ -39,6 +37,9 @@ body {
   --radius-0: var(--size-0);
   --radius-1: var(--size-1);
   --radius-2: var(--size-2);
+
+  --border-size-1: 1px;
+  --border-size-2: 2px;
 
   --font-size-0: clamp(14px, calc(14px + (16 - 14) * var(--fluid)), 16px);
   --font-size-1: clamp(18px, calc(18px + (20 - 18) * var(--fluid)), 20px);

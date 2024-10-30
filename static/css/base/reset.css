@@ -32,7 +32,7 @@ html {
   max-inline-size: 100%;
 }
 
-:where(button, input, select, textarea) {
+:where(button, input, progress, select, textarea) {
   appearance: none;
   background: transparent;
   border: none;
@@ -46,6 +46,7 @@ html {
 }
 
 :where(button) {
+  cursor: pointer;
   user-select: none;
 }
 

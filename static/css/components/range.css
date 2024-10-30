@@ -1,14 +1,10 @@
 .Range {
   --color: var(--color-primary);
   --size: var(--size-5);
-  appearance: none;
-  background: transparent;
-  border: 0;
-  border-radius: var(--radius-1);
   block-size: var(--size);
+  border-radius: var(--radius-1);
   display: block;
   inline-size: 100%;
-  margin: 0;
   overflow: hidden;
 
   &:hover {
@@ -17,7 +13,7 @@
 
   &:focus-visible {
     outline: var(--focus-outline);
-    outline-offset: calc((4 / 16) * 1rem);
+    outline-offset: var(--size-0);
   }
 
   &:disabled {
