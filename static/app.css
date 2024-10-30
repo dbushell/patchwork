@@ -9,7 +9,6 @@
 @import 'css/base/highlight.css' layer(base);
 @import 'css/base/table.css' layer(base);
 @import 'css/base/grid.css' layer(base);
-@import 'css/base/app.css' layer(base);
 
 @import 'css/components/blockquote.css' layer(components);
 @import 'css/components/checkbox.css' layer(components);

@@ -1,3 +1,27 @@
 .Body {
-  min-block-size: 100dvh;
+  container: body / inline-size;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  min-block-size: 100svb;
+
+  & > * {
+    flex: 0 1 auto;
+    min-inline-size: 0;
+    max-inline-size: 100%;
+  }
+
+  & > :where(:last-child:not(:only-child), footer:last-of-type) {
+    margin-block-start: auto;
+  }
+
+  &:where([inert], :has(dialog[open])) {
+    overflow: hidden;
+  }
+}
+
+patchwork-nav,
+patchwork-hero,
+patchwork-header {
+  display: contents;
 }
