@@ -40,7 +40,7 @@
 @supports not selector(:popover-open) {
   .Nav__settings {
     &[style*='--inset'] {
-      inset-block-start: calc(var(--size-3) + var(--button-small-height));
+      inset-block-start: calc(var(--size-3) + var(--button-height));
       inset-inline-end: 0;
     }
   }

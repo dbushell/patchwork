@@ -11,7 +11,7 @@
     var(--grid-main) [main-end inner-end] auto [outer-end];
   --grid-template-advanced: var(--grid-template-basic);
   --grid-template: var(--grid-template-advanced);
-
+  align-items: start;
   container-name: grid;
   container-type: inline-size;
   display: grid;

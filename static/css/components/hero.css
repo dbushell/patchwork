@@ -52,11 +52,11 @@
   initial-value: 0;
 }
 
-/* @property --hero-offset-height {
-  syntax: '<number>';
+@property --hero-offset-height {
+  syntax: '<number> | <percentage>';
   inherits: true;
-  initial-value: 1;
-} */
+  initial-value: 100%;
+}
 
 @property --hero-visible {
   syntax: '<number>';
@@ -84,9 +84,7 @@
     var(--hero-max-height)
   );
 
-  /* --hero-offset-height: var(--hero-height); */
-
-  /* Number of pixels visible*/
+  /* Number of pixels visible */
   --hero-visible: min(
     max(
       0,
@@ -113,8 +111,8 @@
   --hero-font-size: clamp(
     var(--font-size-5),
     calc(
-      var(--font-size-6) +
-        ((var(--font-size-6) - var(--font-size-4)) * var(--hero-visible-ratio))
+      var(--font-size-5) +
+        ((var(--font-size-6) - var(--font-size-5)) * var(--hero-visible-ratio))
     ),
     var(--font-size-6)
   );
@@ -178,8 +176,6 @@
   min-block-size: var(--hero-main-min-height);
   max-block-size: var(--hero-main-max-height);
   padding-block: var(--hero-main-space);
-  /* position: sticky;
-  inset-block-start: calc(var(--hero-height) - var(--hero-main-height)); */
   position: relative;
   transform: translateY(calc(var(--hero-height) - var(--hero-main-height)));
 
@@ -187,34 +183,6 @@
     grid-column: 1 / 6;
     grid-row: 1;
     justify-self: start;
-  }
-}
-
-.Hero__image {
-  --opacity1: max(0, min(1, var(--hero-visible-ratio)));
-  block-size: 100%;
-  grid-column: 4 / 6;
-  justify-self: center;
-  opacity: var(--opacity2, var(--opacity1));
-  overflow: hidden;
-  padding-inline-start: var(--grid-column-gap);
-
-  @container hero (inline-size > calc((600 / 16) * 1rem)) {
-    grid-column: 3 / 6;
-  }
-
-  & img {
-    aspect-ratio: 1 / 1;
-    block-size: 100%;
-    inline-size: 100%;
-    margin: auto;
-    object-fit: contain;
-  }
-}
-
-@supports (width: calc(1px * pow(1, 1))) {
-  .Hero__image {
-    --opacity2: pow(var(--opacity1), 4);
   }
 }
 
@@ -243,15 +211,10 @@
   --font-size: var(--font-size-0);
   align-self: start;
   inset-block-start: 50%;
-  grid-column: 1 / 4;
   margin-top: calc((var(--hero-font-size) / 2));
   opacity: var(--opacity2, var(--opacity1));
   position: absolute;
   text-wrap: balance;
-
-  @container hero (inline-size > calc((600 / 16) * 1rem)) {
-    grid-column: 1 / 3;
-  }
 
   @container hero (block-size > calc((300 / 16) * 1rem)) {
     --font-size: var(--font-size-1);

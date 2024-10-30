@@ -3,6 +3,7 @@
 }
 
 body {
+  accent-color: oklch(var(--color-primary));
   color: oklch(var(--color-text));
   display: flex;
   flex-direction: column;

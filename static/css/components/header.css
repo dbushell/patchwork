@@ -1,7 +1,6 @@
 body {
-  /* TODO fix */
   --header-space: var(--size-5);
-  --header-height: calc((var(--header-space) * 2) + var(--button-small-height));
+  --header-height: calc((var(--header-space) * 2) + var(--button-height));
 }
 
 .Header {
@@ -66,5 +65,5 @@ body {
   position: absolute;
   text-transform: uppercase;
   transform: scale(0.75);
-  transform-origin: 0% 50%;
+  transform-origin: 0% 0%;
 }

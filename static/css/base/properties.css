@@ -7,7 +7,7 @@
 @property --font-size {
   syntax: '<length>';
   inherits: true;
-  initial-value: 1rem;
+  initial-value: 16px;
 }
 
 @property --line-height {
@@ -54,9 +54,6 @@ body {
 }
 
 body {
-  --scroll-y: 0;
-  --scroll-dir: 1;
-
   --focus-outline: calc((2 / 16) * 1rem) solid oklch(var(--color-focus));
 
   --font-display: 'Sora', sans-serif;
@@ -83,6 +80,9 @@ body {
 
   --color-focus: var(--color-pink);
   --color-anchor: var(--color-primary);
+
+  --scroll-y: 0;
+  --scroll-dir: 1;
 }
 
 :root[data-theme='dark'] {

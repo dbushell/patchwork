@@ -3,15 +3,15 @@
     <div class="Hero__main">
       <ssr-slot name="image" />
       <ssr-slot name="main">
-        <slot name="heading">
+        <ssr-slot name="heading">
           <h1 class="Hero__heading">{{heading}}</h1>
         </slot>
-        <slot name="intro">
+        <ssr-slot name="intro">
           <div class="Hero__intro">
             <p>{{description}}</p>
           </div>
-        </slot>
-      </slot>
+        </ssr-slot>
+      </ssr-slot>
     </div>
   </div>
 </patchwork-hero>
