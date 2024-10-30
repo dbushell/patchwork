@@ -18,21 +18,21 @@
   &.\:popover-open {
     display: grid;
     margin-block-start: calc(-1 * var(--header-space));
-    margin-inline: calc(-1 * (var(--grid-margin) + var(--grid-column-gap)));
+    margin-inline: calc(-1 * var(--grid-column-gap));
     width: auto;
   }
 }
 
 .Nav__settings {
   background: oklch(var(--color-bg-dark));
-  border-radius: calc((8 / 16) * 1rem);
+  border-radius: var(--radius-2);
   border: calc((1 / 16) * 1rem) solid oklch(var(--color-bg-lighter));
   inset: 0;
   margin: auto;
-  padding: var(--space-xs) var(--space-s);
+  padding: var(--size-2) var(--size-3);
 
   &[style*='--inset'] {
-    inset: calc(var(--space-s) + (1px * var(--inset-top)))
+    inset: calc(var(--size-3) + (1px * var(--inset-top)))
       calc(1px * var(--inset-right)) auto auto;
   }
 }
@@ -40,7 +40,7 @@
 @supports not selector(:popover-open) {
   .Nav__settings {
     &[style*='--inset'] {
-      inset-block-start: calc(var(--space-s) + var(--button-small-height));
+      inset-block-start: calc(var(--size-3) + var(--button-small-height));
       inset-inline-end: 0;
     }
   }
@@ -76,7 +76,7 @@
 
     & .Menu {
       flex-direction: row;
-      gap: var(--space-s);
+      gap: var(--size-3);
     }
 
     & .Menu__item {

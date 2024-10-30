@@ -1,6 +1,6 @@
 .Progress {
   --color: var(--color-primary);
-  --size: var(--space-m);
+  --size: var(--size-5);
   appearance: none;
   background: transparent;
   background-image: linear-gradient(
@@ -10,9 +10,9 @@
   );
   background-position: 0% center;
   background-repeat: no-repeat;
-  background-size: 100% var(--space-2xs);
+  background-size: 100% var(--size-2);
   border: 0;
-  border-radius: calc((4 / 16) * 1rem);
+  border-radius: var(--radius-1);
   block-size: var(--size);
   display: block;
   inline-size: 100%;
@@ -28,7 +28,7 @@
   );
   background-position: 0% center;
   background-repeat: no-repeat;
-  background-size: 100% var(--space-2xs);
+  background-size: 100% var(--size-2);
   block-size: var(--size);
   inline-size: 100%;
 }
@@ -46,6 +46,6 @@
   );
   background-position: 0% center;
   background-repeat: no-repeat;
-  background-size: 100% var(--space-2xs);
+  background-size: 100% var(--size-2);
   block-size: var(--size);
 }

@@ -1,7 +1,7 @@
 .Stack {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: var(--block-gap1);
+  grid-gap: var(--block-gap-1);
 
   & > * {
     margin-block: 0;

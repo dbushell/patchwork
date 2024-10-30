@@ -2,14 +2,14 @@
 .Checkbox {
   --background-color: var(--color-bg-dark);
   --border-color: var(--color-primary);
-  --border-radius: calc((4 / 16) * 1rem);
+  --border-radius: var(--radius-1);
   --border-width: calc((2 / 16) * 1rem);
   --color: var(--color-text);
   --opacity-checked: 1;
-  --font-size: var(--step-1);
+  --font-size: var(--font-size-1);
   --line-height: 1.2;
-  --block-size: var(--space-m);
-  --inline-size: var(--space-m);
+  --block-size: var(--size-5);
+  --inline-size: var(--size-5);
   display: block;
   position: relative;
 
@@ -19,7 +19,7 @@
     font-size: var(--font-size);
     font-weight: 400;
     line-height: var(--line-height);
-    padding-inline-start: calc(var(--inline-size) + (var(--space-xs)));
+    padding-inline-start: calc(var(--inline-size) + (var(--size-2)));
     user-select: none;
 
     :where(.Button) & {
@@ -86,13 +86,13 @@
 }
 
 .Checkbox:has([switch]) {
-  --inline-size: calc((var(--space-m) * 2) - ((10 / 16) * 1rem));
+  --inline-size: calc((var(--size-5) * 2) - ((10 / 16) * 1rem));
 
   & > span {
     &::after {
-      --block-size: calc(var(--space-m) - ((10 / 16) * 1rem));
-      --inline-size: calc(var(--space-m) - ((10 / 16) * 1rem));
-      --border-radius: calc((2 / 16) * 1rem);
+      --block-size: calc(var(--size-5) - ((10 / 16) * 1rem));
+      --inline-size: calc(var(--size-5) - ((10 / 16) * 1rem));
+      --border-radius: var(--radius-0);
       background-image: var(--checkbox-image);
       background-color: oklch(var(--color-text));
       inset-block-start: 50%;
@@ -131,8 +131,8 @@
 }
 
 .Radio {
-  --block-size: calc(var(--space-m) + ((2 / 16) * 1rem));
-  --inline-size: calc(var(--space-m) + ((2 / 16) * 1rem));
+  --block-size: calc(var(--size-5) + ((2 / 16) * 1rem));
+  --inline-size: calc(var(--size-5) + ((2 / 16) * 1rem));
   --border-radius: 100%;
 
   & > span {
@@ -142,8 +142,8 @@
     }
 
     &::after {
-      --block-size: calc(var(--space-m) - ((10 / 16) * 1rem));
-      --inline-size: calc(var(--space-m) - ((10 / 16) * 1rem));
+      --block-size: calc(var(--size-5) - ((10 / 16) * 1rem));
+      --inline-size: calc(var(--size-5) - ((10 / 16) * 1rem));
       background: oklch(var(--color-text));
       inset-block-start: 50%;
       inset-inline-start: calc((5 / 16) * 1rem);

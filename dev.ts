@@ -40,6 +40,12 @@ const start = async () => {
     });
   };
 
+  ssr.router.get("*", ({ response }) => {
+    if (response instanceof Response) {
+      response.headers.delete("content-security-policy");
+    }
+  });
+
   ssr.router.get("/app.min.css", ({ platform }) => {
     let css = cssBundle();
     css = `/* ${new Date().toISOString()} */\n${css}`;

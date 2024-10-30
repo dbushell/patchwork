@@ -1,9 +1,8 @@
 @layer base, components, utility;
 
-@import 'css/base/props.css' layer(base);
+@import 'css/base/properties.css' layer(base);
 @import 'css/base/reset.css' layer(base);
 @import 'css/base/fonts.css' layer(base);
-@import 'css/base/document.css' layer(base);
 @import 'css/base/body.css' layer(base);
 @import 'css/base/typography.css' layer(base);
 @import 'css/base/highlight.css' layer(base);

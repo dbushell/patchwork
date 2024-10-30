@@ -11,7 +11,6 @@
   & > & {
     grid-column: outer-start / outer-end;
     inline-size: auto;
-    margin-inline: calc(-1 * var(--grid-margin));
   }
 
   & > aside {
@@ -39,7 +38,7 @@
   --background-opacity: 1;
 }
 
-@container grid (inline-size >= calc((800 / 16) * 1rem)) {
+@container root (inline-size >= 900px) {
   .Container {
     & > aside {
       grid-column: aside-start / aside-end;

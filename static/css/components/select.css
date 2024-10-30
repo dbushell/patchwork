@@ -2,13 +2,13 @@
   --background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="oklch(97% 0.02 80)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m2 5 6 6 6-6"/></svg>');
   --background-color: var(--color-bg-dark);
   --border-color: var(--color-primary);
-  --border-radius: calc((8 / 16) * 1rem);
+  --border-radius: var(--radius-2);
   --border-width: calc((2 / 16) * 1rem);
   --color: var(--color-text);
-  --font-size: var(--step-1);
+  --font-size: var(--font-size-1);
   --line-height: 1.2;
-  --padding-block: calc(var(--space-xs));
-  --padding-inline: calc(var(--space-s) - var(--border-width));
+  --padding-block: calc(var(--size-2));
+  --padding-inline: calc(var(--size-3) - var(--border-width));
   --block-size: calc(
     (var(--font-size) * var(--line-height)) +
       ((var(--padding-block) + var(--border-width)) * 2)
@@ -16,9 +16,9 @@
   appearance: none;
   background: oklch(var(--background-color));
   background-image: var(--background-image);
-  background-size: var(--space-m) auto;
+  background-size: var(--size-5) auto;
   background-repeat: no-repeat;
-  background-position: right var(--space-s) center;
+  background-position: right var(--size-3) center;
   border: var(--border-width) solid oklch(var(--border-color));
   border-radius: var(--border-radius);
   block-size: var(--block-size);
@@ -29,7 +29,7 @@
   inline-size: 100%;
   line-height: var(--line-height);
   padding: var(--padding-block) var(--padding-inline);
-  padding-inline-end: calc(var(--space-m) + (var(--space-s) * 2));
+  padding-inline-end: calc(var(--size-5) + (var(--size-3) * 2));
   transition: color 200ms, border-color 200ms;
 
   &:hover {
@@ -51,7 +51,7 @@
   }
 
   &:dir(rtl) {
-    background-position: left var(--space-xs) center;
+    background-position: left var(--size-2) center;
   }
 
   :where([data-theme='light']) & {

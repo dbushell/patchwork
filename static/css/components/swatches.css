@@ -1,17 +1,17 @@
 .Swatches {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-xs);
+  gap: var(--size-2);
   list-style: none;
 
   & li {
     aspect-ratio: 1 / 1;
     display: block;
     flex: 0 0 auto;
-    font-size: var(--step-0);
+    font-size: var(--font-size-0);
     margin: 0;
     max-inline-size: calc((100 / 16) * 1rem);
-    padding: var(--space-xs);
+    padding: var(--size-2);
     inline-size: 100%;
 
     &::before {

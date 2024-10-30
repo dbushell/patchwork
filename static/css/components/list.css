@@ -1,7 +1,7 @@
 .List {
   --border-color: var(--color-bg-lighter);
   border: calc((1 / 16) * 1rem) solid oklch(var(--border-color));
-  border-radius: calc((8 / 16) * 1rem);
+  border-radius: var(--radius-2);
   display: grid;
   grid-template-columns: 1fr;
   list-style: none;
@@ -12,7 +12,7 @@
     inline-size: 100%;
     margin: 0;
     min-inline-size: 0;
-    padding: var(--space-xs) var(--space-s);
+    padding: var(--size-2) var(--size-3);
 
     &:last-child {
       border-block-end: 0;

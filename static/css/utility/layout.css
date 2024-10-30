@@ -1,14 +1,14 @@
 .gap-2xs {
-  gap: var(--space-2xs);
+  gap: var(--size-2);
 }
 .gap-xs {
-  gap: var(--space-xs);
+  gap: var(--size-2);
 }
 .gap-s {
-  gap: var(--space-s);
+  gap: var(--size-3);
 }
 .gap-m {
-  gap: var(--space-m);
+  gap: var(--size-5);
 }
 
 .flex {

@@ -18,8 +18,8 @@
     oklch(var(--color-bg-default) / 0.5)
   );
   border: calc((1 / 16) * 1rem) solid oklch(var(--color-bg-lighter));
-  border-radius: calc((8 / 16) * 1rem);
-  padding: var(--space-m) var(--space-m-l);
+  border-radius: var(--radius-2);
+  padding: var(--size-5) var(--size-6);
 
   & > h2,
   & > h3 {
@@ -43,7 +43,7 @@
   }
 
   & p {
-    --font-size: var(--step-0);
+    --font-size: var(--font-size-0);
   }
 }
 

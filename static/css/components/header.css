@@ -1,5 +1,5 @@
-:root {
-  --header-space: var(--space-s-m);
+body {
+  --header-space: var(--size-5);
   --header-height: calc((var(--header-space) * 2) + var(--button-small-height));
 }
 
@@ -17,7 +17,7 @@
   container-name: header;
   container-type: inline-size;
   display: flex;
-  gap: var(--space-s);
+  gap: var(--size-3);
   justify-content: space-between;
 
   .Button[popovertarget='nav'] {
@@ -55,13 +55,13 @@
     oklch(var(--color-secondary)),
     oklch(var(--color-primary))
   );
-  border-radius: calc((8 / 16) * 1rem);
-  font-size: var(--step-0);
+  border-radius: var(--radius-2);
+  font-size: var(--font-size-0);
   font-weight: 700;
   inset-block-start: 0;
-  inset-inline-start: calc(100% + var(--space-xs));
+  inset-inline-start: calc(100% + var(--size-2));
   line-height: 1;
-  padding: var(--space-3xs) var(--space-2xs);
+  padding: var(--size-1) var(--size-2);
   position: absolute;
   text-transform: uppercase;
   transform: scale(0.75);

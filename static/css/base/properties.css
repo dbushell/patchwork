@@ -1,0 +1,120 @@
+@property --body-size {
+  syntax: '<length>';
+  initial-value: 0px;
+  inherits: true;
+}
+
+@property --font-size {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 1rem;
+}
+
+@property --line-height {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 1.4;
+}
+
+/* @link https://utopia.fyi/type/calculator?c=314,14,1.125,1464,16,1.414,5,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,m,3xl,12 */
+
+body {
+  --body-size: 100cqi;
+  --fluid: calc((var(--body-size) - 400px) / (1200 - 400));
+
+  --size-0: clamp(2px, calc(2px + (4 - 2) * var(--fluid)), 4px);
+  --size-1: clamp(4px, calc(4px + (6 - 4) * var(--fluid)), 6px);
+  --size-2: clamp(8px, calc(8px + (10 - 8) * var(--fluid)), 10px);
+  --size-3: clamp(12px, calc(12px + (16 - 12) * var(--fluid)), 16px);
+  --size-4: clamp(16px, calc(16px + (20 - 16) * var(--fluid)), 20px);
+  --size-5: clamp(20px, calc(20px + (25 - 20) * var(--fluid)), 25px);
+  --size-6: clamp(26px, calc(26px + (32 - 26) * var(--fluid)), 32px);
+  --size-7: clamp(34px, calc(34px + (42 - 34) * var(--fluid)), 42px);
+  --size-8: clamp(44px, calc(44px + (55 - 44) * var(--fluid)), 55px);
+  --size-9: clamp(56px, calc(56px + (70 - 56) * var(--fluid)), 70px);
+
+  --block-gap-1: var(--size-4);
+  --block-gap-2: var(--size-5);
+
+  --radius-0: var(--size-0);
+  --radius-1: var(--size-1);
+  --radius-2: var(--size-2);
+
+  --font-size-0: clamp(14px, calc(14px + (16 - 14) * var(--fluid)), 16px);
+  --font-size-1: clamp(18px, calc(18px + (20 - 18) * var(--fluid)), 20px);
+  --font-size-2: clamp(20px, calc(20px + (24 - 20) * var(--fluid)), 24px);
+  --font-size-3: clamp(22px, calc(22px + (28 - 22) * var(--fluid)), 28px);
+  --font-size-4: clamp(24px, calc(24px + (34 - 24) * var(--fluid)), 34px);
+  --font-size-5: clamp(26px, calc(26px + (42 - 26) * var(--fluid)), 42px);
+  --font-size-6: clamp(32px, calc(32px + (90 - 32) * var(--fluid)), 90px);
+
+  --font-size: var(--font-size-1);
+  --line-height: 1.4;
+}
+
+body {
+  --scroll-y: 0;
+  --scroll-dir: 1;
+
+  --focus-outline: calc((2 / 16) * 1rem) solid oklch(var(--color-focus));
+
+  --font-display: 'Sora', sans-serif;
+  --font-sans: 'Sora', sans-serif;
+  --font-monospace: monospace;
+}
+
+:root {
+  --color-blue: 70% 0.162 250;
+  --color-green: 75% 0.172 150;
+  --color-pink: 75% 0.22 330;
+  --color-yellow: 95% 0.12 102;
+
+  --color-bg-default: 20% 0.015 275;
+  --color-bg-dark: 15% 0.015 275;
+  --color-bg-light: 25% 0.015 275;
+  --color-bg-lighter: 35% 0.015 275;
+  --color-text: 97% 0.02 80;
+  --color-text-subtle: 67% 0.02 80;
+
+  --color-primary: var(--color-green);
+  --color-secondary: var(--color-blue);
+  --color-tertiary: var(--color-yellow);
+
+  --color-focus: var(--color-pink);
+  --color-anchor: var(--color-primary);
+}
+
+:root[data-theme='dark'] {
+  --color-bg-default: 20% 0.015 275;
+  --color-bg-dark: 15% 0.015 275;
+  --color-bg-light: 25% 0.015 275;
+  --color-bg-lighter: 35% 0.015 275;
+  --color-text: 97% 0.02 80;
+  --color-text-subtle: 67% 0.02 80;
+}
+
+:root[data-theme='light'] {
+  --color-bg-default: 97% 0.02 80;
+  --color-bg-dark: 95% 0.02 80;
+  --color-bg-light: 93% 0.02 80;
+  --color-bg-lighter: 90% 0.02 80;
+  --color-text: 20% 0.015 275;
+  --color-text-subtle: 60% 0.015 275;
+  --color-blue: 60% 0.162 250;
+  --color-green: 65% 0.172 150;
+  --color-pink: 65% 0.22 330;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --color-bg-default: 97% 0.02 80;
+    --color-bg-dark: 95% 0.02 80;
+    --color-bg-light: 93% 0.02 80;
+    --color-bg-lighter: 90% 0.02 80;
+    --color-text: 20% 0.015 275;
+    --color-text-subtle: 60% 0.015 275;
+    --color-blue: 60% 0.162 250;
+    --color-green: 65% 0.172 150;
+    --color-pink: 65% 0.22 330;
+  }
+}

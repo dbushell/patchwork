@@ -13,11 +13,11 @@
   border: calc((var(--border-width) / 16) * 1rem) solid
     oklch(var(--color-bg-lighter));
   border-color: transparent;
-  border-radius: calc((8 / 16) * 1rem);
+  border-radius: var(--radius-2);
   background: var(--background-padding-box) padding-box,
     var(--background-border-box) border-box;
-  margin-block: var(--block-gap2);
-  padding: var(--space-m);
+  margin-block: var(--block-gap-2);
+  padding: var(--size-5);
   text-align: center;
 
   &:first-child {
@@ -35,6 +35,6 @@
 
 .Alert--small {
   --border-width: 1;
-  --font-size: var(--step-0);
-  padding: var(--space-s);
+  --font-size: var(--font-size-0);
+  padding: var(--size-3);
 }

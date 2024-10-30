@@ -1,8 +1,15 @@
-.Body {
-  container: body / inline-size;
+@view-transition {
+  navigation: auto;
+}
+
+body {
+  color: oklch(var(--color-text));
   display: flex;
   flex-direction: column;
+  font-family: var(--font-sans);
+  font-weight: 400;
   justify-content: start;
+  line-height: var(--line-height);
   min-block-size: 100svb;
 
   & > * {

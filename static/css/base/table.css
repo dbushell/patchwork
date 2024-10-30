@@ -2,7 +2,7 @@
   overflow: hidden;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
-  margin-block: var(--block-gap2);
+  margin-block: var(--block-gap-2);
 
   &:first-child {
     margin-block-start: 0;
@@ -21,8 +21,8 @@ table {
 td,
 th {
   border-inline: calc((1 / 16) * 1rem) solid oklch(var(--color-bg-lighter));
-  font-size: var(--step-0);
-  padding: var(--space-2xs);
+  font-size: var(--font-size-0);
+  padding: var(--size-2);
   text-align: start;
 }
 

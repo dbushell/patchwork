@@ -1,17 +1,17 @@
 .space-2xs {
-  --space: var(--space-2xs);
+  --space: var(--size-2);
 }
 .space-xs {
-  --space: var(--space-xs);
+  --space: var(--size-2);
 }
 .space-s {
-  --space: var(--space-s);
+  --space: var(--size-3);
 }
 .space-m {
-  --space: var(--space-m);
+  --space: var(--size-5);
 }
 .space-l {
-  --space: var(--space-l);
+  --space: var(--size-6);
 }
 
 .mb-start {

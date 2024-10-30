@@ -3,12 +3,12 @@
   --grid-template: var(--grid-template-basic);
   color: oklch(var(--color-text-subtle));
   background: oklch(var(--color-bg-dark));
-  padding-block: var(--space-l-xl);
+  padding-block: var(--size-7);
 }
 
 .Footer__main {
   align-items: start;
   display: flex;
-  gap: var(--space-s);
+  gap: var(--size-3);
   justify-content: space-between;
 }

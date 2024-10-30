@@ -6,8 +6,11 @@
 }
 
 html {
+  background: oklch(var(--color-bg-default));
+  container: root / inline-size;
   hanging-punctuation: first allow-end last;
   scroll-behavior: smooth;
+  scrollbar-color: oklch(var(--color-blue)) oklch(var(--color-bg-default));
   scrollbar-gutter: stable;
   -webkit-font-smoothing: antialiased;
 

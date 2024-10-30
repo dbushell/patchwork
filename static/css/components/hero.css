@@ -73,7 +73,7 @@
 .Hero {
   --grid-template: var(--grid-template-basic);
 
-  --hero-main-space: var(--space-l);
+  --hero-main-space: var(--size-6);
 
   --hero-min-height: calc((250 / 16) * 1rem);
   --hero-max-height: calc((100dvh - var(--header-height)) * 0.618);
@@ -98,7 +98,9 @@
   /* 1 = visible, 0 = invisible */
   --hero-visible-ratio: calc(var(--hero-visible) / var(--hero-offset-height));
 
-  --hero-main-min-height: calc(var(--step-5) + (var(--hero-main-space) * 2));
+  --hero-main-min-height: calc(
+    var(--font-size-5) + (var(--hero-main-space) * 2)
+  );
   --hero-main-max-height: calc(
     var(--hero-max-height) + (var(--hero-main-space) * 2)
   );
@@ -109,12 +111,12 @@
   );
 
   --hero-font-size: clamp(
-    var(--step-4),
+    var(--font-size-5),
     calc(
-      var(--step-4) +
-        ((var(--step-5) - var(--step-4)) * var(--hero-visible-ratio))
+      var(--font-size-6) +
+        ((var(--font-size-6) - var(--font-size-4)) * var(--hero-visible-ratio))
     ),
-    var(--step-5)
+    var(--font-size-6)
   );
 
   aspect-ratio: 1.618 / 1;
@@ -238,7 +240,7 @@
 
 .Hero__intro {
   --opacity1: max(0, min(1, var(--hero-visible-ratio)));
-  --font-size: var(--step-0);
+  --font-size: var(--font-size-0);
   align-self: start;
   inset-block-start: 50%;
   grid-column: 1 / 4;
@@ -252,7 +254,7 @@
   }
 
   @container hero (block-size > calc((300 / 16) * 1rem)) {
-    --font-size: var(--step-1);
+    --font-size: var(--font-size-1);
   }
 }
 
