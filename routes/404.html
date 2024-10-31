@@ -1,0 +1,21 @@
+<script context="module">
+
+  export const load = async ({fetch, platformProps}) => {
+    const response = await fetch("/props.json");
+    platformProps.props = await response.json();
+    platformProps.description = "Personal Pattern Library";
+    platformProps.title = `Patchwork - ${platformProps.description}`;
+  }
+</script>
+
+<ssr-fragment portal="head">
+  <title>{{title}}</title>
+</ssr-fragment>
+
+<layout-app>
+  <layout-basic>
+    <pw-container>
+      <h1>404 Not Found</h1>
+    </pw-container>
+  </layout-basic>
+</layout-app>

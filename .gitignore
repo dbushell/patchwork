@@ -3,6 +3,7 @@
 !.gitignore
 !deno.jsonc
 !README.md
+!build.ts
 !dev.ts
 !mod.ts
 !components

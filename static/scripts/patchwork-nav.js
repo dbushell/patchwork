@@ -1,9 +1,20 @@
 /// <reference lib="dom" />
 export class Component extends HTMLElement {
   #theme = "";
+  #themes = new Set(["light", "dark"]);
   #navOpen = false;
   #settingsTop = 0;
   #settingsRight = 0;
+
+  get theme() {
+    return this.#theme;
+  }
+
+  set theme(value) {
+    if (this.#themes.has(value)) {
+      this.#theme = value;
+    }
+  }
 
   /** @returns {HTMLElement} */
   get nav() {
@@ -54,7 +65,8 @@ export class Component extends HTMLElement {
       this.#updateSettings();
     }, { passive: true });
     this.#onResize();
-    this.#theme = document.documentElement.getAttribute("data-theme");
+    this.theme = document.documentElement.getAttribute("data-theme") ??
+      globalThis.localStorage.getItem("theme") ?? "";
     this.#updateTheme();
     this.settingsLight.addEventListener("click", () => {
       this.#onTheme("light");
@@ -83,24 +95,29 @@ export class Component extends HTMLElement {
   }
 
   #updateTheme() {
-    this.settingsLight.disabled = this.#theme === "light";
-    this.settingsDark.disabled = this.#theme === "dark";
+    this.settingsLight.disabled = this.theme === "light";
+    this.settingsDark.disabled = this.theme === "dark";
+    if (this.theme) {
+      document.documentElement.dataset.theme = this.theme;
+      globalThis.localStorage.setItem("theme", this.theme);
+    } else {
+      globalThis.localStorage.removeItem("theme");
+    }
   }
 
-  async #onTheme(newTheme) {
-    const response = await fetch("/theme/", {
+  #onTheme(newTheme) {
+    document.documentElement.setAttribute("data-theme", newTheme);
+    this.theme = newTheme;
+    this.#updateTheme();
+    fetch("/theme/", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify({ theme: newTheme }),
+    }).catch((err) => {
+      console.error(err);
     });
-    const { success } = await response.json();
-    if (success) {
-      document.documentElement.setAttribute("data-theme", newTheme);
-      this.#theme = newTheme;
-      this.#updateTheme();
-    }
   }
 }
 

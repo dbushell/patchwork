@@ -1,5 +1,6 @@
 {
   "tasks": {
+    "build": "deno run -A build.ts",
     "dev": "deno run -A dev.ts",
     "prod": "deno run -A mod.ts"
   },

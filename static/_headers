@@ -1,0 +1,13 @@
+/*
+  access-control-allow-origin: https://patchwork.dbushell.com
+  x-frame-options: DENY
+  x-xss-protection: 1; mode=block
+  x-content-type-options: nosniff
+  strict-transport-security: max-age=31536000; includeSubDomains; preload
+  content-security-policy: default-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; frame-ancestors 'none';
+  permissions-policy: browsing-topics=(),interest-cohort=()
+  referrer-policy: same-origin
+  x-robots-tag: noai, noimageai
+
+/robots.txt
+  ! x-robots-tag
