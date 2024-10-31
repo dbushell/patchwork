@@ -3,6 +3,7 @@
 *::before {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
 html {
@@ -27,7 +28,7 @@ html {
 
 :where(canvas, img, picture, svg, video) {
   block-size: auto;
-  border: 0;
+  border: none;
   display: block;
   max-inline-size: 100%;
 }
@@ -40,7 +41,6 @@ html {
   font: inherit;
   hanging-punctuation: none;
   line-height: inherit;
-  padding: 0;
   text-align: start;
   touch-action: manipulation;
 }
@@ -72,14 +72,12 @@ html {
 
 :where(ul, ol, li) {
   list-style: none;
-  padding: 0;
 }
 
 :where(dialog, [popover]) {
   background: transparent;
-  border: 0;
+  border: none;
   color: currentColor;
   margin: auto;
-  padding: 0;
   position: fixed;
 }
