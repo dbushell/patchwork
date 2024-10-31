@@ -19,6 +19,7 @@
 body {
   --body-size: 100cqi;
   --fluid: calc((var(--body-size) - 400px) / (1200 - 400));
+  --rem: 0.0625rem;
 
   --size-0: clamp(2px, calc(2px + (3 - 2) * var(--fluid)), 3px);
   --size-1: clamp(4px, calc(4px + (6 - 4) * var(--fluid)), 6px);
@@ -41,13 +42,38 @@ body {
   --border-size-1: 1px;
   --border-size-2: 2px;
 
-  --font-size-0: clamp(14px, calc(14px + (16 - 14) * var(--fluid)), 16px);
-  --font-size-1: clamp(18px, calc(18px + (20 - 18) * var(--fluid)), 20px);
-  --font-size-2: clamp(20px, calc(20px + (24 - 20) * var(--fluid)), 24px);
-  --font-size-3: clamp(22px, calc(22px + (28 - 22) * var(--fluid)), 28px);
-  --font-size-4: clamp(24px, calc(24px + (34 - 24) * var(--fluid)), 34px);
-  --font-size-5: clamp(26px, calc(26px + (42 - 26) * var(--fluid)), 42px);
-  --font-size-6: clamp(32px, calc(32px + (90 - 32) * var(--fluid)), 90px);
+  /* --font-size-0: clamp(14px, calc(14px + (16 - 14) * var(--fluid)), 16px); */
+  --font-size-0: 1rem;
+  --font-size-1: clamp(
+    calc(18 * var(--rem)),
+    calc((18 * var(--rem)) + (20 - 18) * var(--fluid)),
+    calc(20 * var(--rem))
+  );
+  --font-size-2: clamp(
+    calc(20 * var(--rem)),
+    calc((20 * var(--rem)) + (24 - 20) * var(--fluid)),
+    calc(24 * var(--rem))
+  );
+  --font-size-3: clamp(
+    calc(22 * var(--rem)),
+    calc((22 * var(--rem)) + (28 - 22) * var(--fluid)),
+    calc(28 * var(--rem))
+  );
+  --font-size-4: clamp(
+    calc(24 * var(--rem)),
+    calc((24 * var(--rem)) + (34 - 24) * var(--fluid)),
+    calc(34 * var(--rem))
+  );
+  --font-size-5: clamp(
+    calc(26 * var(--rem)),
+    calc((26 * var(--rem)) + (42 - 26) * var(--fluid)),
+    calc(42 * var(--rem))
+  );
+  --font-size-6: clamp(
+    calc(32 * var(--rem)),
+    calc((32 * var(--rem)) + (90 - 32) * var(--fluid)),
+    calc(90 * var(--rem))
+  );
 
   --font-size: var(--font-size-1);
   --line-height: 1.4;
