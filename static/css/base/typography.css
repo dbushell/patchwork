@@ -175,5 +175,6 @@ code {
 }
 
 :is(small, figcaption) {
-  font-size: var(--font-size-0);
+  --font-size: var(--font-size-0);
+  font-size: var(--font-size);
 }

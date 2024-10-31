@@ -1,4 +1,5 @@
 .Range {
+  --background-color: var(--color-bg-4);
   --color: var(--color-primary);
   --size: var(--size-5);
   block-size: var(--size);
@@ -26,8 +27,8 @@
   background: transparent;
   background-image: linear-gradient(
     to right,
-    oklch(var(--color-bg-4)),
-    oklch(var(--color-bg-4))
+    oklch(var(--background-color)),
+    oklch(var(--background-color))
   );
   background-position: 0% center;
   background-repeat: no-repeat;
@@ -50,8 +51,8 @@
   background: transparent;
   background-image: linear-gradient(
     to right,
-    oklch(var(--color-bg-4)),
-    oklch(var(--color-bg-4))
+    oklch(var(--background-color)),
+    oklch(var(--background-color))
   );
   background-position: 0% center;
   background-repeat: no-repeat;

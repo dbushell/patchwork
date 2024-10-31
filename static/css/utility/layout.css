@@ -1,5 +1,5 @@
 .gap-2xs {
-  gap: var(--size-2);
+  gap: var(--size-1);
 }
 .gap-xs {
   gap: var(--size-2);

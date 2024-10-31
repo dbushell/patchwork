@@ -13,7 +13,7 @@ body {
   --border-opacity: 0;
   --font-size: var(--font-size-0);
   --line-height: 1.5;
-  --icon-scale: 1;
+  --icon-scale: 0.75;
   --padding-block: var(--size-2);
   --padding-inline: var(--size-3);
   --background-padding-box: linear-gradient(
