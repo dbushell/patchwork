@@ -1,6 +1,6 @@
 .List {
   --border-color: var(--color-bg-4);
-  border: var(--border-size-1) solid oklch(var(--border-color));
+  border: var(--border-size-1) solid var(--border-color);
   border-radius: var(--radius-2);
   display: grid;
   grid-template-columns: 1fr;
@@ -8,7 +8,7 @@
 
   :where(&) > * {
     background: none;
-    border-block-end: var(--border-size-1) solid oklch(var(--border-color));
+    border-block-end: var(--border-size-1) solid var(--border-color);
     inline-size: 100%;
     margin: 0;
     min-inline-size: 0;

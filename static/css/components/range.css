@@ -27,8 +27,8 @@
   background: transparent;
   background-image: linear-gradient(
     to right,
-    oklch(var(--background-color)),
-    oklch(var(--background-color))
+    var(--background-color),
+    var(--background-color)
   );
   background-position: 0% center;
   background-repeat: no-repeat;
@@ -39,7 +39,7 @@
 
 .Range::-moz-range-thumb {
   appearance: none;
-  background: oklch(var(--color));
+  background: var(--color);
   border: 0;
   border-radius: 100%;
   block-size: var(--size);
@@ -51,8 +51,8 @@
   background: transparent;
   background-image: linear-gradient(
     to right,
-    oklch(var(--background-color)),
-    oklch(var(--background-color))
+    var(--background-color),
+    var(--background-color)
   );
   background-position: 0% center;
   background-repeat: no-repeat;
@@ -63,7 +63,7 @@
 
 .Range::-webkit-slider-thumb {
   appearance: none;
-  background: oklch(var(--color));
+  background: var(--color);
   border: 0;
   border-radius: 100%;
   block-size: var(--size);

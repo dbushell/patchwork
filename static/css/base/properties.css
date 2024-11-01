@@ -80,7 +80,7 @@ body {
 }
 
 body {
-  --focus-outline: var(--border-size-2) solid oklch(var(--color-focus));
+  --focus-outline: var(--border-size-2) solid var(--color-focus);
 
   --font-display: 'Sora', sans-serif;
   --font-sans: 'Sora', sans-serif;
@@ -95,56 +95,34 @@ body {
 
   --scroll-y: 0;
   --scroll-dir: 1;
-}
 
-:root[data-theme='dark'] {
-  --color-bg-1: 20% 0.015 275;
-  --color-bg-2: 15% 0.015 275;
-  --color-bg-3: 25% 0.015 275;
-  --color-bg-4: 35% 0.015 275;
-  --color-text: 95% 0.04 65;
-  --color-text-subtle: 65% 0.04 65;
-  --color-secondary: 75% 0.15 25;
-  --color-primary: 75% 0.15 45;
-  --color-tertiary: 90% 0.12 90;
-}
+  --color-bg-1: light-dark(oklch(97% 0.03 75), oklch(20% 0.015 275));
+  --color-bg-2: light-dark(oklch(95% 0.03 75), oklch(15% 0.015 275));
+  --color-bg-3: light-dark(oklch(93% 0.04 75), oklch(25% 0.015 275));
+  --color-bg-4: light-dark(oklch(90% 0.05 75), oklch(35% 0.015 275));
+  --color-text: light-dark(oklch(15% 0.04 45), oklch(95% 0.04 65));
+  --color-text-subtle: light-dark(oklch(50% 0.04 45), oklch(65% 0.04 65));
+  --color-secondary: light-dark(oklch(55% 0.14 25), oklch(75% 0.15 25));
+  --color-primary: light-dark(oklch(55% 0.14 45), oklch(75% 0.15 45));
+  --color-tertiary: light-dark(oklch(65% 0.22 0), oklch(90% 0.12 90));
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
-    --color-bg-1: 20% 0.015 275;
-    --color-bg-2: 15% 0.015 275;
-    --color-bg-3: 25% 0.015 275;
-    --color-bg-4: 35% 0.015 275;
-    --color-text: 95% 0.04 65;
-    --color-text-subtle: 65% 0.04 65;
-    --color-secondary: 75% 0.15 25;
-    --color-primary: 75% 0.15 45;
-    --color-tertiary: 90% 0.12 90;
+  &[data-theme='light'] {
+    color-scheme: light;
+  }
+
+  &[data-theme='dark'] {
+    color-scheme: dark;
   }
 }
 
-:root[data-theme='light'] {
-  --color-bg-1: 97% 0.03 75;
-  --color-bg-2: 95% 0.03 75;
-  --color-bg-3: 93% 0.04 75;
-  --color-bg-4: 90% 0.05 75;
-  --color-text: 15% 0.04 45;
-  --color-text-subtle: 50% 0.04 45;
-  --color-secondary: 55% 0.14 25;
-  --color-primary: 55% 0.14 45;
-  --color-tertiary: 65% 0.22 0;
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+  }
 }
 
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme]) {
-    --color-bg-1: 97% 0.03 75;
-    --color-bg-2: 95% 0.03 75;
-    --color-bg-3: 93% 0.04 75;
-    --color-bg-4: 90% 0.05 75;
-    --color-text: 15% 0.04 45;
-    --color-text-subtle: 50% 0.04 45;
-    --color-secondary: 55% 0.14 25;
-    --color-primary: 55% 0.14 45;
-    --color-tertiary: 65% 0.22 0;
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
   }
 }

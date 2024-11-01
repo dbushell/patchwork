@@ -1,9 +1,11 @@
 .Select {
-  --background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="oklch(97% 0.02 80)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m2 5 6 6 6-6"/></svg>');
+  --background-light: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="oklch(15% 0.04 45)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m2 5 6 6 6-6"/></svg>');
+  --background-dark: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="oklch(95% 0.04 65)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m2 5 6 6 6-6"/></svg>');
+  --background-image: var(--background-light);
   --background-color: var(--color-bg-2);
   --border-color: var(--color-primary);
   --border-radius: var(--radius-2);
-  --border-width: var(--border-size-1);
+  --border-size: var(--border-size-1);
   --color: var(--color-text);
   --font-size: var(--font-size-0);
   --line-height: 1.5;
@@ -11,18 +13,18 @@
   --padding-inline: var(--size-3);
   /* --block-size: calc(
     (var(--font-size) * var(--line-height)) +
-      ((var(--padding-block) + var(--border-width)) * 2)
+      ((var(--padding-block) + var(--border-size)) * 2)
   ); */
   appearance: none;
-  background: oklch(var(--background-color));
+  background: var(--background-color);
   background-image: var(--background-image);
   background-size: var(--size-4) auto;
   background-repeat: no-repeat;
   background-position: right var(--size-3) center;
-  border: var(--border-width) solid oklch(var(--border-color));
+  border: var(--border-size) solid var(--border-color);
   border-radius: var(--border-radius);
   /* block-size: var(--block-size); */
-  color: oklch(var(--color));
+  color: var(--color);
   display: block;
   font-family: var(--font-sans);
   font-size: var(--font-size);
@@ -54,7 +56,19 @@
     background-position: left var(--size-2) center;
   }
 
-  :where([data-theme='light']) & {
-    --background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="oklch(20% 0.015 275)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m2 5 6 6 6-6"/></svg>');
+  @media (prefers-color-scheme: light) {
+    --background-image: var(--background-light);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    --background-image: var(--background-dark);
+  }
+
+  :where(:root[data-theme='light']) & {
+    --background-image: var(--background-light);
+  }
+
+  :where(:root[data-theme='dark']) & {
+    --background-image: var(--background-dark);
   }
 }

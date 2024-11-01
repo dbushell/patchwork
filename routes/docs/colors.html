@@ -14,7 +14,7 @@
 
 <layout-app>
   <layout-aside>
-    <h1>Colors</h1>
+    <h1>Color Palette</h1>
     <ul class="Swatches">
       <li class="bg-default">bg</li>
       <li class="bg-dark">bg-dark</li>
@@ -30,5 +30,18 @@
       <li class="bg-secondary color-bg">secondary</li>
       <li class="bg-tertiary color-bg">tertiary</li>
     </ul>
+    <h2>Color Scheme</h2>
+    <p>Color properties are defined using the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark" target="_blank" rel="noopener noreferrer">CSS light-dark</a> color function.</p>
+    <pre class="Code"><code>--color-primary: light-dark(oklch(55% 0.14 45), oklch(75% 0.15 45));</code></pre>
+    <p>The color scheme is set by user preference.</p>
+    <pre class="Code"><code>:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+  }
+}</code></pre>
   </layout-aside>
 </layout-app>

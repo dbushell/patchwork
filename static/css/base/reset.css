@@ -7,11 +7,11 @@
 }
 
 html {
-  background: oklch(var(--color-bg-1));
+  background: var(--color-bg-1);
   container: root / inline-size;
   hanging-punctuation: first allow-end last;
   scroll-behavior: smooth;
-  scrollbar-color: oklch(var(--color-secondary)) oklch(var(--color-bg-1));
+  scrollbar-color: var(--color-secondary) var(--color-bg-1);
   scrollbar-gutter: stable;
   -webkit-font-smoothing: antialiased;
 

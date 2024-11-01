@@ -127,16 +127,16 @@
   max-block-size: var(--hero-max-height);
 
   &::before {
-    background: oklch(var(--color-bg-1));
+    background: var(--color-bg-1);
     background-image: repeating-conic-gradient(
         from calc(var(--hero-visible-ratio) * 20deg) at 0 100%,
-        oklch(var(--color-bg-2) / 1) 0 10deg,
-        oklch(var(--color-bg-2) / 0) 0 20deg
+        var(--color-bg-2) 0 10deg,
+        transparent 0 20deg
       ),
       linear-gradient(
         225deg,
-        oklch(var(--color-bg-2) / 0.5),
-        oklch(var(--color-bg-2) / 0)
+        color-mix(in oklch, var(--color-bg-2) 50%, transparent),
+        transparent
       );
     block-size: 150%;
     display: block;
@@ -147,16 +147,8 @@
   }
 
   &::after {
-    background: linear-gradient(
-        to top,
-        oklch(var(--color-bg-1) / 1),
-        oklch(var(--color-bg-1) / 0)
-      ),
-      linear-gradient(
-        to right,
-        oklch(var(--color-bg-1) / 1),
-        oklch(var(--color-bg-1) / 0)
-      );
+    background: linear-gradient(to top, var(--color-bg-1), transparent),
+      linear-gradient(to right, var(--color-bg-1), transparent);
     block-size: 50%;
     display: block;
     content: '';
@@ -189,13 +181,13 @@
 .Hero__heading {
   --color1: color-mix(
     in oklch,
-    oklch(var(--color-secondary)) calc(100% * var(--hero-visible-ratio)),
-    oklch(var(--color-text))
+    var(--color-secondary) calc(100% * var(--hero-visible-ratio)),
+    var(--color-text)
   );
   --color2: color-mix(
     in oklch,
-    oklch(var(--color-primary)) calc(100% * var(--hero-visible-ratio)),
-    oklch(var(--color-text))
+    var(--color-primary) calc(100% * var(--hero-visible-ratio)),
+    var(--color-text)
   );
   background: linear-gradient(50deg, var(--color1), var(--color2));
   background-clip: text;

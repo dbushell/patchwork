@@ -20,7 +20,7 @@ table {
 
 td,
 th {
-  border-inline: var(--border-size-1) solid oklch(var(--color-bg-4));
+  border-inline: var(--border-size-1) solid var(--color-bg-4);
   font-size: var(--font-size-0);
   padding: var(--size-2);
   text-align: start;
@@ -31,5 +31,5 @@ th {
 }
 
 tr {
-  border-block: var(--border-size-1) solid oklch(var(--color-bg-4));
+  border-block: var(--border-size-1) solid var(--color-bg-4);
 }

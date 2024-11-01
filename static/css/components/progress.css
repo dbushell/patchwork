@@ -3,8 +3,8 @@
   --size: var(--size-5);
   background-image: linear-gradient(
     to right,
-    oklch(var(--color-bg-4)),
-    oklch(var(--color-bg-4))
+    var(--color-bg-4),
+    var(--color-bg-4)
   );
   background-position: 0% center;
   background-repeat: no-repeat;
@@ -20,8 +20,8 @@
   background: transparent;
   background-image: linear-gradient(
     to right,
-    oklch(var(--color-secondary)),
-    oklch(var(--color-primary))
+    var(--color-secondary),
+    var(--color-primary)
   );
   background-position: 0% center;
   background-repeat: no-repeat;
@@ -38,8 +38,8 @@
   background: transparent;
   background-image: linear-gradient(
     to right,
-    oklch(var(--color-secondary)),
-    oklch(var(--color-primary))
+    var(--color-secondary),
+    var(--color-primary)
   );
   background-position: 0% center;
   background-repeat: no-repeat;

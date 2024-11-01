@@ -17,7 +17,23 @@
   <layout-basic>
     <pw-hero heading="Patchwork" description="{{description}}" />
     <pw-container>
-      <pw-button href="/docs" label="Documentation" />
+      <div class="Card-container">
+        <article class="Card">
+          <h3>Introduction</h3>
+          <p>My documentation index page.</p>
+          <pw-button href="/docs/" label="Docs" />
+        </article>
+        <article class="Card">
+          <h3>Typography</h3>
+          <p>Fonts, sizing, and styles.</p>
+          <pw-button href="/docs/typography/" label="Typography" />
+        </article>
+        <article class="Card">
+          <h3>Forms</h3>
+          <p>Patterns for data input and UI.</p>
+          <pw-button href="/docs/forms/" label="Forms" />
+        </article>
+      </div>
     </pw-container>
   </layout-basic>
 </layout-app>

@@ -13,11 +13,11 @@
       ((var(--padding-block) + var(--border-width)) * 2)
   ); */
   appearance: none;
-  background: oklch(var(--background-color));
-  border: var(--border-width) solid oklch(var(--border-color));
+  background: var(--background-color);
+  border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   /* block-size: var(--block-size); */
-  color: oklch(var(--color));
+  color: var(--color);
   display: block;
   font-family: var(--font-sans);
   font-size: var(--font-size);
@@ -37,7 +37,7 @@
   }
 
   &::placeholder {
-    color: oklch(var(--color-text));
+    color: var(--color-text);
     opacity: 0.5;
     font-size: var(--font-size-0);
   }

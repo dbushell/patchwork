@@ -3,8 +3,8 @@
 }
 
 body {
-  accent-color: oklch(var(--color-primary));
-  color: oklch(var(--color-text));
+  accent-color: var(--color-primary);
+  color: var(--color-text);
   display: flex;
   flex-direction: column;
   font-family: var(--font-sans);

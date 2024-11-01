@@ -1,21 +1,26 @@
 a {
   --color: var(--color-anchor);
   --underline-opacity: 0.5;
-  color: oklch(var(--color));
+  color: var(--color);
   text-decoration-line: underline;
   text-decoration-thickness: var(--border-size-1);
   text-decoration-skip-ink: all;
-  text-decoration-color: oklch(var(--color) / var(--underline-opacity));
+  text-decoration-color: color-mix(
+    in oklch,
+    var(--color) calc(100% * var(--underline-opacity)),
+    transparent
+  );
   text-underline-offset: 0.15em;
   transition: color 200ms, text-decoration-color 200ms;
 
   &:active,
   &:visited {
-    color: oklch(var(--color));
+    color: var(--color);
   }
 
   &:hover {
     --color: var(--color-secondary);
+    --underline-opacity: 1;
   }
 
   &:focus-visible {
@@ -28,7 +33,7 @@ a {
 
 .Anchor {
   --color: var(--color-anchor);
-  color: oklch(var(--color));
+  color: var(--color);
   cursor: pointer;
   transition: color 200ms;
   user-select: text;
@@ -106,7 +111,7 @@ p {
 
 ul,
 ol {
-  --bullet: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><path fill="oklch(97% 0.02 80)" d="M9.625 5.375L15 7.5 9.625 9.625 7.5 15 5.375 9.625 0 7.5l5.375-2.125L7.5 0z"/></svg>');
+  --bullet: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><path d="M9.625 5.375L15 7.5 9.625 9.625 7.5 15 5.375 9.625 0 7.5l5.375-2.125L7.5 0z"/></svg>');
   --bullet-size: calc(var(--font-size) * var(--line-height));
   margin-block-end: var(--block-gap-1);
   list-style: none outside;
@@ -129,7 +134,7 @@ ol {
       content: '•';
       color: transparent;
       display: block;
-      background-color: oklch(var(--color-text));
+      background-color: var(--color-text);
       mask: var(--bullet) center center / calc(var(--font-size) * 0.9) auto
         no-repeat;
       block-size: var(--bullet-size);
@@ -171,7 +176,7 @@ pre {
 
 code {
   font-family: var(--font-monospace);
-  color: oklch(var(--color-secondary));
+  color: var(--color-secondary);
 }
 
 :is(small, figcaption) {

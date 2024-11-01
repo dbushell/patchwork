@@ -8,7 +8,7 @@
 
 .Menu__item {
   --font-size: var(--font-size-0);
-  border-block-end: var(--border-size-1) solid oklch(var(--color-bg-4));
+  border-block-end: var(--border-size-1) solid var(--color-bg-4);
   inline-size: 100%;
   margin: 0;
   padding: var(--size-2);
