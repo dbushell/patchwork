@@ -98,6 +98,8 @@ body {
   position: fixed;
 }
 
+/*
 :where(dialog:not([open], [popover]), [popover]:not(:popover-open)) {
   display: none !important;
 }
+*/
