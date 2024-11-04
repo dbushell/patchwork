@@ -13,6 +13,9 @@ html {
   scroll-behavior: smooth;
   scrollbar-color: var(--color-secondary) var(--color-bg-1);
   scrollbar-gutter: stable;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
 
   &:where(.translated-rtl) {
@@ -24,6 +27,10 @@ html {
   html {
     scroll-behavior: auto;
   }
+}
+
+body {
+  min-block-size: 100svb;
 }
 
 :where(canvas, img, picture, svg, video) {
@@ -50,6 +57,10 @@ html {
   user-select: none;
 }
 
+:where(textarea) {
+  resize: vertical;
+}
+
 :where(b, strong) {
   font-weight: 700;
 }
@@ -68,6 +79,10 @@ html {
 
 :where(cite) {
   font-style: normal;
+}
+
+:where(small) {
+  font-size: inherit;
 }
 
 :where(ul, ol, li) {

@@ -48,8 +48,4 @@
     --color: var(--color-text) / 0.5;
     pointer-events: none;
   }
-
-  &[rows] {
-    resize: vertical;
-  }
 }
