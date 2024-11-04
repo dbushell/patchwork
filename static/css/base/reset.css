@@ -9,6 +9,7 @@
 html {
   background: var(--color-bg-1);
   container: root / inline-size;
+  color-scheme: light dark;
   hanging-punctuation: first allow-end last;
   scroll-behavior: smooth;
   scrollbar-color: var(--color-secondary) var(--color-bg-1);
@@ -95,4 +96,8 @@ body {
   color: currentColor;
   margin: auto;
   position: fixed;
+}
+
+:where(dialog:not([open], [popover]), [popover]:not(:popover-open)) {
+  display: none !important;
 }
