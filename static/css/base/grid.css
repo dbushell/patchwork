@@ -26,7 +26,7 @@
   }
 }
 
-@container root (inline-size >= 900px) {
+@container body (inline-size >= 900px) {
   .Grid {
     --grid-aside-columns: 3;
     --grid-main-columns: 7;
@@ -37,7 +37,7 @@
   }
 }
 
-@container root (inline-size >= 1200px) {
+@container body (inline-size >= 1200px) {
   .Grid {
     --grid-aside-columns: 2;
     --grid-main-columns: 8;

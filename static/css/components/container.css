@@ -42,7 +42,7 @@
   --background-opacity: 1;
 }
 
-@container root (inline-size >= 900px) {
+@container body (inline-size >= 900px) {
   .Container {
     & > aside {
       grid-column: aside-start / aside-end;
