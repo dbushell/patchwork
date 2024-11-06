@@ -9,26 +9,27 @@
   max-inline-size: min(600px, calc(100% - (2 * var(--size-5))));
 
   &::backdrop {
-    background-color: oklch(0% 0 0 / 0.2);
+    background-color: oklch(0% 0 0 / 0.4);
+    backdrop-filter: blur(2px);
   }
 }
 
 .Dialog--css-transition {
   opacity: 0;
-  transition: display 500ms allow-discrete, opacity 500ms,
-    overlay 500ms allow-discrete;
+  transition: display 300ms allow-discrete, opacity 300ms,
+    overlay 300ms allow-discrete;
 
   &::backdrop {
     background-color: oklch(0% 0 0 / 0);
-    transition: background-color 500ms, display 500ms allow-discrete,
-      overlay 500ms allow-discrete;
+    transition: background-color 300ms, display 300ms allow-discrete,
+      overlay 300ms allow-discrete;
   }
 
   &[open] {
     opacity: 1;
 
     &::backdrop {
-      background-color: oklch(0% 0 0 / 0.2);
+      background-color: oklch(0% 0 0 / 0.4);
     }
   }
 }
@@ -96,7 +97,7 @@
 }
 
 ::view-transition-new(dialog-in) {
-  animation: 500ms dialog-in;
+  animation: 600ms dialog-in;
   animation-timing-function: cubic-bezier(0.6, 2, 0.6, 0.8);
 }
 ::view-transition-old(dialog-in) {
@@ -111,7 +112,7 @@
 }
 
 ::view-transition-new(backdrop-in) {
-  animation: 500ms backdrop-in;
+  animation: 300ms backdrop-in;
   animation-timing-function: ease-out;
 }
 ::view-transition-old(backdrop-in) {

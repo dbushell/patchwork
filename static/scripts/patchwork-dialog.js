@@ -28,6 +28,7 @@ export class Component extends HTMLElement {
   }
 
   close() {
+    // Use CSS view transitions
     if (this.transition) {
       this.#internals.states.add("closing");
       document.startViewTransition(() => {
@@ -41,7 +42,8 @@ export class Component extends HTMLElement {
   }
 
   showModal() {
-    this.#onOpen();
+    this.buttons.forEach(($button) => $button.ariaExpanded = "true");
+    // Use CSS view transitions
     if (this.transition) {
       this.#internals.states.add("opening");
       document.startViewTransition(() => {
@@ -52,23 +54,19 @@ export class Component extends HTMLElement {
     } else {
       this.dialog.showModal();
     }
-    this.dialog.addEventListener("close", () => this.#onClose(), {
+    // Clean up after "close" event
+    this.dialog.addEventListener("close", () => {
+      this.buttons.forEach(($button) => $button.ariaExpanded = "false");
+    }, {
       once: true,
       signal: this.#controller.signal,
     });
   }
 
-  #onClose() {
-    this.buttons.forEach(($button) => $button.ariaExpanded = "false");
-  }
-
-  #onOpen() {
-    this.buttons.forEach(($button) => $button.ariaExpanded = "true");
-  }
-
   connectedCallback() {
     this.#internals = this.attachInternals();
     this.#controller = new AbortController();
+    // Handle close buttons
     this.buttons.forEach(($button) => {
       $button.addEventListener("click", () => {
         if (this.open) {
@@ -78,6 +76,13 @@ export class Component extends HTMLElement {
         }
       }, { signal: this.#controller.signal });
     });
+    // Capture "Escape" key to animate close
+    this.addEventListener("keydown", (ev) => {
+      if (this.open && ev.key === "Escape") {
+        ev.preventDefault();
+        this.close();
+      }
+    }, { signal: this.#controller.signal });
   }
 
   disconnectedCallback() {
