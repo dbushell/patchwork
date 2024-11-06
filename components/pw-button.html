@@ -1,6 +1,6 @@
 <script context="component">
   const tagattr = $local.tag ?? ($local.href ? 'a' : 'button');
-  const typeattr = $local.type ?? ($local.tag === 'button' ? 'button' : undefined);
+  const typeattr = $local.type ?? (tagattr === 'button' ? 'button' : undefined);
   const labelclass = $local.icon === undefined ? undefined : 'hidden';
   const buttonclass = ['Button', ...($local.classes ?? [])];
 </script>
@@ -13,6 +13,8 @@
   type="{{typeattr}}"
   disabled="{{$local.disabled}}"
   aria-current="{{ariaCurrent}}"
+  aria-expanded="{{ariaExpanded}}"
+  aria-controls="{{ariaControls}}"
   popovertarget="{{popovertarget}}"
   popovertargetaction="{{popovertargetaction}}"
   >

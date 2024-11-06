@@ -1,0 +1,58 @@
+<script context="module">
+  export const pattern = "/";
+
+  export const load = async ({fetch, platformProps}) => {
+    const response = await fetch("/props.json");
+    platformProps.props = await response.json();
+    platformProps.title = "Modals - Documentation";
+  }
+</script>
+
+<ssr-fragment portal="head">
+  <title>{{title}}</title>
+</ssr-fragment>
+
+<layout-app>
+  <layout-aside>
+    <pw-stack>
+      <h1>Modals</h1>
+      <pw-button label="No Transition" aria-controls="basic-dialog" aria-expanded="false" />
+      <pw-button label="CSS Transition" aria-controls="css-transition-dialog" aria-expanded="false" />
+      <pw-button label="View Transition" aria-controls="view-transition-dialog" aria-expanded="false" />
+    </pw-stack>
+  </layout-aside>
+</layout-app>
+
+<patchwork-dialog>
+  <dialog class="Dialog" id="basic-dialog">
+    <pw-stack>
+      <pw-button label="Close" aria-controls="basic-dialog" aria-expanded="false" />
+      <h3>Dialog Modal</h3>
+      <p>This is a top-level dialog modal. It captures focus and content outside the dialog is inert.</p>
+    </pw-stack>
+  </dialog>
+</patchwork-dialog>
+
+<patchwork-dialog>
+  <dialog class="Dialog Dialog--css-transition" id="css-transition-dialog">
+    <pw-stack>
+      <pw-button label="Close" aria-controls="css-transition-dialog" aria-expanded="false" />
+      <h3>CSS Transition Dialog</h3>
+      <p>This is a top-level dialog modal. It captures focus and content outside the dialog is inert.</p>
+    </pw-stack>
+  </dialog>
+</patchwork-dialog>
+
+<patchwork-dialog transition>
+  <dialog class="Dialog" id="view-transition-dialog">
+    <pw-stack>
+      <pw-button label="Close" aria-controls="view-transition-dialog" aria-expanded="false" />
+      <h3>View Transition Dialog</h3>
+      <p>This is a top-level dialog modal. It captures focus and content outside the dialog is inert.</p>
+    </pw-stack>
+  </dialog>
+</patchwork-dialog>
+
+<ssr-fragment portal="head">
+  <script type="module" src="/scripts/patchwork-dialog.js?v={{deployHash}}"></script>
+</ssr-fragment>

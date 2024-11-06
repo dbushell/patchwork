@@ -62,6 +62,10 @@ const props = {
         "name": "Layout",
         "href": "/docs/layout/",
       },
+      {
+        "name": "Modals",
+        "href": "/docs/modals/",
+      },
     ],
   },
 };

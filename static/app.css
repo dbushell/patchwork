@@ -8,6 +8,7 @@
 @import 'css/base/table.css' layer(base);
 @import 'css/base/grid.css' layer(base);
 
+@import 'css/components/alert.css' layer(components);
 @import 'css/components/blockquote.css' layer(components);
 @import 'css/components/checkbox.css' layer(components);
 @import 'css/components/range.css' layer(components);
@@ -18,8 +19,8 @@
 @import 'css/components/menu.css' layer(components);
 @import 'css/components/card.css' layer(components);
 @import 'css/components/code.css' layer(components);
-@import 'css/components/alert.css' layer(components);
 @import 'css/components/container.css' layer(components);
+@import 'css/components/dialog.css' layer(components);
 @import 'css/components/nav.css' layer(components);
 @import 'css/components/header.css' layer(components);
 @import 'css/components/footer.css' layer(components);

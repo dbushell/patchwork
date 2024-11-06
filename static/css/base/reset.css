@@ -94,6 +94,8 @@ body {
   border: none;
   color: inherit;
   margin: auto;
+  max-block-size: none;
+  max-inline-size: none;
   position: fixed;
 }
 

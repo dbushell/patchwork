@@ -43,6 +43,7 @@ const routePaths = [
   "/docs/colors/",
   "/docs/forms/",
   "/docs/layout/",
+  "/docs/modals/",
   "/docs/typography/",
 ];
 

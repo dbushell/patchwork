@@ -32,8 +32,9 @@ body {
   }
 }
 
-patchwork-nav,
+patchwork-dialog,
+patchwork-header,
 patchwork-hero,
-patchwork-header {
+patchwork-nav {
   display: contents;
 }
