@@ -2,6 +2,11 @@
   navigation: auto;
 }
 
+html {
+  background: var(--color-bg-1);
+  scrollbar-color: var(--color-secondary) var(--color-bg-1);
+}
+
 body {
   accent-color: var(--color-primary);
   color: var(--color-text);

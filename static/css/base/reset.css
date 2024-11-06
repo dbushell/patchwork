@@ -7,11 +7,9 @@
 }
 
 html {
-  background: var(--color-bg-1);
   color-scheme: light dark;
   hanging-punctuation: first allow-end last;
   scroll-behavior: smooth;
-  scrollbar-color: var(--color-secondary) var(--color-bg-1);
   scrollbar-gutter: stable;
   text-size-adjust: none;
   -webkit-text-size-adjust: none;
@@ -46,7 +44,7 @@ body {
   appearance: none;
   background: transparent;
   border: none;
-  color: currentColor;
+  color: inherit;
   font: inherit;
   hanging-punctuation: none;
   line-height: inherit;
@@ -94,7 +92,7 @@ body {
 :where(dialog, [popover]) {
   background: transparent;
   border: none;
-  color: currentColor;
+  color: inherit;
   margin: auto;
   position: fixed;
 }

@@ -70,6 +70,11 @@
   initial-value: 1;
 }
 
+:root {
+  --scroll-y: 0;
+  --scroll-dir: 1;
+}
+
 .Hero {
   --grid-template: var(--grid-template-basic);
 

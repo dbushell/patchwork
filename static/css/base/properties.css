@@ -16,6 +16,43 @@
   initial-value: 1.4;
 }
 
+:root {
+  --color-pink: 75% 0.22 330;
+
+  --color-focus: var(--color-tertiary);
+  --color-anchor: var(--color-primary);
+
+  --color-bg-1: light-dark(oklch(97% 0.03 75), oklch(20% 0.015 275));
+  --color-bg-2: light-dark(oklch(95% 0.03 75), oklch(15% 0.015 275));
+  --color-bg-3: light-dark(oklch(93% 0.04 75), oklch(25% 0.015 275));
+  --color-bg-4: light-dark(oklch(90% 0.05 75), oklch(35% 0.015 275));
+  --color-text: light-dark(oklch(15% 0.04 45), oklch(95% 0.04 65));
+  --color-text-subtle: light-dark(oklch(50% 0.04 45), oklch(65% 0.04 65));
+  --color-secondary: light-dark(oklch(55% 0.14 25), oklch(75% 0.15 25));
+  --color-primary: light-dark(oklch(55% 0.14 45), oklch(75% 0.15 45));
+  --color-tertiary: light-dark(oklch(65% 0.22 0), oklch(90% 0.12 90));
+
+  &[data-theme='light'] {
+    color-scheme: light;
+  }
+
+  &[data-theme='dark'] {
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
 body {
   --body-size: 100cqi;
   --fluid: calc((var(--body-size) - 400px) / (1200 - 400));
@@ -77,52 +114,10 @@ body {
 
   --font-size: var(--font-size-1);
   --line-height: 1.4;
-}
-
-body {
-  --focus-outline: var(--border-size-2) solid var(--color-focus);
 
   --font-display: 'Sora', sans-serif;
   --font-sans: 'Sora', sans-serif;
   --font-monospace: monospace;
-}
 
-:root {
-  --color-pink: 75% 0.22 330;
-
-  --color-focus: var(--color-tertiary);
-  --color-anchor: var(--color-primary);
-
-  --scroll-y: 0;
-  --scroll-dir: 1;
-
-  --color-bg-1: light-dark(oklch(97% 0.03 75), oklch(20% 0.015 275));
-  --color-bg-2: light-dark(oklch(95% 0.03 75), oklch(15% 0.015 275));
-  --color-bg-3: light-dark(oklch(93% 0.04 75), oklch(25% 0.015 275));
-  --color-bg-4: light-dark(oklch(90% 0.05 75), oklch(35% 0.015 275));
-  --color-text: light-dark(oklch(15% 0.04 45), oklch(95% 0.04 65));
-  --color-text-subtle: light-dark(oklch(50% 0.04 45), oklch(65% 0.04 65));
-  --color-secondary: light-dark(oklch(55% 0.14 25), oklch(75% 0.15 25));
-  --color-primary: light-dark(oklch(55% 0.14 45), oklch(75% 0.15 45));
-  --color-tertiary: light-dark(oklch(65% 0.22 0), oklch(90% 0.12 90));
-
-  &[data-theme='light'] {
-    color-scheme: light;
-  }
-
-  &[data-theme='dark'] {
-    color-scheme: dark;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color-scheme: light;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-  }
+  --focus-outline: var(--border-size-2) solid var(--color-focus);
 }
