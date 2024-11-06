@@ -15,13 +15,20 @@
 <layout-app>
   <layout-aside>
     <pw-stack>
-      <h1>Modals</h1>
+      <h1>Dialog</h1>
       <pw-button label="No Transition" aria-controls="basic-dialog" aria-expanded="false" />
       <pw-button label="CSS Transition" aria-controls="css-transition-dialog" aria-expanded="false" />
       <pw-button label="View Transition" aria-controls="view-transition-dialog" aria-expanded="false" />
+      <h2>Popover</h2>
+      <pw-button label="Tooltip" id="tooltip-anchor-1" aria-describedby="tooltip-1" popovertarget="tooltip-1" />
+
     </pw-stack>
   </layout-aside>
 </layout-app>
+
+<div class="Tooltip" id="tooltip-1" anchor="tooltip-anchor-1" role="tooltip" popover>
+  <p>This is a tooltip popover with a single paragraph.</p>
+</div>
 
 <patchwork-dialog>
   <dialog class="Dialog" id="basic-dialog">

@@ -1,8 +1,7 @@
 .Dialog {
-  --border-size: var(--border-size-2);
   background: var(--color-bg-1);
   border-radius: var(--radius-2);
-  border: var(--border-size) solid var(--color-secondary);
+  border: var(--border-size-2) solid var(--color-secondary);
   inset: 0;
   padding: var(--size-5);
   position: fixed;

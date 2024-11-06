@@ -21,6 +21,7 @@
 @import 'css/components/code.css' layer(components);
 @import 'css/components/container.css' layer(components);
 @import 'css/components/dialog.css' layer(components);
+@import 'css/components/tooltip.css' layer(components);
 @import 'css/components/nav.css' layer(components);
 @import 'css/components/header.css' layer(components);
 @import 'css/components/footer.css' layer(components);
