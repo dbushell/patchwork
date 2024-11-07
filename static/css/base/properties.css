@@ -23,23 +23,31 @@
   --color-focus: var(--color-tertiary);
   --color-anchor: var(--color-primary);
 
+  --font-weight-base: 0;
+  --font-weight-1: calc(var(--font-weight-base) + 400);
+  --font-weight-2: calc(var(--font-weight-base) + 600);
+
   &[data-theme='light'] {
+    --font-weight-base: 0;
     color-scheme: light;
   }
 
   &[data-theme='dark'] {
+    --font-weight-base: 50;
     color-scheme: dark;
   }
 }
 
 @media (prefers-color-scheme: light) {
   :root {
+    --font-weight-base: 0;
     color-scheme: light;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --font-weight-base: 50;
     color-scheme: dark;
   }
 }

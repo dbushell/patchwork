@@ -61,7 +61,7 @@ body {
 }
 
 :where(b, strong) {
-  font-weight: 700;
+  font-weight: var(--font-weight-2);
 }
 
 :where(p, li, h1, h2, h3, h4, h5, h6) {

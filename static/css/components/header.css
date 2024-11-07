@@ -38,7 +38,7 @@ body {
   --underline-opacity: 0;
   margin-inline-end: auto;
   font-size: var(--font-size);
-  font-weight: 400;
+  font-weight: var(--font-weight-1);
   position: relative;
 
   &:not(:focus-visible, :hover) {
@@ -57,7 +57,7 @@ body {
   );
   border-radius: var(--radius-2);
   font-size: var(--font-size-0);
-  font-weight: 700;
+  font-weight: var(--font-weight-2);
   inset-block-start: 0;
   inset-inline-start: calc(100% + var(--size-2));
   line-height: 1;

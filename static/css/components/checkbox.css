@@ -18,7 +18,7 @@
     display: block;
     color: var(--color);
     font-size: var(--font-size);
-    font-weight: 400;
+    font-weight: var(--font-weight-1);
     line-height: var(--line-height);
     padding-inline-start: calc(var(--inline-size) + (var(--size-2)));
     user-select: none;

@@ -13,7 +13,7 @@ html {
   background: var(--color-bg-1);
   color: var(--color-text);
   font-family: var(--font-sans);
-  font-weight: 400;
+  font-weight: var(--font-weight-1);
   line-height: var(--line-height);
   scrollbar-color: var(--color-secondary) var(--color-bg-1);
 }

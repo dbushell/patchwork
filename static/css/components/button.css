@@ -45,7 +45,7 @@ body {
   gap: var(--size-2);
   font-family: var(--font-sans);
   font-size: var(--font-size);
-  font-weight: 700;
+  font-weight: var(--font-weight-2);
   flex-shrink: 0;
   inline-size: fit-content;
   justify-content: center;

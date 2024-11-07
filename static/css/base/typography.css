@@ -60,7 +60,7 @@ h5,
 h6 {
   font-family: var(--font-display);
   font-size: var(--font-size);
-  font-weight: 700;
+  font-weight: var(--font-weight-2);
   line-height: var(--line-height);
   margin: 0;
   margin-block-end: var(--block-gap-1);

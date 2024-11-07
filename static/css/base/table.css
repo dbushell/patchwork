@@ -27,7 +27,7 @@ th {
 }
 
 th {
-  font-weight: 700;
+  font-weight: var(--font-weight-2);
 }
 
 tr {
