@@ -1,0 +1,138 @@
+patchwork-scroller {
+  display: block;
+  --color-anchor: var(--color-tertiary);
+  background: var(--color-bg-1);
+  color: var(--color-tertiary);
+  color-scheme: dark;
+  overflow: clip;
+
+  & .Container {
+    background: transparent;
+    padding-block: 0;
+  }
+}
+
+.scroll-section {
+  align-items: center;
+  display: grid;
+  justify-content: center;
+  position: relative;
+  min-height: 100svb;
+}
+
+@keyframes s1-heading {
+  0% {
+    background-position-y: 0%;
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    background-position-y: 0%;
+    filter: blur(0px);
+    opacity: 1;
+    transform: scale(1) rotateZ(0);
+  }
+  80% {
+    background-position-y: 100%;
+    filter: blur(5px);
+    opacity: 0;
+    transform: scale(4) rotateZ(10deg);
+  }
+  100% {
+    filter: blur(5px);
+    opacity: 0;
+    transform: scale(4) rotateZ(10deg);
+  }
+}
+
+@keyframes s2-paragraph {
+  0% {
+    opacity: 0;
+    transform: rotateX(15deg) scale(2);
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(45deg) scale(0.5);
+  }
+}
+
+@keyframes s3-paragraph {
+  0% {
+    filter: blur(20px);
+    opacity: 0;
+    transform: translateY(-80svb) rotateX(-90deg) scale(2, 0);
+  }
+  25% {
+    filter: blur(0);
+    transform: translateY(-40svb) rotateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+#scroll-1 {
+  align-items: start;
+  view-timeline: --s1 block;
+
+  & h1 {
+    --font-size: var(--font-size-6);
+    animation-name: s1-heading;
+    animation-timeline: --s1;
+    animation-timing-function: ease;
+    inset-block-start: calc(
+      50svb - (0.5 * var(--font-size) * var(--line-height))
+    );
+    background: linear-gradient(
+      180deg,
+      var(--color-tertiary) 20%,
+      var(--color-secondary) 60%
+    );
+    background-size: 100% 1000%;
+    background-clip: text;
+    position: sticky;
+    text-align: center;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+#scroll-2 {
+  perspective: 500px;
+  view-timeline: --s2 block;
+
+  & p {
+    --font-size: var(--font-size-3);
+    font-weight: 500;
+    max-inline-size: 35ch;
+  }
+
+  & blockquote {
+    transform-origin: 50% 100%;
+    animation-name: s2-paragraph;
+    animation-timeline: --s2;
+    animation-timing-function: linear;
+    text-align: center;
+  }
+}
+
+#scroll-3 {
+  view-timeline: --s3 block;
+
+  & p {
+    --font-size: var(--font-size-5);
+    text-align: center;
+    animation-name: s3-paragraph;
+    animation-timeline: --s3;
+    animation-timing-function: linear;
+    max-inline-size: 40ch;
+  }
+}

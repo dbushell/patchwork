@@ -10,6 +10,7 @@
 
 <ssr-fragment portal="head">
   <title>{{title}}</title>
+  <script type="module" src="/scripts/patchwork-dialog.js?v={{deployHash}}"></script>
 </ssr-fragment>
 
 <layout-app>
@@ -71,8 +72,4 @@
     </dialog>
   </patchwork-dialog>
 
-</ssr-fragment>
-
-<ssr-fragment portal="head">
-  <script type="module" src="/scripts/patchwork-dialog.js?v={{deployHash}}"></script>
 </ssr-fragment>

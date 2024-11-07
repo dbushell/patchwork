@@ -1,0 +1,42 @@
+<script context="module">
+  export const pattern = "/";
+
+  export const load = async ({fetch, platformProps}) => {
+    const response = await fetch("/props.json");
+    platformProps.props = await response.json();
+    platformProps.description = "Personal Pattern Library";
+    platformProps.title = `Scroll - ${platformProps.description}`;
+  }
+</script>
+
+<ssr-fragment portal="head">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/scroll.css?v={{deployHash}}">
+  <script type="module" src="/scripts/patchwork-scroller.js?v={{deployHash}}"></script>
+</ssr-fragment>
+
+<layout-app>
+  <layout-basic>
+    <patchwork-scroller>
+      <pw-container>
+        <div class="scroll-section" id="scroll-1">
+          <h1>Patckwork!</h1>
+        </div>
+      </pw-container>
+      <pw-container>
+        <div class="scroll-section" id="scroll-2">
+          <blockquote>
+            <p>👋 Hello! I'm <a href="https://dbushell.com" target="_blank">David Bushell</a> and Patchwork is my playground where I experiment with new shiny web stuff. Patchwork is also a pattern library for <a href="https://github.com/dbushell/">my personal projects</a>.</p>
+            <p>Feel free to view source and inspect element.</p>
+            <p>Code is available to view on GitHub.</p>
+          </blockquote>
+        </div>
+      </pw-container>
+      <pw-container>
+        <div class="scroll-section" id="scroll-3">
+          <p>Goodbye!</p>
+        </div>
+      </pw-container>
+    </patchwork-scroller>
+  </layout-basic>
+</layout-app>
