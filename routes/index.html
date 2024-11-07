@@ -20,18 +20,22 @@
       <div class="Card-container">
         <article class="Card">
           <h3>Introduction</h3>
-          <p>My documentation index page.</p>
-          <pw-button href="/docs/" label="Docs" />
+          <p>👋 Hello! What’s all this about? Learn and see more in the docs section.</p>
+          <pw-button href="/docs/" label="Documentation" />
         </article>
         <article class="Card">
-          <h3>Typography</h3>
-          <p>Fonts, sizing, and styles.</p>
-          <pw-button href="/docs/typography/" label="Typography" />
+          <h3>Made by...</h3>
+          <p>Me, <a href="https://dbushell.com" target="_blank">David Bushell</a>. This is my playground where I <strong>experiment</strong> with new shiny web stuff.</p>
+          <pw-button href="https://dbushell.com" label="dbushell.com" target="_blank">
+            <ssr-fragment slot="icon"><icon-external /></ssr-fragment>
+          </pw-button>
         </article>
         <article class="Card">
-          <h3>Forms</h3>
-          <p>Patterns for data input and UI.</p>
-          <pw-button href="/docs/forms/" label="Forms" />
+          <h3>View source</h3>
+          <p>Feel free to <em>view source</em> and <em>inspect element</em>. Code is available to view on GitHub.</p>
+          <pw-button href="{{props.footer.menu[1].href}}" label="GitHub" target="_blank">
+            <ssr-fragment slot="icon"><icon-external /></ssr-fragment>
+          </pw-button>
         </article>
       </div>
     </pw-container>

@@ -16,49 +16,56 @@
   <layout-aside>
     <pw-stack>
       <h1>Dialog</h1>
+      <p>Basic <code>dialog</code> with no transition.</p>
       <pw-button label="No Transition" aria-controls="basic-dialog" aria-expanded="false" />
+      <p>CSS transition using <code>allow-discrete</code> and <code>@starting-style</code>.</p>
       <pw-button label="CSS Transition" aria-controls="css-transition-dialog" aria-expanded="false" />
+      <p>View Transition with <code>@keyframes</code> animation.</p>
       <pw-button label="View Transition" aria-controls="view-transition-dialog" aria-expanded="false" />
       <h2>Popover</h2>
+      <p>No-JS tooltip using HTML <code>popover</code> attribute and <code>anchor</code> positioning.</p>
       <pw-button label="Tooltip" id="tooltip-anchor-1" aria-describedby="tooltip-1" popovertarget="tooltip-1" />
-
     </pw-stack>
   </layout-aside>
 </layout-app>
 
-<div class="Tooltip" id="tooltip-1" anchor="tooltip-anchor-1" role="tooltip" popover>
-  <p>This is a tooltip popover with a single paragraph.</p>
-</div>
+<ssr-fragment portal="foot">
 
-<patchwork-dialog>
-  <dialog class="Dialog" id="basic-dialog">
-    <pw-stack>
-      <pw-button label="Close" aria-controls="basic-dialog" aria-expanded="false" />
-      <h3>Dialog Modal</h3>
-      <p>This is a top-level dialog modal. It captures focus and content outside the dialog is inert.</p>
-    </pw-stack>
-  </dialog>
-</patchwork-dialog>
+  <div class="Tooltip" id="tooltip-1" anchor="tooltip-anchor-1" role="tooltip" popover>
+    <p>This is a tooltip popover with a single paragraph.</p>
+  </div>
 
-<patchwork-dialog>
-  <dialog class="Dialog Dialog--css-transition" id="css-transition-dialog">
-    <pw-stack>
-      <pw-button label="Close" aria-controls="css-transition-dialog" aria-expanded="false" />
-      <h3>CSS Transition Dialog</h3>
-      <p>This is a top-level dialog modal. It captures focus and content outside the dialog is inert.</p>
-    </pw-stack>
-  </dialog>
-</patchwork-dialog>
+  <patchwork-dialog>
+    <dialog class="Dialog" id="basic-dialog">
+      <pw-stack>
+        <pw-button label="Close" aria-controls="basic-dialog" aria-expanded="false" />
+        <h3>Dialog Modal</h3>
+        <p>This is a top-level dialog modal. It captures focus and content outside the dialog is inert.</p>
+      </pw-stack>
+    </dialog>
+  </patchwork-dialog>
 
-<patchwork-dialog transition>
-  <dialog class="Dialog" id="view-transition-dialog">
-    <pw-stack>
-      <pw-button label="Close" aria-controls="view-transition-dialog" aria-expanded="false" />
-      <h3>View Transition Dialog</h3>
-      <p>This is a top-level dialog modal. It captures focus and content outside the dialog is inert.</p>
-    </pw-stack>
-  </dialog>
-</patchwork-dialog>
+  <patchwork-dialog>
+    <dialog class="Dialog Dialog--css-transition" id="css-transition-dialog">
+      <pw-stack>
+        <pw-button label="Close" aria-controls="css-transition-dialog" aria-expanded="false" />
+        <h3>CSS Transition Dialog</h3>
+        <p>This is a top-level dialog modal. It captures focus and content outside the dialog is inert.</p>
+      </pw-stack>
+    </dialog>
+  </patchwork-dialog>
+
+  <patchwork-dialog transition>
+    <dialog class="Dialog" id="view-transition-dialog">
+      <pw-stack>
+        <pw-button label="Close" aria-controls="view-transition-dialog" aria-expanded="false" />
+        <h3>View Transition Dialog</h3>
+        <p>This is a top-level dialog modal. It captures focus and content outside the dialog is inert.</p>
+      </pw-stack>
+    </dialog>
+  </patchwork-dialog>
+
+</ssr-fragment>
 
 <ssr-fragment portal="head">
   <script type="module" src="/scripts/patchwork-dialog.js?v={{deployHash}}"></script>

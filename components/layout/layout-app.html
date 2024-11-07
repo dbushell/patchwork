@@ -16,6 +16,13 @@
   <ssr-portal name="head" />
 </head>
 <body>
-  <ssr-slot />
+  <patchwork-body>
+    <ssr-slot />
+  </patchwork-body>
+  <ssr-portal name="foot" />
 </body>
 </html>
+
+<ssr-fragment portal="head">
+  <script type="module" src="/scripts/patchwork-body.js?v={{deployHash}}"></script>
+</ssr-fragment>

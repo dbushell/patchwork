@@ -10,12 +10,18 @@ html {
 body {
   accent-color: var(--color-primary);
   color: var(--color-text);
-  display: flex;
-  flex-direction: column;
   font-family: var(--font-sans);
   font-weight: 400;
-  justify-content: start;
   line-height: var(--line-height);
+}
+
+patchwork-body {
+  container: body / inline-size;
+  min-block-size: 100svb;
+  min-inline-size: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
 
   & > * {
     flex: 0 1 auto;
