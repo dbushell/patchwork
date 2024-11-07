@@ -2,17 +2,26 @@
   navigation: auto;
 }
 
-html {
-  background: var(--color-bg-1);
-  scrollbar-color: var(--color-secondary) var(--color-bg-1);
+@property --body-size {
+  syntax: '<length>';
+  initial-value: 0px;
+  inherits: true;
 }
 
-body {
+html {
   accent-color: var(--color-primary);
+  background: var(--color-bg-1);
   color: var(--color-text);
   font-family: var(--font-sans);
   font-weight: 400;
   line-height: var(--line-height);
+  scrollbar-color: var(--color-secondary) var(--color-bg-1);
+}
+
+body {
+  &:where([inert], :has(dialog[open])) {
+    overflow: hidden;
+  }
 }
 
 patchwork-body {
@@ -24,6 +33,7 @@ patchwork-body {
   justify-content: start;
 
   & > * {
+    --body-size: 100cqi;
     flex: 0 1 auto;
     min-inline-size: 0;
     max-inline-size: 100%;
@@ -31,10 +41,6 @@ patchwork-body {
 
   & > :where(:last-child:not(:only-child), footer:last-of-type) {
     margin-block-start: auto;
-  }
-
-  &:where([inert], :has(dialog[open])) {
-    overflow: hidden;
   }
 }
 

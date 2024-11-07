@@ -1,9 +1,3 @@
-@property --body-size {
-  syntax: '<length>';
-  initial-value: 0px;
-  inherits: true;
-}
-
 @property --font-size {
   syntax: '<length>';
   inherits: true;
@@ -17,11 +11,6 @@
 }
 
 :root {
-  --color-pink: 75% 0.22 330;
-
-  --color-focus: var(--color-tertiary);
-  --color-anchor: var(--color-primary);
-
   --color-bg-1: light-dark(oklch(97% 0.03 75), oklch(20% 0.015 275));
   --color-bg-2: light-dark(oklch(95% 0.03 75), oklch(15% 0.015 275));
   --color-bg-3: light-dark(oklch(93% 0.04 75), oklch(25% 0.015 275));
@@ -31,6 +20,8 @@
   --color-secondary: light-dark(oklch(55% 0.14 25), oklch(75% 0.15 25));
   --color-primary: light-dark(oklch(55% 0.14 45), oklch(75% 0.15 45));
   --color-tertiary: light-dark(oklch(65% 0.22 0), oklch(90% 0.12 90));
+  --color-focus: var(--color-tertiary);
+  --color-anchor: var(--color-primary);
 
   &[data-theme='light'] {
     color-scheme: light;
@@ -53,9 +44,9 @@
   }
 }
 
-body {
-  --body-size: 100cqi;
-  --fluid: calc((var(--body-size) - 400px) / (1200 - 400));
+:root {
+  /* --fluid: calc((var(--body-size) - 400px) / (1200 - 400)); */
+  --fluid: calc((100vi - 400px) / (1200 - 400));
   --rem: 0.0625rem;
 
   --size-0: clamp(2px, calc(2px + (3 - 2) * var(--fluid)), 3px);
@@ -72,14 +63,13 @@ body {
   --block-gap-1: var(--size-4);
   --block-gap-2: var(--size-5);
 
+  --border-size-1: 1px;
+  --border-size-2: 2px;
+
   --radius-0: var(--size-0);
   --radius-1: var(--size-1);
   --radius-2: var(--size-2);
 
-  --border-size-1: 1px;
-  --border-size-2: 2px;
-
-  /* --font-size-0: clamp(14px, calc(14px + (16 - 14) * var(--fluid)), 16px); */
   --font-size-0: 1rem;
   --font-size-1: clamp(
     calc(18 * var(--rem)),
@@ -117,7 +107,7 @@ body {
 
   --font-display: 'Sora', sans-serif;
   --font-sans: 'Sora', sans-serif;
-  --font-monospace: monospace;
+  --font-mono: monospace;
 
   --focus-outline: var(--border-size-2) solid var(--color-focus);
 }
