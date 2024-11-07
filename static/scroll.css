@@ -1,4 +1,4 @@
-patchwork-scroller {
+patchwork-scroll {
   display: block;
   --color-anchor: var(--color-tertiary);
   background: var(--color-bg-1);
@@ -60,6 +60,7 @@ patchwork-scroller {
     opacity: 0;
   }
   100% {
+    opacity: 0;
     transform: rotateX(45deg) scale(0.5);
   }
 }

@@ -12,12 +12,12 @@
 <ssr-fragment portal="head">
   <title>{{title}}</title>
   <link rel="stylesheet" href="/scroll.css?v={{deployHash}}">
-  <script type="module" src="/scripts/patchwork-scroller.js?v={{deployHash}}"></script>
+  <script type="module" src="/scripts/patchwork-scroll.js?v={{deployHash}}"></script>
 </ssr-fragment>
 
 <layout-app>
   <layout-basic>
-    <patchwork-scroller>
+    <patchwork-scroll>
       <pw-container>
         <div class="scroll-section" id="scroll-1">
           <h1>Patckwork!</h1>
@@ -37,6 +37,6 @@
           <p>Goodbye!</p>
         </div>
       </pw-container>
-    </patchwork-scroller>
+    </patchwork-scroll>
   </layout-basic>
 </layout-app>

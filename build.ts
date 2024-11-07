@@ -45,6 +45,7 @@ const routePaths = [
   "/docs/layout/",
   "/docs/modals/",
   "/docs/typography/",
+  "/scroll/",
 ];
 
 for (const href of routePaths) {
