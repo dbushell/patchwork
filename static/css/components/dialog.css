@@ -57,26 +57,26 @@
 .Dialog {
   :state(opening) > & {
     & .Dialog__body {
-      view-transition-name: dialog-in;
+      view-transition-name: --dialog-in;
     }
 
     &::backdrop {
-      view-transition-name: backdrop-in;
+      view-transition-name: --backdrop-in;
     }
   }
 
   :state(closing) > & {
     & .Dialog__body {
-      view-transition-name: dialog-out;
+      view-transition-name: --dialog-out;
     }
 
     &::backdrop {
-      view-transition-name: backdrop-out;
+      view-transition-name: --backdrop-out;
     }
   }
 }
 
-@keyframes dialog-in {
+@keyframes --dialog-in {
   0% {
     opacity: 0;
     transform: scale(1.2);
@@ -89,51 +89,51 @@
   }
 }
 
-@keyframes dialog-out {
+@keyframes --dialog-out {
   to {
     opacity: 0;
     transform: scale(0.9);
   }
 }
 
-@keyframes backdrop-in {
+@keyframes --backdrop-in {
   from {
     opacity: 0;
   }
 }
 
-@keyframes backdrop-out {
+@keyframes --backdrop-out {
   to {
     opacity: 0;
   }
 }
 
-::view-transition-new(dialog-in) {
-  animation: 600ms dialog-in;
+::view-transition-new(--dialog-in) {
+  animation: 600ms --dialog-in;
   animation-timing-function: cubic-bezier(0.6, 2, 0.6, 0.8);
 }
-::view-transition-old(dialog-in) {
+::view-transition-old(--dialog-in) {
   animation: none;
 }
-::view-transition-new(dialog-out) {
+::view-transition-new(--dialog-out) {
   animation: none;
 }
-::view-transition-old(dialog-out) {
-  animation: 300ms dialog-out;
+::view-transition-old(--dialog-out) {
+  animation: 300ms --dialog-out;
   animation-timing-function: ease-in;
 }
 
-::view-transition-new(backdrop-in) {
-  animation: 300ms backdrop-in;
+::view-transition-new(--backdrop-in) {
+  animation: 300ms --backdrop-in;
   animation-timing-function: ease-out;
 }
-::view-transition-old(backdrop-in) {
+::view-transition-old(--backdrop-in) {
   animation: none;
 }
-::view-transition-new(backdrop-out) {
+::view-transition-new(--backdrop-out) {
   animation: none;
 }
-::view-transition-old(backdrop-out) {
-  animation: 300ms backdrop-out;
+::view-transition-old(--backdrop-out) {
+  animation: 300ms --backdrop-out;
   animation-timing-function: ease-in;
 }

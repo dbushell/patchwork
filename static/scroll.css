@@ -20,7 +20,7 @@ patchwork-scroll {
   min-height: 100svb;
 }
 
-@keyframes s1-heading {
+@keyframes --s1-heading {
   0% {
     background-position-y: 0%;
     opacity: 1;
@@ -45,7 +45,7 @@ patchwork-scroll {
   }
 }
 
-@keyframes s2-paragraph {
+@keyframes --s2-paragraph {
   0% {
     opacity: 0;
     transform: rotateX(15deg) scale(2);
@@ -65,7 +65,7 @@ patchwork-scroll {
   }
 }
 
-@keyframes s3-paragraph {
+@keyframes --s3-paragraph {
   0% {
     filter: blur(20px);
     opacity: 0;
@@ -87,7 +87,7 @@ patchwork-scroll {
 
   & h1 {
     --font-size: var(--font-size-6);
-    animation-name: s1-heading;
+    animation-name: --s1-heading;
     animation-timeline: --s1;
     animation-timing-function: ease;
     inset-block-start: calc(
@@ -118,7 +118,7 @@ patchwork-scroll {
 
   & blockquote {
     transform-origin: 50% 100%;
-    animation-name: s2-paragraph;
+    animation-name: --s2-paragraph;
     animation-timeline: --s2;
     animation-timing-function: linear;
     text-align: center;
@@ -131,7 +131,7 @@ patchwork-scroll {
   & p {
     --font-size: var(--font-size-5);
     text-align: center;
-    animation-name: s3-paragraph;
+    animation-name: --s3-paragraph;
     animation-timeline: --s3;
     animation-timing-function: linear;
     max-inline-size: 40ch;
