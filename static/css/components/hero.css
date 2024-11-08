@@ -39,12 +39,12 @@
   &::before {
     background: var(--color-bg-1);
     background-image: repeating-conic-gradient(
-        from calc(var(--hero-visibility) * 20deg) at 0 100%,
+        in oklch from calc(var(--hero-visibility) * 20deg) at 0 100%,
         var(--color-bg-2) 0 10deg,
         transparent 0 20deg
       ),
       linear-gradient(
-        225deg,
+        in oklch 225deg,
         color-mix(in oklch, var(--color-bg-2) 50%, transparent),
         transparent
       );
@@ -57,8 +57,8 @@
   }
 
   &::after {
-    background: linear-gradient(to top, var(--color-bg-1), transparent),
-      linear-gradient(to right, var(--color-bg-1), transparent);
+    background: linear-gradient(in oklch to top, var(--color-bg-1), transparent),
+      linear-gradient(in oklch to right, var(--color-bg-1), transparent);
     block-size: 50%;
     display: block;
     content: '';
@@ -106,7 +106,7 @@
     var(--color-primary) calc(100% * var(--hero-visibility)),
     var(--color-text)
   );
-  background: linear-gradient(50deg, var(--color1), var(--color2));
+  background: linear-gradient(in oklch 50deg, var(--color1), var(--color2));
   background-clip: text;
   margin: 0;
   -webkit-text-fill-color: transparent;

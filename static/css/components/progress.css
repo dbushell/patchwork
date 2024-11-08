@@ -2,7 +2,7 @@
   --color: var(--color-primary);
   --size: var(--size-5);
   background-image: linear-gradient(
-    to right,
+    in oklch to right,
     var(--color-bg-4),
     var(--color-bg-4)
   );
@@ -19,7 +19,7 @@
 .Progress::-moz-progress-bar {
   background: transparent;
   background-image: linear-gradient(
-    to right,
+    in oklch to right,
     var(--color-secondary),
     var(--color-primary)
   );
@@ -37,7 +37,7 @@
 .Progress::-webkit-progress-value {
   background: transparent;
   background-image: linear-gradient(
-    to right,
+    in oklch to right,
     var(--color-secondary),
     var(--color-primary)
   );

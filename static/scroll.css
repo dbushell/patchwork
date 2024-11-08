@@ -94,7 +94,7 @@ patchwork-scroll {
       50svb - (0.5 * var(--font-size) * var(--line-height))
     );
     background: linear-gradient(
-      180deg,
+      in oklch 180deg,
       var(--color-tertiary) 20%,
       var(--color-secondary) 60%
     );

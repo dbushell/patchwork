@@ -26,7 +26,7 @@
 .Range::-moz-range-track {
   background: transparent;
   background-image: linear-gradient(
-    to right,
+    in oklch to right,
     var(--background-color),
     var(--background-color)
   );
@@ -50,7 +50,7 @@
 .Range::-webkit-slider-runnable-track {
   background: transparent;
   background-image: linear-gradient(
-    to right,
+    in oklch to right,
     var(--background-color),
     var(--background-color)
   );

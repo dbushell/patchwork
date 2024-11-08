@@ -1,12 +1,12 @@
 .Alert {
   --border-size: var(--border-size-2);
   --background-padding-box: linear-gradient(
-    to right,
+    in oklch to right,
     var(--color-bg-1),
     var(--color-bg-2)
   );
   --background-border-box: linear-gradient(
-    45deg,
+    in oklch 45deg,
     var(--color-secondary),
     var(--color-primary)
   );

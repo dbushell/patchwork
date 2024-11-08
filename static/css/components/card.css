@@ -13,7 +13,7 @@
 .Card {
   display: block;
   background-image: linear-gradient(
-    225deg,
+    in oklch 225deg,
     var(--color-bg-1),
     color-mix(in oklch, var(--color-bg-3) 50%, transparent)
   );
@@ -27,7 +27,7 @@
 
     &::before {
       background-image: linear-gradient(
-        to right,
+        in oklch to right,
         var(--color-secondary),
         color-mix(in oklch, var(--color-primary) 50%, transparent) 40%,
         color-mix(in oklch, var(--color-primary) 0%, transparent) 100%
