@@ -3,8 +3,6 @@ export class Component extends HTMLElement {
   #theme = "";
   #themes = new Set(["light", "dark"]);
   #navOpen = false;
-  #settingsTop = 0;
-  #settingsRight = 0;
 
   get theme() {
     return this.#theme;
@@ -47,6 +45,10 @@ export class Component extends HTMLElement {
   }
 
   connectedCallback() {
+    const settings = document.querySelector("#settings-template").content
+      .cloneNode(true);
+    this.nav.append(settings);
+    this.settingsButton.disabled = false;
     this.nav.addEventListener("beforetoggle", (ev) => {
       this.#navOpen = ev.newState === "open";
     });
@@ -61,9 +63,6 @@ export class Component extends HTMLElement {
     globalThis.addEventListener("resize", () => {
       this.#onResize();
     }, { passive: true });
-    globalThis.addEventListener("scroll", () => {
-      this.#updateSettings();
-    }, { passive: true });
     this.#onResize();
     this.theme = document.documentElement.getAttribute("data-theme") ??
       globalThis.localStorage.getItem("theme") ?? "";
@@ -77,21 +76,12 @@ export class Component extends HTMLElement {
   }
 
   #onResize() {
-    this.#updateSettings();
     if (this.#navOpen) {
       const display = globalThis.getComputedStyle(this.nav).display;
       if (display !== "grid") {
         this.nav.hidePopover();
       }
     }
-  }
-
-  #updateSettings() {
-    const bounds = this.settingsButton.getBoundingClientRect();
-    this.#settingsTop = bounds.bottom;
-    this.#settingsRight = globalThis.innerWidth - bounds.right;
-    this.settings.style.setProperty("--inset-top", this.#settingsTop);
-    this.settings.style.setProperty("--inset-right", this.#settingsRight);
   }
 
   #updateTheme() {

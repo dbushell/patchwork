@@ -23,7 +23,12 @@
   }
 }
 
-.Nav__settings {
+#settings-button {
+  anchor-name: --settings;
+}
+
+#settings {
+  position-anchor: --settings;
   background: var(--color-bg-2);
   border-radius: var(--radius-2);
   border: var(--border-size-1) solid var(--color-bg-4);
@@ -31,17 +36,17 @@
   margin: auto;
   padding: var(--size-2) var(--size-3);
 
-  &[style*='--inset'] {
-    inset: calc(var(--size-3) + (1px * var(--inset-top)))
-      calc(1px * var(--inset-right)) auto auto;
+  @supports (inset: anchor(end)) {
+    margin: 0;
+    inset: auto;
+    inset-block-start: calc(anchor(end) + var(--size-3));
+    inset-inline-end: anchor(end);
   }
-}
 
-@supports not selector(:popover-open) {
-  .Nav__settings {
-    &[style*='--inset'] {
-      inset-block-start: calc(var(--size-3) + var(--button-height));
-      inset-inline-end: 0;
+  @supports not (inset: anchor(end)) {
+    &::backdrop {
+      background-color: oklch(0% 0 0 / 0.4);
+      backdrop-filter: blur(2px);
     }
   }
 }
@@ -57,7 +62,7 @@
     }
   }
 
-  .Nav__settings {
+  #settings {
     display: contents;
   }
 }
@@ -87,7 +92,7 @@
   }
 
   @supports not selector(:popover-open) {
-    .Nav__settings {
+    #settings {
       &:not(.\:popover-open) {
         display: none;
       }

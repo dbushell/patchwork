@@ -4,7 +4,7 @@
   border: var(--border-size-1) solid var(--color-secondary);
   padding: var(--size-3);
 
-  @supports (inset: anchor(end)) {
+  @supports (position-area: end) {
     margin-inline: 0;
     margin-block: var(--size-2);
     max-inline-size: calc(100% - var(--size-5));
@@ -21,6 +21,7 @@
 #tooltip-anchor-1 {
   anchor-name: --tooltip1;
 }
+
 #tooltip-1 {
   position-anchor: --tooltip1;
 }
