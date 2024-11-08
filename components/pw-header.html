@@ -1,26 +1,20 @@
-<patchwork-header>
-  <header class="Grid | Header">
-    <div class="Header__main">
-      <ssr-slot name="primary">
-        <a class="Header__logo" href="/">
-          <span class="Header__name">{{heading}}</span>
-          <ssr-if condition="tag">
-            <span class="Header__tag">{{tag}}</span>
-          </ssr-if>
-        </a>
-      </ssr-slot>
-      <ssr-slot name="secondary">
-        <ssr-if condition="menu.length">
-          <pw-button icon label="Toggle Menu" classes="{{['Hamburger']}}" popovertarget="nav" popovertargetaction="toggle">
-            <ssr-fragment slot="icon"><icon-menu /></ssr-fragment>
-          </pw-button>
-          <pw-nav menu="{{menu}}" />
+<header class="Grid | Header">
+  <div class="Header__main">
+    <ssr-slot name="primary">
+      <a class="Header__logo" href="/">
+        <span class="Header__name">{{heading}}</span>
+        <ssr-if condition="tag">
+          <span class="Header__tag">{{tag}}</span>
         </ssr-if>
-      </ssr-slot>
-    </div>
-  </header>
-</patchwork-header>
-
-<ssr-fragment portal="head">
-  <script type="module" src="/scripts/patchwork-header.js?v={{deployHash}}"></script>
-</ssr-fragment>
+      </a>
+    </ssr-slot>
+    <ssr-slot name="secondary">
+      <ssr-if condition="menu.length">
+        <pw-button icon label="Toggle Menu" classes="{{['Hamburger']}}" popovertarget="nav" popovertargetaction="toggle">
+          <ssr-fragment slot="icon"><icon-menu /></ssr-fragment>
+        </pw-button>
+        <pw-nav menu="{{menu}}" />
+      </ssr-if>
+    </ssr-slot>
+  </div>
+</header>

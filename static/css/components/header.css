@@ -1,4 +1,4 @@
-body {
+:root {
   --header-space: var(--size-5);
   --header-height: calc((var(--header-space) * 2) + var(--button-height));
 }

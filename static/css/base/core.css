@@ -45,8 +45,6 @@ patchwork-body {
 }
 
 patchwork-dialog,
-patchwork-header,
-patchwork-hero,
 patchwork-nav {
   display: contents;
 }

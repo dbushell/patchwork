@@ -1,21 +1,15 @@
-<patchwork-hero>
-  <div class="Grid | Hero">
-    <div class="Hero__main">
-      <ssr-slot name="image" />
-      <ssr-slot name="main">
-        <ssr-slot name="heading">
-          <h1 class="Hero__heading">{{heading}}</h1>
-        </slot>
-        <ssr-slot name="intro">
-          <div class="Hero__intro">
-            <p>{{description}}</p>
-          </div>
-        </ssr-slot>
+<div class="Grid | Hero">
+  <div class="Hero__main">
+    <ssr-slot name="image" />
+    <ssr-slot name="main">
+      <ssr-slot name="heading">
+        <h1 class="Hero__heading">{{heading}}</h1>
+      </slot>
+      <ssr-slot name="intro">
+        <div class="Hero__intro">
+          <p>{{description}}</p>
+        </div>
       </ssr-slot>
-    </div>
+    </ssr-slot>
   </div>
-</patchwork-hero>
-
-<ssr-fragment portal="head">
-  <script type="module" src="/scripts/patchwork-hero.js?v={{deployHash}}"></script>
-</ssr-fragment>
+</div>

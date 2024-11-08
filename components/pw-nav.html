@@ -13,15 +13,17 @@
   </nav>
 </patchwork-nav>
 
-<template id="settings-template">
-  <div id="settings" popover>
-    <div class="Button-group jc-end">
-      <p class="small space-xs mi-end">Theme</p>
-      <pw-button disabled id="settings-light" label="Light" />
-      <pw-button disabled id="settings-dark" label="Dark" />
+<ssr-fragment portal="foot">
+  <template id="settings-template">
+    <div id="settings" popover>
+      <div class="Button-group jc-end">
+        <p class="small space-xs mi-end">Theme</p>
+        <pw-button disabled id="settings-light" label="Light" />
+        <pw-button disabled id="settings-dark" label="Dark" />
+      </div>
     </div>
-  </div>
-</template>
+  </template>
+</ssr-fragment>
 
 <ssr-fragment portal="head">
   <script type="module" src="/scripts/patchwork-nav.js?v={{deployHash}}"></script>

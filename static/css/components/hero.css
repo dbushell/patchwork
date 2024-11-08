@@ -1,140 +1,45 @@
-@property --scroll-y {
-  syntax: '<number>';
-  inherits: true;
-  initial-value: 0;
-}
-
-@property --scroll-dir {
-  syntax: '<number>';
-  inherits: true;
-  initial-value: 0;
-}
-
-@property --hero-height {
+@property --hero-heading-size {
   syntax: '<length>';
   inherits: true;
-  initial-value: 0;
+  initial-value: 16px;
 }
 
-@property --hero-min-height {
-  syntax: '<length>';
-  inherits: true;
-  initial-value: 0;
-}
-
-@property --hero-max-height {
-  syntax: '<length>';
-  inherits: true;
-  initial-value: 0;
-}
-
-@property --hero-main-height {
-  syntax: '<length> | <percentage>';
-  inherits: true;
-  initial-value: 100%;
-}
-
-@property --hero-main-min-height {
-  syntax: '<length> | <percentage>';
-  inherits: true;
-  initial-value: 100%;
-}
-
-@property --hero-main-max-height {
-  syntax: '<length> | <percentage>';
-  inherits: true;
-  initial-value: 100%;
-}
-
-@property --hero-offset-top {
-  syntax: '<number>';
-  inherits: true;
-  initial-value: 0;
-}
-
-@property --hero-offset-height {
-  syntax: '<number> | <percentage>';
-  inherits: true;
-  initial-value: 100%;
-}
-
-@property --hero-visible {
+@property --hero-visibility {
   syntax: '<number>';
   inherits: true;
   initial-value: 1;
 }
 
-@property --hero-visible-ratio {
-  syntax: '<number>';
-  inherits: true;
-  initial-value: 1;
-}
-
-:root {
-  --scroll-y: 0;
-  --scroll-dir: 1;
+@keyframes --hero {
+  0% {
+    --hero-heading-size: var(--font-size-6);
+    --hero-visibility: 1;
+  }
+  100% {
+    --hero-heading-size: var(--font-size-5);
+    --hero-visibility: 0;
+  }
 }
 
 .Hero {
   --grid-template: var(--grid-template-basic);
-
-  --hero-main-space: var(--size-6);
-
-  --hero-min-height: calc((250 / 16) * 1rem);
-  --hero-max-height: calc((100dvh - var(--header-height)) * 0.618);
-
   --hero-height: clamp(
-    var(--hero-min-height),
+    calc((250 / 16) * 1rem),
     calc(100dvw / 1.618),
-    var(--hero-max-height)
+    calc((100dvh - var(--header-height)) * 0.618)
   );
-
-  /* Number of pixels visible */
-  --hero-visible: min(
-    max(
-      0,
-      var(--hero-offset-height) - (var(--scroll-y) - var(--hero-offset-top))
-    ),
-    var(--hero-offset-height)
-  );
-
-  /* 1 = visible, 0 = invisible */
-  --hero-visible-ratio: calc(var(--hero-visible) / var(--hero-offset-height));
-
-  --hero-main-min-height: calc(
-    var(--font-size-5) + (var(--hero-main-space) * 2)
-  );
-  --hero-main-max-height: calc(
-    var(--hero-max-height) + (var(--hero-main-space) * 2)
-  );
-  --hero-main-height: clamp(
-    var(--hero-main-min-height),
-    calc(1px * (var(--hero-offset-height) * var(--hero-visible-ratio))),
-    var(--hero-main-max-height)
-  );
-
-  --hero-font-size: clamp(
-    var(--font-size-5),
-    calc(
-      var(--font-size-5) +
-        ((var(--font-size-6) - var(--font-size-5)) * var(--hero-visible-ratio))
-    ),
-    var(--font-size-6)
-  );
-
+  --hero-heading-size: var(--font-size-6);
+  align-items: center;
   aspect-ratio: 1.618 / 1;
-  align-items: start;
   block-size: var(--hero-height);
   container-name: hero;
   container-type: size;
   position: relative;
-  min-block-size: var(--hero-min-height);
-  max-block-size: var(--hero-max-height);
 
   &::before {
     background: var(--color-bg-1);
     background-image: repeating-conic-gradient(
-        from calc(var(--hero-visible-ratio) * 20deg) at 0 100%,
+        from calc(var(--hero-visibility) * 20deg) at 0 100%,
         var(--color-bg-2) 0 10deg,
         transparent 0 20deg
       ),
@@ -144,11 +49,11 @@
         transparent
       );
     block-size: 150%;
-    display: block;
     content: '';
-    position: absolute;
-    top: 0;
+    display: block;
     inline-size: 100%;
+    inset-block-start: 0;
+    position: absolute;
   }
 
   &::after {
@@ -157,69 +62,62 @@
     block-size: 50%;
     display: block;
     content: '';
-    position: absolute;
-    top: 100%;
     inline-size: 100%;
+    inset-block-start: 100%;
+    position: absolute;
+  }
+
+  @supports (animation-timeline: view()) {
+    /* animation-fill-mode: both; */
+    animation-timing-function: ease-out;
+    animation-name: --hero;
+    animation-timeline: view(
+      block var(--header-height) calc(100% - var(--header-height))
+    );
   }
 }
 
 .Hero__main {
+  --translate-y: calc((var(--hero-height) / 2) - 50% - var(--size-2));
   align-items: center;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   justify-items: start;
-  block-size: var(--hero-main-height);
-
-  min-block-size: var(--hero-main-min-height);
-  max-block-size: var(--hero-main-max-height);
-  padding-block: var(--hero-main-space);
   position: relative;
-  transform: translateY(calc(var(--hero-height) - var(--hero-main-height)));
+  transform: translateY(
+    calc(var(--translate-y) * (1 - var(--hero-visibility)))
+  );
 
   & > * {
     grid-column: 1 / 6;
-    grid-row: 1;
     justify-self: start;
   }
 }
 
 .Hero__heading {
+  --font-size: var(--hero-heading-size);
   --color1: color-mix(
     in oklch,
-    var(--color-secondary) calc(100% * var(--hero-visible-ratio)),
+    var(--color-secondary) calc(100% * var(--hero-visibility)),
     var(--color-text)
   );
   --color2: color-mix(
     in oklch,
-    var(--color-primary) calc(100% * var(--hero-visible-ratio)),
+    var(--color-primary) calc(100% * var(--hero-visibility)),
     var(--color-text)
   );
   background: linear-gradient(50deg, var(--color1), var(--color2));
   background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: var(--hero-font-size);
   margin: 0;
-  transform-origin: 0 100%;
+  -webkit-text-fill-color: transparent;
 }
 
 .Hero__intro {
-  --opacity1: max(0, min(1, var(--hero-visible-ratio)));
   --font-size: var(--font-size-0);
-  align-self: start;
-  inset-block-start: 50%;
-  margin-top: calc((var(--hero-font-size) / 2));
-  opacity: var(--opacity2, var(--opacity1));
-  position: absolute;
+  opacity: pow(max(0, min(1, var(--hero-visibility))), 8);
   text-wrap: balance;
 
   @container hero (block-size > 300px) {
     --font-size: var(--font-size-1);
-  }
-}
-
-@supports (width: calc(1px * pow(1, 1))) {
-  .Hero__intro {
-    --opacity2: pow(var(--opacity1), 8);
   }
 }

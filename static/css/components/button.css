@@ -1,4 +1,4 @@
-body {
+:root {
   --button-height: calc(
     (var(--font-size-0) * 1.5) + (var(--size-2) * 2) +
       (var(--border-size-1) * 2)
