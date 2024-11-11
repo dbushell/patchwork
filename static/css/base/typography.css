@@ -184,7 +184,11 @@ code {
   color: var(--color-secondary);
 }
 
-:is(small, figcaption) {
+:where(b, strong) {
+  font-weight: var(--font-weight-2);
+}
+
+:where(small, figcaption) {
   --font-size: var(--font-size-0);
   font-size: var(--font-size);
 }

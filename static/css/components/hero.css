@@ -79,19 +79,10 @@
 
 .Hero__main {
   --translate-y: calc((var(--hero-height) / 2) - 50% - var(--size-2));
-  align-items: center;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  justify-items: start;
   position: relative;
   transform: translateY(
     calc(var(--translate-y) * (1 - var(--hero-visibility)))
   );
-
-  & > * {
-    grid-column: 1 / 6;
-    justify-self: start;
-  }
 }
 
 .Hero__heading {
