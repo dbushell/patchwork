@@ -5,6 +5,7 @@
 
 .Header {
   --grid-template: var(--grid-template-basic);
+  align-items: center;
   background: var(--color-bg-2);
   block-size: var(--header-height);
   padding-block: var(--header-space);
