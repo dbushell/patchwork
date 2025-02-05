@@ -21,9 +21,61 @@ table {
 td,
 th {
   border-inline: var(--border-size-1) solid var(--color-bg-4);
-  font-size: var(--font-size-0);
+  --font-size: var(--font-size-0);
+  font-size: var(--font-size);
   padding: var(--size-2);
   text-align: start;
+
+  & > button {
+    --color: var(--color-text);
+    align-items: center;
+    color: var(--color);
+    display: flex;
+    gap: var(--size-2);
+    inline-size: 100%;
+    justify-content: space-between;
+    padding: var(--size-2);
+    transition: color 200ms;
+
+    & svg {
+      --color: transparent;
+      --size: calc(var(--font-size) * var(--line-height));
+      block-size: var(--size);
+      color: var(--color);
+      fill: currentColor;
+      flex: 0 0 auto;
+      inline-size: var(--size);
+      pointer-events: none;
+      transition: color 200ms;
+      user-select: none;
+    }
+
+    &[aria-pressed] svg {
+      --color: var(--color-text-subtle);
+    }
+
+    &:hover {
+      --color: var(--color-secondary);
+
+      & svg {
+        --color: var(--color-secondary);
+      }
+    }
+
+    &:focus-visible {
+      --color: var(--color-focus);
+      outline: var(--focus-outline);
+      outline-offset: calc(-1 * var(--border-size-2));
+
+      & svg {
+        --color: var(--color-focus);
+      }
+    }
+  }
+
+  &:has(> button:only-child) {
+    padding: 0;
+  }
 }
 
 th {
@@ -32,4 +84,38 @@ th {
 
 tr {
   border-block: var(--border-size-1) solid var(--color-bg-4);
+}
+
+.Table--stripe {
+  & th {
+    background-color: var(--color-bg-3);
+  }
+  & tbody {
+    & tr:nth-child(even) {
+      background-color: var(--color-bg-2);
+    }
+
+    & tr {
+      /* contain: layout; */
+      transform: translate(0);
+
+      & a[href] {
+        &:after {
+          content: '';
+          display: block;
+          inset: 0;
+          position: absolute;
+          z-index: 0;
+        }
+      }
+    }
+
+    & tr:hover {
+      background-color: color-mix(
+        in oklch,
+        var(--color-primary) 10%,
+        transparent
+      );
+    }
+  }
 }

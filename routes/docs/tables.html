@@ -1,0 +1,109 @@
+<script context="module">
+  export const pattern = "/";
+
+  export const load = async ({fetch, platformProps}) => {
+    const response = await fetch("/props.json");
+    platformProps.props = await response.json();
+    platformProps.title = "Tables - Documentation";
+  }
+</script>
+
+<ssr-fragment portal="head">
+  <title>{{title}}</title>
+</ssr-fragment>
+
+<layout-app>
+  <layout-aside>
+    <pw-stack tag="div">
+      <h1>Tables</h1>
+      <p>Basic table</p>
+      <div class="Table">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Money in</th>
+              <th>Money out</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5th Jan 2025</td>
+              <td>Tomatoes</td>
+              <td></td>
+              <td><data value="399">£3.99</data></td>
+              <td><data value="99601">£996.01</data></td>
+            </tr>
+            <tr>
+              <td>6th Jan 2025</td>
+              <td>Potatoes</td>
+              <td></td>
+              <td><data value="499">£4.99</data></td>
+              <td><data value="99102">£991.02</data></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Advanced data table</p>
+      <div class="Table Table--stripe">
+        <table>
+          <thead>
+            <tr>
+              <th aria-sort="ascending"><button aria-pressed="true"><span>Date</span><icon-sort-asc /></button></th>
+              <th>Description</th>
+              <th><button><span>Money in</span><icon-sort-asc /></button></th>
+              <th><button><span>Money out</span><icon-sort-asc /></button></th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5th Jan 2025</td>
+              <td><a href="#">Tomatoes</a></td>
+              <td></td>
+              <td><data value="399">£3.99</data></td>
+              <td><data value="99601">£996.01</data></td>
+            </tr>
+            <tr>
+              <td>6th Jan 2025</td>
+              <td><a href="#">Potatoes</a></td>
+              <td></td>
+              <td><data value="499">£4.99</data></td>
+              <td><data value="99102">£991.02</data></td>
+            </tr>
+            <tr>
+              <td>7th Jan 2025</td>
+              <td><a href="#">Playstation 5</a></td>
+              <td></td>
+              <td><data value="52999">£529.99</data></td>
+              <td><data value="46103">£461.03</data></td>
+            </tr>
+            <tr>
+              <td>8th Jan 2025</td>
+              <td><a href="#">Something</a></td>
+              <td></td>
+              <td><data value="125">£1.25</data></td>
+              <td><data value="45978">£459.78</data></td>
+            </tr>
+            <tr>
+              <td>9th Jan 2025</td>
+              <td><a href="#">Invoice paid</a></td>
+              <td><data value="192000">£1,920</data></td>
+              <td></td>
+              <td><data value="237978">£2,379.78</data></td>
+            </tr>
+            <tr>
+              <td>10th Jan 2025</td>
+              <td><a href="#">Stuff</a></td>
+              <td></td>
+              <td><data value="7259">£72.50</data></td>
+              <td><data value="245228">£2,452.28</data></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </pw-stack>
+  </layout-aside>
+</layout-app>
