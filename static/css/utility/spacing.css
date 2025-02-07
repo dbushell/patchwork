@@ -8,9 +8,12 @@
   --space: var(--size-3);
 }
 .space-m {
-  --space: var(--size-5);
+  --space: var(--size-4);
 }
 .space-l {
+  --space: var(--size-5);
+}
+.space-xl {
   --space: var(--size-6);
 }
 

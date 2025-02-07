@@ -11,3 +11,9 @@
   position: absolute;
   white-space: nowrap;
 }
+
+@media (scripting: enabled) {
+  .noscript {
+    display: none;
+  }
+}

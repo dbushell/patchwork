@@ -24,6 +24,7 @@ body {
   }
 }
 
+.App,
 patchwork-body {
   container: body / inline-size;
   min-block-size: 100svb;

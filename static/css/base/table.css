@@ -34,6 +34,7 @@ th {
     gap: var(--size-2);
     inline-size: 100%;
     justify-content: space-between;
+    min-width: max-content;
     padding: var(--size-2);
     transition: color 200ms;
 
@@ -90,24 +91,14 @@ tr {
   & th {
     background-color: var(--color-bg-3);
   }
+
   & tbody {
     & tr:nth-child(even) {
       background-color: var(--color-bg-2);
     }
 
     & tr {
-      /* contain: layout; */
-      transform: translate(0);
-
-      & a[href] {
-        &:after {
-          content: '';
-          display: block;
-          inset: 0;
-          position: absolute;
-          z-index: 0;
-        }
-      }
+      vertical-align: top;
     }
 
     & tr:hover {
