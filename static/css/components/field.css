@@ -42,6 +42,11 @@
     font-size: var(--font-size-0);
   }
 
+  &[readonly] {
+    --border-color: var(--color-bg-4);
+    --color: var(--color-text-subtle);
+  }
+
   &[disabled] {
     --background-color: var(--color-bg-3);
     --border-color: var(--color-bg-4);

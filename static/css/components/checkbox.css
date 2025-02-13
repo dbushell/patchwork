@@ -20,6 +20,7 @@
     font-size: var(--font-size);
     font-weight: var(--font-weight-1);
     line-height: var(--line-height);
+    min-block-size: calc(var(--font-size) * var(--line-height));
     padding-inline-start: calc(var(--inline-size) + (var(--size-2)));
     user-select: none;
 
@@ -44,6 +45,7 @@
     &::before {
       background-color: var(--background-color);
       border: var(--border-width) solid var(--border-color);
+      transition: border-color 200ms;
     }
 
     &::after {
@@ -51,6 +53,20 @@
       opacity: 0;
       transition: opacity 200ms;
     }
+  }
+
+  &[aria-label] {
+    & > span {
+      padding-inline-start: var(--inline-size);
+    }
+
+    &:not(:hover, :has(input:checked)) {
+      --border-color: var(--color-bg-4);
+    }
+  }
+
+  &:hover {
+    --border-color: var(--color-secondary);
   }
 
   & input:checked + span {

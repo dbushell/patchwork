@@ -57,6 +57,7 @@ body {
 }
 
 :where(textarea) {
+  field-sizing: content;
   resize: vertical;
 }
 
