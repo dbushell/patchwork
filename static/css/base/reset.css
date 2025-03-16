@@ -9,6 +9,7 @@
 html {
   color-scheme: light dark;
   hanging-punctuation: first allow-end last;
+  interpolate-size: allow-keywords;
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
   text-size-adjust: none;
@@ -57,8 +58,11 @@ body {
 }
 
 :where(textarea) {
-  field-sizing: content;
   resize: vertical;
+}
+
+:where(textarea:not([rows])) {
+  field-sizing: content;
 }
 
 :where(p, li, h1, h2, h3, h4, h5, h6) {
@@ -66,11 +70,9 @@ body {
   text-wrap: pretty;
 }
 
-:where(abbr) {
-  &[title] {
-    border: none;
-    text-decoration: none;
-  }
+:where(abbr[title]) {
+  border: none;
+  text-decoration: none;
 }
 
 :where(cite) {
@@ -97,4 +99,8 @@ body {
 
 :where(dialog:not([open], [popover]), [popover]:not(:popover-open)) {
   display: none;
+}
+
+:where(fieldset) {
+  border: none;
 }

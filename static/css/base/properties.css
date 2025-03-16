@@ -1,11 +1,11 @@
 @property --font-size {
-  syntax: '<length>';
+  syntax: '<length> | <custom-ident>';
   inherits: true;
   initial-value: 16px;
 }
 
 @property --line-height {
-  syntax: '<number>';
+  syntax: '<number> | <custom-ident>';
   inherits: true;
   initial-value: 1.4;
 }
