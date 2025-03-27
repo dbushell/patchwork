@@ -7,7 +7,7 @@ export const GET = () => {
 const props = {
   "header": {
     "heading": "Patchwork",
-    "tag": "2.5",
+    "tag": "2.6",
     "menu": [
       {
         "name": "Home",

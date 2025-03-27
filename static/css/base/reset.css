@@ -76,7 +76,7 @@ body {
 }
 
 :where(cite) {
-  font-style: normal;
+  font-style: inherit;
 }
 
 :where(small) {

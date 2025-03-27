@@ -5,7 +5,8 @@
   );
 }
 
-.Button {
+.Button,
+::file-selector-button {
   --color: var(--color-primary);
   --background-padding-box: linear-gradient(
     in oklch to right,
@@ -104,10 +105,14 @@
   }
 }
 
-/* .Button--large {
-  --border-width: 2;
-  --font-size: var(--font-size-1);
-} */
+::file-selector-button {
+  display: inline-block;
+  margin-inline-end: var(--size-2);
+}
+
+input[type='file'] {
+  inline-size: fit-content;
+}
 
 .Button-group {
   align-items: center;
