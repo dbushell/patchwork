@@ -21,6 +21,7 @@
       <pw-field />
       <pw-field placeholder="Placeholder..." />
       <pw-field value="Value entered" />
+      <pw-field value="Required" required />
       <pw-field readonly value="Readonly value" />
       <pw-field disabled placeholder="Placeholder..." />
       <pw-field disabled value="Value entered" />
@@ -45,6 +46,10 @@
       <pw-select
         required
         options="{{[{value: 'one', label: 'One'},{value: 'two', label: 'Two', selected: true},{value: 'three', label: 'Three'}]}}"
+      />
+      <pw-select
+        required
+        options="{{[{value: '', label: 'Select…'},{value: 'value', label: 'Value'}]}}"
       />
       <pw-select disabled options="{{[{value: 'none', label: 'None'}]}}" />
 

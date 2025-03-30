@@ -1,10 +1,8 @@
 .Container {
   --background-color: var(--color-bg-1);
   --background-opacity: 0;
-  background: color-mix(
-    in oklch,
-    var(--background-color) calc(100% * var(--background-opacity)),
-    transparent
+  background: oklch(
+    from var(--background-color) l c h / calc(1 * var(--background-opacity))
   );
   padding-block: var(--grid-row-gap);
 

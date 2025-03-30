@@ -45,7 +45,7 @@
       ),
       linear-gradient(
         in oklch 225deg,
-        color-mix(in oklch, var(--color-bg-2) 50%, transparent),
+        oklch(from var(--color-bg-2) l c h / 0.5),
         transparent
       );
     block-size: 150%;

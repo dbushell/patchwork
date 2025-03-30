@@ -12,8 +12,8 @@
     in oklch to right,
     var(--color-bg-1),
     var(--color-bg-1) 34%,
-    color-mix(in oklch, var(--color-bg-1) 90%, transparent) 67%,
-    color-mix(in oklch, var(--color-bg-1) 80%, transparent)
+    oklch(from var(--color-bg-1) l c h / 0.9) 67%,
+    oklch(from var(--color-bg-1) l c h / 0.8)
   );
   --background-border-box: linear-gradient(
     in oklch 45deg,
@@ -24,10 +24,8 @@
   --border-radius: var(--radius-2);
   --border-width: var(--border-size-1);
   --border-opacity: 0;
-  --border-mix: color-mix(
-    in oklch,
-    var(--border-color) calc(100% * var(--border-opacity)),
-    transparent
+  --border-mix: oklch(
+    from var(--border-color) l c h / calc(1 * var(--border-opacity))
   );
   --font-size: var(--font-size-0);
   --line-height: 1.5;

@@ -20,6 +20,7 @@
   --color-secondary: light-dark(oklch(55% 0.14 25), oklch(75% 0.15 25));
   --color-primary: light-dark(oklch(55% 0.14 45), oklch(75% 0.15 45));
   --color-tertiary: light-dark(oklch(65% 0.22 0), oklch(90% 0.12 90));
+  --color-error: light-dark(oklch(50% 0.2 18), oklch(60% 0.2 18));
   --color-focus: var(--color-tertiary);
   --color-anchor: var(--color-primary);
 

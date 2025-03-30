@@ -47,10 +47,15 @@
     --color: var(--color-text-subtle);
   }
 
-  &[disabled] {
+  &:disabled {
     --background-color: var(--color-bg-3);
     --border-color: var(--color-bg-4);
     --color: var(--color-text) / 0.5;
     pointer-events: none;
+  }
+
+  &:user-invalid {
+    --border-color: var(--color-error);
+    --color: var(--color-error);
   }
 }

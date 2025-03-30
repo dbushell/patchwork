@@ -10,10 +10,8 @@ a {
   text-decoration-line: underline;
   text-decoration-thickness: var(--border-size-1);
   text-decoration-skip-ink: all;
-  text-decoration-color: color-mix(
-    in oklch,
-    var(--color) calc(100% * var(--underline-opacity)),
-    transparent
+  text-decoration-color: oklch(
+    from var(--color) l c h / calc(1 * var(--underline-opacity))
   );
   text-underline-offset: 0.15em;
   transition: color 200ms, text-decoration-color 200ms;
