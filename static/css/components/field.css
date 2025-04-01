@@ -58,4 +58,35 @@
     --border-color: var(--color-error);
     --color: var(--color-error);
   }
+
+  &[type='search'] {
+    --background-light: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="oklch(15% 0.04 45)" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg>');
+    --background-dark: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="oklch(95% 0.04 65)" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg>');
+    --background-image: var(--background-light);
+    background-image: var(--background-image);
+    background-position: left var(--size-2) center;
+    background-repeat: no-repeat;
+    background-size: auto var(--font-size);
+    padding-inline-start: calc(var(--font-size) + var(--padding-inline));
+
+    &:dir(rtl) {
+      background-position: right var(--size-2) center;
+    }
+
+    @media (prefers-color-scheme: light) {
+      --background-image: var(--background-light);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      --background-image: var(--background-dark);
+    }
+
+    :where(:root[data-theme='light']) & {
+      --background-image: var(--background-light);
+    }
+
+    :where(:root[data-theme='dark']) & {
+      --background-image: var(--background-dark);
+    }
+  }
 }
