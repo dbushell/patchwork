@@ -52,3 +52,7 @@
 .va-top {
   vertical-align: top;
 }
+
+.nowrap {
+  white-space: nowrap;
+}

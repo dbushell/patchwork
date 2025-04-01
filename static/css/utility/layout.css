@@ -35,6 +35,16 @@
   display: inline-flex;
 }
 
+.inline-size-0 {
+  inline-size: 0%;
+}
+.inline-size-100 {
+  inline-size: 100%;
+}
+.inline-size-auto {
+  inline-size: auto;
+}
+
 .order-1 {
   order: 1;
 }
