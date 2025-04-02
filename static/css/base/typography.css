@@ -112,8 +112,7 @@ p {
   }
 }
 
-ul,
-ol {
+:is(ul, ol) {
   --bullet: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><path d="M9.625 5.375L15 7.5 9.625 9.625 7.5 15 5.375 9.625 0 7.5l5.375-2.125L7.5 0z"/></svg>');
   --bullet-size: calc(var(--font-size) * var(--line-height));
   margin-block-end: var(--block-gap-1);
